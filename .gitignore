@@ -1,0 +1,3 @@
+.venv/
+.crawler_profile/
+__pycache__/

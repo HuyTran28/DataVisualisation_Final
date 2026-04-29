@@ -5,13 +5,15 @@ import asyncio
 import csv
 import inspect
 import itertools
+import json
 import logging
 import random
 import re
+import signal
 import unicodedata
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
@@ -28,7 +30,7 @@ except Exception:
 
 DEFAULT_START_URL = "https://batdongsan.com.vn/ban-can-ho-chung-cu/p1?cIds=650,362,44&vrs=1"
 DEFAULT_OUTPUT = "batdongsan_real_estate.csv"
-DEFAULT_MAX_PAGES = 2
+DEFAULT_MAX_PAGES = 200
 DEFAULT_DELAY_MIN = 0.7
 DEFAULT_DELAY_MAX = 1.8
 DEFAULT_TIMEOUT_MS = 90_000
@@ -39,12 +41,15 @@ DEFAULT_USER_DATA_DIR = ".crawler_profile"
 DEFAULT_PROXY_FILE = "proxies.txt"
 DEFAULT_HTTPX_TIMEOUT = 25.0
 DEFAULT_CONCURRENT_REQUESTS_PER_HOST = 1
+DEFAULT_PROGRESS_FILE = "progress.json"
+DEFAULT_AUTOSAVE_BATCH_SIZE = 80
 
 DEFAULT_MAX_RETRIES = 5
 DEFAULT_RETRY_BASE_BACKOFF = 2.0
 # Current effective settings (overridden from CLI in main)
 CURRENT_MAX_RETRIES = DEFAULT_MAX_RETRIES
 CURRENT_RETRY_BASE_BACKOFF = DEFAULT_RETRY_BASE_BACKOFF
+STOP_REQUESTED = False
 
 DETAIL_URL_PATTERN = re.compile(r"/[^\s?#]*-pr\d+(?:\?|$)", re.IGNORECASE)
 PRODUCT_ID_PATTERN = re.compile(r"pr(\d+)", re.IGNORECASE)
@@ -91,7 +96,7 @@ class RealEstateSchema(BaseModel):
     interior: Optional[str] = Field(None, description="Tình trạng nội thất")
     legal_status: str = Field("Sổ hồng/Sổ đỏ", description="Tình trạng pháp lý")
     post_rank: Optional[str] = Field(None, description="Cấp bậc tin (Tin VIP, Tin Nổi bật, ...)")
-    # price_trend_1y: Optional[float] = Field(None, description="Tăng trưởng giá khu vực (%)")
+    price_trend_1y: Optional[float] = Field(None, description="Tăng trưởng giá khu vực (%)")
     is_verified: bool = Field(False, description="Tin đã được xác thực bởi sàn")
     has_elevator: bool = Field(False, description="Có thang máy")
     near_park: bool = Field(False, description="Gần công viên/bờ sông")
@@ -958,24 +963,36 @@ def extract_post_rank_from_selector(html: str) -> Optional[str]:
     return None
 
 
-# def extract_price_trend_from_selector(html: str) -> Optional[float]:
-#     """
-#     Trích xuất price_trend_1y từ .re__chart-col.re__col-2 strong.
-#     Ví dụ: "+23%", "-5%"
-#     Trả về số (23.0, -5.0)
-#     """
-#     soup = BeautifulSoup(html, "html.parser")
+def extract_price_trend_from_selector(html: str) -> Optional[float]:
+    """
+    Trích xuất price_trend_1y từ khối pricing CTA.
+    Ví dụ: "1,3%", "+23%", "-5%"
+    Trả về số (23.0, -5.0)
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Ưu tiên block pricing CTA mới (ví dụ: .re__up-trend/.re__down-trend)
+    cta_block = soup.select_one(".re__block-ldp-pricing-cta")
+    if cta_block:
+        number_elem = cta_block.select_one(".cta-number")
+        if number_elem:
+            trend_text = normalize_text(number_elem.get_text())
+            trend_value = clean_numeric(trend_text)
+            if trend_value is not None:
+                cta_classes = cta_block.get("class", [])
+                # Giữ dấu âm nếu block thể hiện xu hướng giảm.
+                if any("down-trend" in cls for cls in cta_classes):
+                    return -abs(trend_value)
+                return trend_value
+
+    # Fallback selector cũ để tương thích ngược.
+    chart_elem = soup.select_one(".re__chart-col.re__col-2 strong")
+    if chart_elem:
+        trend_text = normalize_text(chart_elem.get_text())
+        trend_value = clean_numeric(trend_text)
+        return trend_value
     
-#     # Tìm .re__chart-col.re__col-2 strong
-#     chart_elem = soup.select_one(".re__chart-col.re__col-2 strong")
-    
-#     if chart_elem:
-#         trend_text = normalize_text(chart_elem.get_text())
-#         # Extract số từ "+23%" hoặc "-5%"
-#         trend_value = clean_numeric(trend_text)
-#         return trend_value
-    
-#     return None
+    return None
 
 
 def extract_is_verified_from_selector(html: str) -> bool:
@@ -1021,7 +1038,7 @@ def parse_detail_page(url: str, html: str, fallback_title: str = "") -> RealEsta
     price_per_m2_css = extract_price_per_m2_from_selector(html)
     area_css, frontage_css = extract_area_and_frontage_from_selector(html)
     post_rank_css = extract_post_rank_from_selector(html)
-    # price_trend_css = extract_price_trend_from_selector(html)
+    price_trend_css = extract_price_trend_from_selector(html)
     is_verified_css = extract_is_verified_from_selector(html)
     
     # === PHASE 2: Regex Fallback (if CSS returns None) ===
@@ -1091,7 +1108,7 @@ def parse_detail_page(url: str, html: str, fallback_title: str = "") -> RealEsta
         interior=interior,
         legal_status=legal_status,
         post_rank=post_rank_css or "",
-        # price_trend_1y=price_trend_css,
+        price_trend_1y=price_trend_css,
         is_verified=is_verified_css or "tin xac thuc" in canonical(text) or "da xac thuc" in canonical(text),
         has_elevator=desc_flags["has_elevator"],
         near_park=desc_flags["near_park"],
@@ -1386,6 +1403,9 @@ async def collect_catalog_links_via_page(page, start_url: str, max_pages: int) -
     seen: set[str] = set()
 
     for page_number in range(1, max_pages + 1):
+        if STOP_REQUESTED:
+            logging.info("Stop requested during catalog collection. Ending early.")
+            break
         page_url = build_catalog_page_url(start_url, page_number)
         logging.info("Catalog page %s: %s", page_number, page_url)
         html = ""
@@ -1428,6 +1448,9 @@ async def collect_catalog_links(crawler: AsyncWebCrawler, start_url: str, max_pa
     seen: set[str] = set()
 
     for page_number in range(1, max_pages + 1):
+        if STOP_REQUESTED:
+            logging.info("Stop requested during catalog collection. Ending early.")
+            break
         page_url = build_catalog_page_url(start_url, page_number)
         logging.info("Catalog page %s: %s", page_number, page_url)
         html = ""
@@ -1473,6 +1496,8 @@ async def crawl_details_browser(
     delay_min: float,
     delay_max: float,
     max_concurrent: int,
+    orchestrator: Optional[CrawlOrchestrator] = None,
+    stop_checker: Optional[Callable[[], bool]] = None,
 ) -> tuple[list[RealEstateSchema], list[str]]:
     """Crawl detail pages using a persistent browser context."""
     records: list[RealEstateSchema] = []
@@ -1482,15 +1507,22 @@ async def crawl_details_browser(
 
     async def crawl_one_detail(index: int, url: str) -> None:
         async with semaphore:
+            if stop_checker and stop_checker():
+                return
             await asyncio.sleep(random.uniform(0, 0.5))
             for attempt in range(1, 4):
+                if stop_checker and stop_checker():
+                    break
                 attempt_str = f" [Attempt {attempt}/3]" if attempt > 1 else ""
                 logging.info("Detail %s/%s%s: %s", index + 1, len(urls), attempt_str, url)
                 try:
                     _, html = await robust_crawl_single_page(crawler, url, config_template)
                     record = parse_detail_page(url, html)
-                    async with records_lock:
-                        records.append(record)
+                    if orchestrator is not None:
+                        await orchestrator.record_success(record)
+                    else:
+                        async with records_lock:
+                            records.append(record)
                     break
                 except (ValidationError, ValueError) as exc:
                     logging.warning("Skipping detail page %s (Data Error): %s", url, exc)
@@ -1518,6 +1550,8 @@ async def crawl_details_httpx(
     user_agent: str,
     max_concurrent: int,
     proxy_pool: list[str],
+    orchestrator: Optional[CrawlOrchestrator] = None,
+    stop_checker: Optional[Callable[[], bool]] = None,
 ) -> tuple[list[RealEstateSchema], list[str]]:
     """Crawl detail pages using httpx with cf_clearance cookies for speed."""
     records: list[RealEstateSchema] = []
@@ -1551,6 +1585,8 @@ async def crawl_details_httpx(
     try:
         async def fetch_one(index: int, url: str) -> None:
             async with semaphore:
+                if stop_checker and stop_checker():
+                    return
                 client = client_no_proxy
                 if proxy_cycle is not None:
                     async with proxy_lock:
@@ -1561,8 +1597,11 @@ async def crawl_details_httpx(
                     if response.status_code >= 400 or is_cf_challenge(response.text):
                         raise RuntimeError(f"Blocked or challenge: {response.status_code}")
                     record = parse_detail_page(url, response.text)
-                    async with records_lock:
-                        records.append(record)
+                    if orchestrator is not None:
+                        await orchestrator.record_success(record)
+                    else:
+                        async with records_lock:
+                            records.append(record)
                 except (ValidationError, ValueError) as exc:
                     logging.warning("Skipping detail page %s (Data Error): %s", url, exc)
                 except Exception as exc:
@@ -1595,6 +1634,116 @@ def write_csv(records: list[RealEstateSchema], output_path: Path) -> None:
             writer.writerow(data)
 
 
+def append_csv(records: list[RealEstateSchema], output_path: Path) -> None:
+    if not records:
+        return
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = list(RealEstateSchema.model_fields.keys())
+    write_header = (not output_path.exists()) or output_path.stat().st_size == 0
+
+    with output_path.open("a", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        if write_header:
+            writer.writeheader()
+        for record in records:
+            data = record.model_dump()
+            data["posted_date"] = data["posted_date"].isoformat()
+            data["expiry_date"] = data["expiry_date"].isoformat()
+            writer.writerow(data)
+
+
+def _handle_stop_signal(signum, _frame) -> None:
+    global STOP_REQUESTED
+    if STOP_REQUESTED:
+        return
+    STOP_REQUESTED = True
+    logging.warning("Received stop signal %s. Will stop after current in-flight work.", signum)
+
+
+def register_signal_handlers() -> None:
+    for sig_name in ("SIGINT", "SIGTERM"):
+        sig = getattr(signal, sig_name, None)
+        if sig is None:
+            continue
+        try:
+            signal.signal(sig, _handle_stop_signal)
+        except Exception:
+            # Some environments may not allow replacing handlers.
+            continue
+
+
+class CrawlOrchestrator:
+    def __init__(self, output_path: Path, progress_path: Path, batch_size: int) -> None:
+        self.output_path = output_path
+        self.progress_path = progress_path
+        self.batch_size = max(1, batch_size)
+        self._lock = asyncio.Lock()
+        self._buffer: list[RealEstateSchema] = []
+        self._processed_urls: set[str] = set()
+        self._processed_ids: set[str] = set()
+        self.new_success_count = 0
+        self._load_progress()
+
+    @property
+    def processed_count(self) -> int:
+        return len(self._processed_urls)
+
+    def stop_requested(self) -> bool:
+        return STOP_REQUESTED
+
+    def _load_progress(self) -> None:
+        if not self.progress_path.exists():
+            return
+        try:
+            payload = json.loads(self.progress_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            logging.warning("Cannot load progress file %s: %s", self.progress_path, exc)
+            return
+
+        self._processed_urls = set(payload.get("crawled_urls") or [])
+        self._processed_ids = set(payload.get("crawled_ids") or [])
+
+    def _save_progress(self) -> None:
+        payload = {
+            "version": 1,
+            "updated_at": datetime.utcnow().isoformat() + "Z",
+            "crawled_urls": sorted(self._processed_urls),
+            "crawled_ids": sorted(self._processed_ids),
+            "success_count": len(self._processed_urls),
+        }
+        self.progress_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp_path = self.progress_path.with_suffix(self.progress_path.suffix + ".tmp")
+        tmp_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp_path.replace(self.progress_path)
+
+    def filter_pending_urls(self, urls: list[str]) -> list[str]:
+        return [url for url in urls if url not in self._processed_urls]
+
+    async def record_success(self, record: RealEstateSchema) -> None:
+        async with self._lock:
+            if record.url in self._processed_urls:
+                return
+            self._processed_urls.add(record.url)
+            self._processed_ids.add(record.product_id)
+            self._buffer.append(record)
+            self.new_success_count += 1
+            self._save_progress()
+
+            if len(self._buffer) >= self.batch_size:
+                self._flush_buffer_locked()
+
+    def _flush_buffer_locked(self) -> None:
+        if not self._buffer:
+            return
+        append_csv(self._buffer, self.output_path)
+        logging.info("Autosaved %d records to %s", len(self._buffer), self.output_path)
+        self._buffer.clear()
+
+    async def flush(self) -> None:
+        async with self._lock:
+            self._flush_buffer_locked()
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Crawl batdongsan.com.vn listings into CSV with parallel processing")
     parser.add_argument("--start-url", default=DEFAULT_START_URL, help="Catalog URL to start from")
@@ -1617,6 +1766,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--max-retries", type=int, default=DEFAULT_MAX_RETRIES, help="Max retries for internal crawl attempts")
     parser.add_argument("--retry-backoff", type=float, default=DEFAULT_RETRY_BASE_BACKOFF, help="Base backoff seconds for retries")
+    parser.add_argument("--progress-file", default=DEFAULT_PROGRESS_FILE, help="Progress checkpoint JSON path")
+    parser.add_argument(
+        "--autosave-batch-size",
+        type=int,
+        default=DEFAULT_AUTOSAVE_BATCH_SIZE,
+        help="Append to CSV after this many successful records",
+    )
     parser.add_argument("--log-level", default="INFO", help="Logging level (DEBUG, INFO, WARNING, ERROR)")
     return parser.parse_args()
 
@@ -1627,6 +1783,7 @@ async def main_async() -> int:
         level=getattr(logging, args.log_level.upper(), logging.INFO),
         format="%(asctime)s [%(levelname)s] %(message)s"
     )
+    register_signal_handlers()
 
     concurrency = max(1, min(args.concurrency, 10))
     if concurrency != args.concurrency:
@@ -1635,6 +1792,12 @@ async def main_async() -> int:
     warmup_count = max(0, args.warmup_count)
     user_data_dir = Path(args.user_data_dir)
     user_data_dir.mkdir(parents=True, exist_ok=True)
+    orchestrator = CrawlOrchestrator(
+        output_path=Path(args.output),
+        progress_path=Path(args.progress_file),
+        batch_size=max(1, int(args.autosave_batch_size)),
+    )
+    logging.info("Loaded progress: %d URLs already completed", orchestrator.processed_count)
 
     proxy_pool = load_proxies(Path(args.proxy_file)) if args.use_proxy else []
     if args.use_proxy and not proxy_pool:
@@ -1711,19 +1874,30 @@ async def main_async() -> int:
             catalog_urls = await collect_catalog_links(crawler, args.start_url, args.max_pages, warmup_run_config)
 
         if not catalog_urls:
+            if orchestrator.stop_requested():
+                await orchestrator.flush()
+                logging.info("Stopped before detail crawl started.")
+                return 130
             logging.error("No detail URLs were found from the catalog pages")
             return 1
 
         logging.info("Collected %s candidate detail URLs", len(catalog_urls))
-
-        records: list[RealEstateSchema] = []
+        pending_urls = orchestrator.filter_pending_urls(catalog_urls)
+        logging.info("Pending detail URLs after resume filter: %d", len(pending_urls))
+        if not pending_urls:
+            await orchestrator.flush()
+            logging.info("No pending URLs. Output is up to date at %s", orchestrator.output_path.resolve())
+            return 0
 
         # ── PHASE 2: Detail page crawling ──
         if warm_page is not None:
             # Use the warm page to crawl detail pages sequentially
-            logging.info("Detail phase: using warm page for %d URLs (sequential)", len(catalog_urls))
-            for index, detail_url in enumerate(catalog_urls):
-                logging.info("Detail %s/%s: %s", index + 1, len(catalog_urls), detail_url)
+            logging.info("Detail phase: using warm page for %d URLs (sequential)", len(pending_urls))
+            for index, detail_url in enumerate(pending_urls):
+                if orchestrator.stop_requested():
+                    logging.info("Stop requested. Exiting detail loop after current URL.")
+                    break
+                logging.info("Detail %s/%s: %s", index + 1, len(pending_urls), detail_url)
                 try:
                     await asyncio.sleep(random.uniform(args.delay_min, args.delay_max))
                     html = await navigate_page(warm_page, detail_url)
@@ -1731,7 +1905,7 @@ async def main_async() -> int:
                         logging.warning("CF challenge on detail page %s; skipping", detail_url)
                         continue
                     record = parse_detail_page(detail_url, html)
-                    records.append(record)
+                    await orchestrator.record_success(record)
                 except (ValidationError, ValueError) as exc:
                     logging.warning("Skipping detail page %s (Data Error): %s", detail_url, exc)
                 except Exception as exc:
@@ -1748,10 +1922,10 @@ async def main_async() -> int:
                 pass
         else:
             # Fallback: use crawl4ai browser crawling
-            warmup_urls = catalog_urls[:warmup_count]
-            remaining_urls = catalog_urls[warmup_count:]
+            warmup_urls = pending_urls[:warmup_count]
+            remaining_urls = pending_urls[warmup_count:]
 
-            if warmup_urls:
+            if warmup_urls and not orchestrator.stop_requested():
                 logging.info("Warm-up phase: %d URLs with concurrency=1", len(warmup_urls))
                 warmup_records, warmup_failed = await crawl_details_browser(
                     crawler,
@@ -1760,8 +1934,11 @@ async def main_async() -> int:
                     args.delay_min,
                     args.delay_max,
                     max_concurrent=1,
+                    orchestrator=orchestrator,
+                    stop_checker=orchestrator.stop_requested,
                 )
-                records.extend(warmup_records)
+                if warmup_records:
+                    logging.debug("Warm-up collected %d records in non-orchestrated mode", len(warmup_records))
                 if warmup_failed:
                     logging.warning("Warm-up failed for %d URLs", len(warmup_failed))
 
@@ -1769,7 +1946,7 @@ async def main_async() -> int:
             cookies = await extract_session_cookies(crawler)
             log_cf_clearance(cookies)
 
-            if remaining_urls:
+            if remaining_urls and not orchestrator.stop_requested():
                 if cookies.get("cf_clearance"):
                     logging.info("Scale phase: HTTPX with concurrency=%d", concurrency)
                     httpx_records, httpx_failed = await crawl_details_httpx(
@@ -1778,8 +1955,11 @@ async def main_async() -> int:
                         selected_user_agent,
                         concurrency,
                         proxy_pool,
+                        orchestrator=orchestrator,
+                        stop_checker=orchestrator.stop_requested,
                     )
-                    records.extend(httpx_records)
+                    if httpx_records:
+                        logging.debug("HTTPX collected %d records in non-orchestrated mode", len(httpx_records))
 
                     if httpx_failed:
                         logging.info("HTTPX fallback to browser for %d URLs", len(httpx_failed))
@@ -1790,8 +1970,11 @@ async def main_async() -> int:
                             args.delay_min,
                             args.delay_max,
                             max_concurrent=concurrency,
+                            orchestrator=orchestrator,
+                            stop_checker=orchestrator.stop_requested,
                         )
-                        records.extend(browser_records)
+                        if browser_records:
+                            logging.debug("Fallback browser collected %d records in non-orchestrated mode", len(browser_records))
                         if browser_failed:
                             logging.warning("Browser fallback failed for %d URLs", len(browser_failed))
                 else:
@@ -1803,19 +1986,27 @@ async def main_async() -> int:
                         args.delay_min,
                         args.delay_max,
                         max_concurrent=concurrency,
+                        orchestrator=orchestrator,
+                        stop_checker=orchestrator.stop_requested,
                     )
-                    records.extend(browser_records)
+                    if browser_records:
+                        logging.debug("Browser scale collected %d records in non-orchestrated mode", len(browser_records))
                     if browser_failed:
                         logging.warning("Browser scale failed for %d URLs", len(browser_failed))
 
-    if not records:
+    await orchestrator.flush()
+
+    if orchestrator.processed_count == 0:
         logging.error("No valid records were extracted")
         return 1
 
-    output_path = Path(args.output)
-    write_csv(records, output_path)
-    logging.info("Saved %s records to %s", len(records), output_path.resolve())
-    return 0
+    logging.info(
+        "Run completed. New records: %d | Total progress: %d | Output: %s",
+        orchestrator.new_success_count,
+        orchestrator.processed_count,
+        orchestrator.output_path.resolve(),
+    )
+    return 130 if orchestrator.stop_requested() else 0
 
 
 def main() -> None:
