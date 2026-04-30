@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DatasetFolderPath", "batdongsan_real_estate_cleaned"]
+
+annotation PBI_ProTooling = ["DevMode","TMDL-Extension"]
+
+ref table batdongsan_real_estate_cleaned
+ref table DateTableTemplate_19e91238-ab3f-47d5-8cfb-55d393c30f45
+ref table LocalDateTable_2e1fcaea-258d-4ce7-9027-3dbd85f47cf9
+ref table LocalDateTable_efb00036-6bdf-4ec2-98bf-e40af2140a00
+
+ref cultureInfo en-US
+
+ref expression DatasetFolderPath

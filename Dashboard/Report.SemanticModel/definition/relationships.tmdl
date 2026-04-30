@@ -1,0 +1,10 @@
+relationship 90c14991-8c63-411d-8c24-68225202675b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: batdongsan_real_estate_cleaned.posted_date
+	toColumn: LocalDateTable_2e1fcaea-258d-4ce7-9027-3dbd85f47cf9.Date
+
+relationship 908ff486-1971-4ae3-9653-704b8a76e59f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: batdongsan_real_estate_cleaned.expiry_date
+	toColumn: LocalDateTable_efb00036-6bdf-4ec2-98bf-e40af2140a00.Date
+

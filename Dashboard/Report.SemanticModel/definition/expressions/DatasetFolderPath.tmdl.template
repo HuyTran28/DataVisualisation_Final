@@ -1,0 +1,4 @@
+expression DatasetFolderPath = "C:\Users\Admin\Documents\DataVisualisation_Final\Dataset" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: c910d42b-df4e-463b-b39a-10287dda62b6
+
+	annotation PBI_ResultType = Text

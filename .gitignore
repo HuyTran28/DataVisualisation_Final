@@ -1,4 +1,22 @@
 .venv/
 .crawler_profile/
 __pycache__/
-batdongsan_real_estate*.csv
+
+**/.pbi/
+**/cache.abf
+**/localSettings.json
+**/user.config
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+Dashboard/Report.SemanticModel/definition/expressions/DatasetFolderPath.tmdl
+Dashboard/Report.SemanticModel/definition/expressions.tmdl
