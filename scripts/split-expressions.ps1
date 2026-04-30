@@ -35,9 +35,13 @@ foreach ($block in $blocks) {
     if ($trimmed -match '(?m)^expression\s+([^\s=]+)\s*=') {
         $name = $Matches[1]
         $names.Add($name)
-        $target = Join-Path $expressionsFolder ("$name.tmdl.template")
+        $target = Join-Path $expressionsFolder ("$name.tmdl")
         [System.IO.File]::WriteAllText($target, ($trimmed + [Environment]::NewLine), $utf8NoBom)
-        Write-Host ("Split expression template: {0}.tmdl.template" -f $name)
+        $legacyTemplate = Join-Path $expressionsFolder ("$name.tmdl.template")
+        if (Test-Path $legacyTemplate) {
+            Remove-Item $legacyTemplate -Force
+        }
+        Write-Host ("Split expression: {0}.tmdl" -f $name)
     }
 }
 
