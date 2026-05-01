@@ -39,7 +39,10 @@ foreach ($block in $blocks) {
         [System.IO.File]::WriteAllText($target, ($trimmed + [Environment]::NewLine), $utf8NoBom)
         $legacyTemplate = Join-Path $expressionsFolder ("$name.tmdl.template")
         if (Test-Path $legacyTemplate) {
-            Remove-Item $legacyTemplate -Force
+            # Keep DatasetFolderPath.tmdl.template, remove other templates
+            if ($name -ne 'DatasetFolderPath') {
+                Remove-Item $legacyTemplate -Force
+            }
         }
         Write-Host ("Split expression: {0}.tmdl" -f $name)
     }
