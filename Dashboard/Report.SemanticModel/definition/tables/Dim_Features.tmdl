@@ -1,30 +1,30 @@
 table Dim_Features
 	lineageTag: c1711940-a3e9-4ffb-9e8d-6997ce58bed5
 
-	column has_elevator
+	column 'Có thang máy'
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 2d9ecf48-0337-451b-a07e-b6de031bb04f
 		summarizeBy: none
-		sourceColumn: has_elevator
+		sourceColumn: Có thang máy
 
 		annotation SummarizationSetBy = Automatic
 
-	column near_park
+	column 'Gần công viên'
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 0fc2e92d-1e68-47c3-8ed2-b66f3ec7ce88
 		summarizeBy: none
-		sourceColumn: near_park
+		sourceColumn: Gần công viên
 
 		annotation SummarizationSetBy = Automatic
 
-	column is_frontage_road
+	column 'Nhà mặt tiền'
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 94d23bb6-929d-4106-8297-ce7c516cdb53
 		summarizeBy: none
-		sourceColumn: is_frontage_road
+		sourceColumn: Nhà mặt tiền
 
 		annotation SummarizationSetBy = Automatic
 
@@ -44,9 +44,10 @@ table Dim_Features
 				    Source = batdongsan_real_estate_cleaned,
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"has_elevator", "near_park", "is_frontage_road"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
-				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Feature_SKey", 1, 1, Int64.Type)
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Feature_SKey", 1, 1, Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"has_elevator", "Có thang máy"}, {"near_park", "Gần công viên"}, {"is_frontage_road", "Nhà mặt tiền"}})
 				in
-				    #"Added Index"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

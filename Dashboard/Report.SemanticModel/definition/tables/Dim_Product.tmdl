@@ -1,11 +1,11 @@
 table Dim_Product
 	lineageTag: 83fb619c-e6af-48fa-9b7f-cc4cca5b635b
 
-	column title
+	column 'Bất động sản'
 		dataType: string
 		lineageTag: c93f6b67-2ba9-4687-b592-8c5ab247580b
 		summarizeBy: none
-		sourceColumn: title
+		sourceColumn: Bất động sản
 
 		annotation SummarizationSetBy = Automatic
 
@@ -17,11 +17,11 @@ table Dim_Product
 
 		annotation SummarizationSetBy = Automatic
 
-	column description
+	column 'Mô tả'
 		dataType: string
 		lineageTag: 090341b5-718f-4ea3-b3e5-dbb5a038a65f
 		summarizeBy: none
-		sourceColumn: description
+		sourceColumn: Mô tả
 
 		annotation SummarizationSetBy = Automatic
 
@@ -51,9 +51,10 @@ table Dim_Product
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"title", "url", "description", "product_id"}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"product_id", Int64.Type}}),
 				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"product_id"}),
-				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Product_SKey", 1, 1, Int64.Type)
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Product_SKey", 1, 1, Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"title", "Bất động sản"}, {"description", "Mô tả"}})
 				in
-				    #"Added Index"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

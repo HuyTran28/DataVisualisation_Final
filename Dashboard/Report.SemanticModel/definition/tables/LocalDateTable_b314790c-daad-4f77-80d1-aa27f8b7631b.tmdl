@@ -110,7 +110,7 @@ table LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b
 
 	partition LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('Fact_Listings'[posted_date])), 1, 1), Date(Year(MAX('Fact_Listings'[posted_date])), 12, 31))
+		source = Calendar(Date(Year(MIN('Fact_Listings'[Ngày đăng])), 1, 1), Date(Year(MAX('Fact_Listings'[Ngày đăng])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

@@ -1,43 +1,43 @@
 table Dim_Location
 	lineageTag: 8450f79a-f010-4eea-adfa-84437913e865
 
-	column city
+	column 'Thành phố'
 		dataType: string
 		lineageTag: 8e4f7b36-4e2c-4e62-b701-d9c53319fd44
 		summarizeBy: none
-		sourceColumn: city
+		sourceColumn: Thành phố
 
 		annotation SummarizationSetBy = Automatic
 
-	column district
+	column Quận
 		dataType: string
 		lineageTag: fed1137a-1218-4f7e-8432-9145043db24a
 		summarizeBy: none
-		sourceColumn: district
+		sourceColumn: Quận
 
 		annotation SummarizationSetBy = Automatic
 
-	column ward
+	column Phường
 		dataType: string
 		lineageTag: 4b00cf5b-35b0-4faa-b3a3-4725d0d0c462
 		summarizeBy: none
-		sourceColumn: ward
+		sourceColumn: Phường
 
 		annotation SummarizationSetBy = Automatic
 
-	column street
+	column Đường
 		dataType: string
 		lineageTag: ec7fd1b8-c5bf-498a-a2f6-9aeee43e28d3
 		summarizeBy: none
-		sourceColumn: street
+		sourceColumn: Đường
 
 		annotation SummarizationSetBy = Automatic
 
-	column full_address
+	column 'Địa chỉ'
 		dataType: string
 		lineageTag: 498a6aff-7ce4-482b-8a5e-026f1f5b093e
 		summarizeBy: none
-		sourceColumn: full_address
+		sourceColumn: Địa chỉ
 
 		annotation SummarizationSetBy = Automatic
 
@@ -58,9 +58,10 @@ table Dim_Location
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"city", "district", "ward", "street", "full_address"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"city", "district", "ward", "street", "full_address"}),
 				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Location_SKey", 1, 1, Int64.Type),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Added Index",{{"Location_SKey", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Index",{{"Location_SKey", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"city", "Thành phố"}, {"district", "Quận"}, {"ward", "Phường"}, {"street", "Đường"}, {"full_address", "Địa chỉ"}})
 				in
-				    #"Changed Type"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

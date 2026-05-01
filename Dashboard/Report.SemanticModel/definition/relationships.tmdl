@@ -1,6 +1,6 @@
 relationship b7a9c7d6-6a5f-41a3-a837-5e9b037c2a58
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Fact_Listings.posted_date
+	fromColumn: Fact_Listings.'Ngày đăng'
 	toColumn: LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b.Date
 
 relationship c1dda36e-3c20-4b50-8efd-d85df39eb2b3
