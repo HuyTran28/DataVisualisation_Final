@@ -1,10 +1,26 @@
-relationship 90c14991-8c63-411d-8c24-68225202675b
+relationship b7a9c7d6-6a5f-41a3-a837-5e9b037c2a58
 	joinOnDateBehavior: datePartOnly
-	fromColumn: batdongsan_real_estate_cleaned.posted_date
-	toColumn: LocalDateTable_2e1fcaea-258d-4ce7-9027-3dbd85f47cf9.Date
+	fromColumn: Fact_Listings.posted_date
+	toColumn: LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b.Date
 
-relationship 908ff486-1971-4ae3-9653-704b8a76e59f
+relationship c1dda36e-3c20-4b50-8efd-d85df39eb2b3
 	joinOnDateBehavior: datePartOnly
-	fromColumn: batdongsan_real_estate_cleaned.expiry_date
-	toColumn: LocalDateTable_efb00036-6bdf-4ec2-98bf-e40af2140a00.Date
+	fromColumn: Fact_Listings.expiry_date
+	toColumn: LocalDateTable_4275abd7-7c0a-44cc-993a-521f5c6f11de.Date
+
+relationship AutoDetected_93861df5-b503-473d-a6ee-aeff523e9440
+	fromColumn: Fact_Listings.Location_SKey
+	toColumn: Dim_Location.Location_SKey
+
+relationship AutoDetected_8eb98c31-f4cc-447c-9a9d-2cf54e3cd0b6
+	fromColumn: Fact_Listings.Status_SKey
+	toColumn: Dim_Property_Details.Status_SKey
+
+relationship AutoDetected_b3ed334b-a2bf-4ab3-9021-d828bca81881
+	fromColumn: Fact_Listings.Feature_SKey
+	toColumn: Dim_Features.Feature_SKey
+
+relationship AutoDetected_c08aa582-3b2d-4e0e-8de6-a143b4ea21ca
+	fromColumn: Fact_Listings.Product_SKey
+	toColumn: Dim_Product.Product_SKey
 

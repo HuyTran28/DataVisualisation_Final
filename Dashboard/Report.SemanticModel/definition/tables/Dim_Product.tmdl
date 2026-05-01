@@ -1,0 +1,61 @@
+table Dim_Product
+	lineageTag: 83fb619c-e6af-48fa-9b7f-cc4cca5b635b
+
+	column title
+		dataType: string
+		lineageTag: c93f6b67-2ba9-4687-b592-8c5ab247580b
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: ae7dbcf9-ad60-4613-bbf7-77a186cfeef0
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 090341b5-718f-4ea3-b3e5-dbb5a038a65f
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a6fef5d-11fa-40e2-9f75-c876d39f6dfa
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_SKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 18c35ccf-716a-41b4-9990-71fc77cc7b29
+		summarizeBy: none
+		sourceColumn: Product_SKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Product = m
+		mode: import
+		source =
+				let
+				    Source = batdongsan_real_estate_cleaned,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"title", "url", "description", "product_id"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"product_id", Int64.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"product_id"}),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Product_SKey", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

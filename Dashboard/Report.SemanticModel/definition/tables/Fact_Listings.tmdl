@@ -1,0 +1,179 @@
+table Fact_Listings
+	lineageTag: 6dbf4d8b-6450-49d9-a197-1bfe46312350
+
+	column price_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 7354f1b0-5171-4689-ad3c-bcecadab50e3
+		summarizeBy: sum
+		sourceColumn: price_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_per_m2
+		dataType: double
+		lineageTag: 02c95d77-64a0-44c1-aa73-0809fa2fc0d5
+		summarizeBy: sum
+		sourceColumn: price_per_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column area
+		dataType: double
+		lineageTag: 3684af57-7726-497b-ae1c-c2cc4cdb0f85
+		summarizeBy: sum
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column frontage
+		dataType: double
+		lineageTag: 4615e9ce-b933-4c8f-b081-6cf8a6a4afa8
+		summarizeBy: sum
+		sourceColumn: frontage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column road_width
+		dataType: double
+		lineageTag: 4d9dd61c-514a-4203-9435-bc95eba642ce
+		summarizeBy: sum
+		sourceColumn: road_width
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bedrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: a7e9d81d-c1e9-4f68-8341-4b9adef3e448
+		summarizeBy: sum
+		sourceColumn: bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column bathrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: 06c6bb96-266e-41aa-b745-fb3afa276c9a
+		summarizeBy: sum
+		sourceColumn: bathrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column floors
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e193a4c-528b-4468-b4de-4f9dcb234d08
+		summarizeBy: sum
+		sourceColumn: floors
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_trend_1y
+		dataType: double
+		lineageTag: 23b3afc9-2026-471a-b90d-cfbdf27a0509
+		summarizeBy: sum
+		sourceColumn: price_trend_1y
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column posted_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3671a490-5662-4a6b-a1de-4bc11ec7a9cb
+		summarizeBy: none
+		sourceColumn: posted_date
+
+		variation Variation
+			isDefault
+			relationship: b7a9c7d6-6a5f-41a3-a837-5e9b037c2a58
+			defaultHierarchy: LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column expiry_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c7d6de7f-603e-48ac-8f26-fdce5fac2193
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		variation Variation
+			isDefault
+			relationship: c1dda36e-3c20-4b50-8efd-d85df39eb2b3
+			defaultHierarchy: LocalDateTable_4275abd7-7c0a-44cc-993a-521f5c6f11de.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Location_SKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8eb85d28-0efa-49e7-9036-739ea7fcbf77
+		summarizeBy: none
+		sourceColumn: Location_SKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Feature_SKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c399081-33a6-4d15-b65d-c54843c31f0b
+		summarizeBy: none
+		sourceColumn: Feature_SKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status_SKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 95d8cd6d-d25e-4a4c-bf40-0e9993a3c007
+		summarizeBy: none
+		sourceColumn: Status_SKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_SKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 41b238fa-ed81-41e6-9589-8f0722c103cd
+		summarizeBy: none
+		sourceColumn: Product_SKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Listings = m
+		mode: import
+		source =
+				let
+				    Source = batdongsan_real_estate_cleaned,
+				    #"Removed Duplicates" = Table.Distinct(Source, {"product_id", "posted_date"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Duplicates", {"city", "district", "ward", "street", "full_address"}, Dim_Location, {"city", "district", "ward", "street", "full_address"}, "Dim_Location", JoinKind.LeftOuter),
+				    #"Merged Queries1" = Table.NestedJoin(#"Merged Queries", {"has_elevator", "near_park", "is_frontage_road"}, Dim_Features, {"has_elevator", "near_park", "is_frontage_road"}, "Dim_Features", JoinKind.LeftOuter),
+				    #"Merged Queries2" = Table.NestedJoin(#"Merged Queries1", {"direction", "interior", "legal_status", "post_rank"}, Dim_Property_Details, {"direction", "interior", "legal_status", "post_rank"}, "Dim_Property_Details", JoinKind.LeftOuter),
+				    #"Merged Queries3" = Table.NestedJoin(#"Merged Queries2", {"product_id"}, Dim_Product, {"product_id"}, "Dim_Product", JoinKind.LeftOuter),
+				    #"Expanded Dim_Location" = Table.ExpandTableColumn(#"Merged Queries3", "Dim_Location", {"Location_SKey"}, {"Location_SKey"}),
+				    #"Expanded Dim_Features" = Table.ExpandTableColumn(#"Expanded Dim_Location", "Dim_Features", {"Feature_SKey"}, {"Feature_SKey"}),
+				    #"Expanded Dim_Property_Details" = Table.ExpandTableColumn(#"Expanded Dim_Features", "Dim_Property_Details", {"Status_SKey"}, {"Status_SKey"}),
+				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Expanded Dim_Product",{"product_id", "title", "url", "city", "district", "ward", "street", "full_address", "direction", "interior", "legal_status", "post_rank", "has_elevator", "near_park", "is_frontage_road", "description"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

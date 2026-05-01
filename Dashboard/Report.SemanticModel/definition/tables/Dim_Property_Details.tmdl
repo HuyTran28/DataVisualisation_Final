@@ -1,0 +1,59 @@
+table Dim_Property_Details
+	lineageTag: 61bc28d9-a4c7-4ae8-86cc-9a61bd60bf63
+
+	column direction
+		dataType: string
+		lineageTag: e8dc0347-04df-49a9-a7b9-81656be067b5
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column interior
+		dataType: string
+		lineageTag: 17eb4c67-9042-47d2-af61-afa05efc5f49
+		summarizeBy: none
+		sourceColumn: interior
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_status
+		dataType: string
+		lineageTag: cb4d4a2e-e6e5-4fa8-be8c-b3e680bc26ed
+		summarizeBy: none
+		sourceColumn: legal_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column post_rank
+		dataType: string
+		lineageTag: 66a26f5a-ae4a-4302-896e-d39266317652
+		summarizeBy: none
+		sourceColumn: post_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status_SKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f9dac49-3a7f-4374-8ce6-e0a39c21d08b
+		summarizeBy: none
+		sourceColumn: Status_SKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Property_Details = m
+		mode: import
+		source =
+				let
+				    Source = batdongsan_real_estate_cleaned,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"direction", "interior", "legal_status", "post_rank"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Status_SKey", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
