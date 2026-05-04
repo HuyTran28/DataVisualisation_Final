@@ -1,6 +1,6 @@
 expression batdongsan_real_estate_cleaned = ```
 		let
-		    Source = Csv.Document(File.Contents(DatasetFolderPath & "\batdongsan_real_estate_cleaned.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		    Source = Csv.Document(File.Contents(DatasetFolderPath & "\batdongsan_with_features.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 		    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers", {
 		        {"title", "Bất động sản"},
@@ -26,17 +26,32 @@ expression batdongsan_real_estate_cleaned = ```
 		        {"has_elevator", "Có thang máy"},
 		        {"near_park", "Gần công viên"},
 		        {"is_frontage_road", "Nhà mặt tiền"},
-		        {"posted_date", "Ngày đăng"}
+		        {"posted_date", "Ngày đăng"},
+		        {"has_ngop_kw", "Có dấu hiệu bán gấp"},
+		        {"has_marketing_kw", "Có từ khóa marketing"},
+		        {"has_dongtien_kw", "Có từ khóa dòng tiền"},
+		        {"has_phaply_yeu_kw", "Có dấu hiệu pháp lý yếu"},
+		        {"desc_len", "Độ dài mô tả"},
+		        {"exclamation_count", "Số dấu chấm than"},
+		        {"caps_lock_ratio", "Tỷ lệ chữ in hoa"}
 		    }),
 		    #"Trimmed Boolean Columns" = Table.TransformColumns(#"Renamed Columns", {
 		        {"Có thang máy", each Text.Trim(Text.From(_))},
 		        {"Gần công viên", each Text.Trim(Text.From(_))},
-		        {"Nhà mặt tiền", each Text.Trim(Text.From(_))}
+		        {"Nhà mặt tiền", each Text.Trim(Text.From(_))},
+		        {"Có dấu hiệu bán gấp", each Text.Trim(Text.From(_))},
+		        {"Có từ khóa marketing", each Text.Trim(Text.From(_))},
+		        {"Có từ khóa dòng tiền", each Text.Trim(Text.From(_))},
+		        {"Có dấu hiệu pháp lý yếu", each Text.Trim(Text.From(_))}
 		    }),
 		    #"Converted Boolean Text" = Table.TransformColumns(#"Trimmed Boolean Columns", {
 		        {"Có thang máy", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
 		        {"Gần công viên", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
-		        {"Nhà mặt tiền", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null}
+		        {"Nhà mặt tiền", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
+		        {"Có dấu hiệu bán gấp", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
+		        {"Có từ khóa marketing", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
+		        {"Có từ khóa dòng tiền", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
+		        {"Có dấu hiệu pháp lý yếu", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null}
 		    }),
 		    #"Changed Type" = Table.TransformColumnTypes(#"Converted Boolean Text", {
 		        {"product_id", Int64.Type},
@@ -63,6 +78,13 @@ expression batdongsan_real_estate_cleaned = ```
 		        {"Loại tin", type text},
 		        {"Có thang máy", type logical},
 		        {"Gần công viên", type logical},
+		        {"Có dấu hiệu bán gấp", type logical},
+		        {"Có từ khóa marketing", type logical},
+		        {"Có từ khóa dòng tiền", type logical},
+		        {"Có dấu hiệu pháp lý yếu", type logical},
+		        {"Độ dài mô tả", Int64.Type},
+		        {"Số dấu chấm than", Int64.Type},
+		        {"Tỷ lệ chữ in hoa", type number},
 		        {"Nhà mặt tiền", type logical},
 		        {"Ngày đăng", type datetime},
 		        {"expiry_date", type datetime}
@@ -274,7 +296,7 @@ expression batdongsan_real_estate_cleaned = ```
 		    )
 		in
 		    AddLegalCategory,
-		    #"Reordered Columns" = Table.ReorderColumns(Custom2,{"product_id", "Bất động sản", "url", "Thành phố", "Quận", "Phường", "Đường", "Địa chỉ", "Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Hướng nhà", "Nội thất", "Pháp lý", "Pháp lý Chuẩn hóa", "Loại tin", "Biến động giá", "Xu hướng giá", "Có thang máy", "Gần công viên", "Nhà mặt tiền", "Mô tả", "Ngày đăng", "expiry_date"}),
+		    #"Reordered Columns" = Table.ReorderColumns(Custom2,{"product_id", "Bất động sản", "url", "Thành phố", "Quận", "Phường", "Đường", "Địa chỉ", "Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Hướng nhà", "Nội thất", "Pháp lý", "Pháp lý Chuẩn hóa", "Loại tin", "Biến động giá", "Xu hướng giá", "Có thang máy", "Gần công viên", "Có dấu hiệu bán gấp", "Có từ khóa marketing", "Có từ khóa dòng tiền", "Có dấu hiệu pháp lý yếu", "Độ dài mô tả", "Số dấu chấm than", "Tỷ lệ chữ in hoa", "Nhà mặt tiền", "Mô tả", "Ngày đăng", "expiry_date"}),
 		    #"Removed Columns1" = Table.RemoveColumns(#"Reordered Columns",{"Nhà mặt tiền"})
 		in
 		    #"Removed Columns1"
