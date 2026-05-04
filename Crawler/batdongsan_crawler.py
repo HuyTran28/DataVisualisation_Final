@@ -913,32 +913,46 @@ def extract_price_per_m2_from_selector(html: str) -> Optional[float]:
 def extract_area_and_frontage_from_selector(html: str) -> tuple[Optional[float], Optional[float]]:
     """
     Trích xuất area và frontage.
-    - area: Lấy số lớn từ item "Diện tích" (830 m²)
-    - frontage: Lấy từ .ext (Mặt tiền 6 m) hoặc "Mặt tiền"
+    - area: Lấy từ item có title "Diện tích" trong .re__pr-specs-content-item
+    - frontage: Lấy từ item có title "Mặt tiền" trong .re__pr-specs-content-item
+    - Fallback: Lấy frontage từ span.ext chứa "Mặt tiền" (không chứa giá)
     """
     soup = BeautifulSoup(html, "html.parser")
     
     area = None
     frontage = None
     
-    # Tìm area từ "Diện tích"
     for item in soup.select(".re__pr-specs-content-item"):
-        title = item.get("title", "").lower()
+        # Ưu tiên đọc title từ child span .re__pr-specs-content-item-title
+        title_elem = item.select_one(".re__pr-specs-content-item-title")
+        value_elem = item.select_one(".re__pr-specs-content-item-value")
         
-        if "dien tich" in title:
-            value_text = normalize_text(item.get_text())
-            area = clean_numeric(value_text)
+        if title_elem:
+            title_key = canonical(normalize_text(title_elem.get_text()))
+        else:
+            # Fallback: đọc từ HTML title attribute
+            title_key = canonical(item.get("title", ""))
         
-        elif "mat tien" in title:
-            value_text = normalize_text(item.get_text())
-            frontage = clean_numeric(value_text)
+        raw_value = normalize_text(value_elem.get_text()) if value_elem else normalize_text(item.get_text())
+        
+        if "dien tich" in title_key:
+            area = clean_numeric(raw_value)
+        elif "mat tien" in title_key:
+            frontage = clean_numeric(raw_value)
     
-    # Fallback: Tìm frontage từ .ext span
+    # Fallback: Tìm frontage từ span.ext chứa "Mặt tiền"
+    # Chỉ lấy span.ext mà text bắt đầu bằng "Mặt tiền" và KHÔNG chứa giá (triệu, tỷ, m²)
     if frontage is None:
-        ext_elem = soup.select_one(".ext")
-        if ext_elem:
+        for ext_elem in soup.select("span.ext"):
             ext_text = normalize_text(ext_elem.get_text())
-            frontage = clean_numeric(ext_text)
+            ext_lower = ext_text.lower()
+            # Bỏ qua nếu chứa giá tiền
+            if any(kw in ext_lower for kw in ("triệu", "tỷ", "m²", "m2")):
+                continue
+            # Chỉ lấy nếu text chứa "Mặt tiền"
+            if "mặt tiền" in ext_lower or "mat tien" in canonical(ext_text):
+                frontage = clean_numeric(ext_text)
+                break
     
     return area, frontage
 
