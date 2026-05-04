@@ -1,8 +1,3 @@
-relationship b7a9c7d6-6a5f-41a3-a837-5e9b037c2a58
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Fact_Listings.'Ngày đăng'
-	toColumn: LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b.Date
-
 relationship c1dda36e-3c20-4b50-8efd-d85df39eb2b3
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Fact_Listings.expiry_date
@@ -23,4 +18,9 @@ relationship AutoDetected_b3ed334b-a2bf-4ab3-9021-d828bca81881
 relationship AutoDetected_c08aa582-3b2d-4e0e-8de6-a143b4ea21ca
 	fromColumn: Fact_Listings.Product_SKey
 	toColumn: Dim_Product.Product_SKey
+
+relationship 0c1bc912-bc50-4b4d-93bd-5ad7234ffbc0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Listings.'Ngày đăng'
+	toColumn: LocalDateTable_7478aafa-aae9-4eb5-8c25-cc4601a578b2.Date
 

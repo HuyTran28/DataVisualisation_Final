@@ -1,106 +1,6 @@
 table Fact_Listings
 	lineageTag: 6dbf4d8b-6450-49d9-a197-1bfe46312350
 
-	column 'Khoảng giá'
-		dataType: int64
-		formatString: 0
-		lineageTag: 7354f1b0-5171-4689-ad3c-bcecadab50e3
-		summarizeBy: sum
-		sourceColumn: Khoảng giá
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Đơn giá'
-		dataType: double
-		lineageTag: 02c95d77-64a0-44c1-aa73-0809fa2fc0d5
-		summarizeBy: sum
-		sourceColumn: Đơn giá
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Diện tích'
-		dataType: double
-		lineageTag: 3684af57-7726-497b-ae1c-c2cc4cdb0f85
-		summarizeBy: sum
-		sourceColumn: Diện tích
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Mặt tiền'
-		dataType: double
-		lineageTag: 4615e9ce-b933-4c8f-b081-6cf8a6a4afa8
-		summarizeBy: sum
-		sourceColumn: Mặt tiền
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Đường vào'
-		dataType: double
-		lineageTag: 4d9dd61c-514a-4203-9435-bc95eba642ce
-		summarizeBy: sum
-		sourceColumn: Đường vào
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Số phòng ngủ'
-		dataType: int64
-		formatString: 0
-		lineageTag: a7e9d81d-c1e9-4f68-8341-4b9adef3e448
-		summarizeBy: sum
-		sourceColumn: Số phòng ngủ
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Số phòng tắm, vệ sinh'
-		dataType: int64
-		formatString: 0
-		lineageTag: 06c6bb96-266e-41aa-b745-fb3afa276c9a
-		summarizeBy: sum
-		sourceColumn: Số phòng tắm, vệ sinh
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Số tầng'
-		dataType: int64
-		formatString: 0
-		lineageTag: 2e193a4c-528b-4468-b4de-4f9dcb234d08
-		summarizeBy: sum
-		sourceColumn: Số tầng
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Biến động giá'
-		dataType: double
-		lineageTag: 23b3afc9-2026-471a-b90d-cfbdf27a0509
-		summarizeBy: sum
-		sourceColumn: Biến động giá
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Ngày đăng'
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 3671a490-5662-4a6b-a1de-4bc11ec7a9cb
-		summarizeBy: none
-		sourceColumn: Ngày đăng
-
-		variation Variation
-			isDefault
-			relationship: b7a9c7d6-6a5f-41a3-a837-5e9b037c2a58
-			defaultHierarchy: LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
 	column expiry_date
 		dataType: dateTime
 		formatString: Long Date
@@ -160,14 +60,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Bất động sản'
-		dataType: string
-		lineageTag: 86d1a049-942a-432d-8db8-8213537d365d
-		summarizeBy: none
-		sourceColumn: Bất động sản
-
-		annotation SummarizationSetBy = Automatic
-
 	column url
 		dataType: string
 		lineageTag: 03d37c6c-a51f-4265-973a-48293f7041c1
@@ -176,9 +68,17 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Bất động sản'
+		dataType: string
+		lineageTag: 9654a485-fc32-42cd-a593-51d022d1b9cc
+		summarizeBy: none
+		sourceColumn: Bất động sản
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'Thành phố'
 		dataType: string
-		lineageTag: 4d90e20b-8830-439c-9348-d59561bd2036
+		lineageTag: b58a4754-1087-430f-9f43-6241b9fc23e4
 		summarizeBy: none
 		sourceColumn: Thành phố
 
@@ -186,7 +86,7 @@ table Fact_Listings
 
 	column Quận
 		dataType: string
-		lineageTag: 62c6728f-154f-496a-99db-9f1a8a340dd2
+		lineageTag: e4d0c349-21ba-4440-ba7d-43bd48ffd3eb
 		summarizeBy: none
 		sourceColumn: Quận
 
@@ -194,7 +94,7 @@ table Fact_Listings
 
 	column Phường
 		dataType: string
-		lineageTag: 8bb9e9f4-9fc7-4173-8ec1-ad8db4f8be46
+		lineageTag: a5a62351-6216-45ee-9f43-6cdb1eb17874
 		summarizeBy: none
 		sourceColumn: Phường
 
@@ -202,7 +102,7 @@ table Fact_Listings
 
 	column Đường
 		dataType: string
-		lineageTag: 4f7ca3ee-1834-4c21-a23b-c76cc70a6412
+		lineageTag: 03fd9d21-4509-4598-8cc1-346d9a03f45c
 		summarizeBy: none
 		sourceColumn: Đường
 
@@ -210,15 +110,83 @@ table Fact_Listings
 
 	column 'Địa chỉ'
 		dataType: string
-		lineageTag: 35899061-2969-441d-9c4d-2ad3892677bf
+		lineageTag: 06fd8b0c-2fb8-41aa-bcdd-4e049754b473
 		summarizeBy: none
 		sourceColumn: Địa chỉ
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Khoảng giá'
+		dataType: int64
+		formatString: 0
+		lineageTag: 10ba38ee-e25e-4078-bc51-e723929c7cb8
+		summarizeBy: sum
+		sourceColumn: Khoảng giá
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diện tích'
+		dataType: double
+		lineageTag: 5a749730-4dad-4b19-a63e-d2aa2babe48f
+		summarizeBy: sum
+		sourceColumn: Diện tích
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Mặt tiền'
+		dataType: double
+		lineageTag: cb21897e-4a1d-40f4-a9cd-77406d0fefa4
+		summarizeBy: sum
+		sourceColumn: Mặt tiền
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Đường vào'
+		dataType: double
+		lineageTag: f1509322-b72a-4d5f-bf61-c8c0c3ea661b
+		summarizeBy: sum
+		sourceColumn: Đường vào
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Số phòng ngủ'
+		dataType: double
+		lineageTag: c74c73c8-557e-4f84-9916-892d5fdb6464
+		summarizeBy: sum
+		sourceColumn: Số phòng ngủ
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Số phòng tắm, vệ sinh'
+		dataType: double
+		lineageTag: 33e1120c-f1cc-4201-9388-5a4cc33c3f33
+		summarizeBy: sum
+		sourceColumn: Số phòng tắm, vệ sinh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Số tầng'
+		dataType: int64
+		formatString: 0
+		lineageTag: cc21e775-60da-4b69-90c8-3d523a49dc45
+		summarizeBy: sum
+		sourceColumn: Số tầng
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'Hướng nhà'
 		dataType: string
-		lineageTag: c989aaa0-cb41-44d1-af53-e48260ac2904
+		lineageTag: 7d3a370a-dbb0-4c87-a4bf-45d05ab48123
 		summarizeBy: none
 		sourceColumn: Hướng nhà
 
@@ -226,7 +194,7 @@ table Fact_Listings
 
 	column 'Nội thất'
 		dataType: string
-		lineageTag: 65cdb7b0-6bb6-4e65-8ebd-b3ec02c2c805
+		lineageTag: a359b07d-e67c-40a7-8e42-e71984589bc5
 		summarizeBy: none
 		sourceColumn: Nội thất
 
@@ -234,7 +202,7 @@ table Fact_Listings
 
 	column 'Pháp lý'
 		dataType: string
-		lineageTag: 72edd82d-4e04-4405-8f85-56f68d00b659
+		lineageTag: 32d96b28-d882-488c-93e8-6d1c89900a0c
 		summarizeBy: none
 		sourceColumn: Pháp lý
 
@@ -242,16 +210,26 @@ table Fact_Listings
 
 	column 'Loại tin'
 		dataType: string
-		lineageTag: 678ae71a-7882-45fd-9320-ac7b8cfccaff
+		lineageTag: e368ba7f-efb7-472c-8305-15358264ffe1
 		summarizeBy: none
 		sourceColumn: Loại tin
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Biến động giá'
+		dataType: double
+		lineageTag: f0221bc6-b12a-4468-9d1b-f9a244c0dcd9
+		summarizeBy: sum
+		sourceColumn: Biến động giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column 'Có thang máy'
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: a3235ce2-2439-4b64-9207-7dada804c397
+		lineageTag: c0627ccd-b3a7-4935-a039-4f197cef526b
 		summarizeBy: none
 		sourceColumn: Có thang máy
 
@@ -260,26 +238,81 @@ table Fact_Listings
 	column 'Gần công viên'
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 2d94f2ab-c038-4b87-b2b4-cf82c0dfb8c3
+		lineageTag: dedd8c5d-bfb3-4a97-a6e0-6cdf93b975b9
 		summarizeBy: none
 		sourceColumn: Gần công viên
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Nhà mặt tiền'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 83e83e6b-a208-40b5-9d9c-7a6e81f6c7a9
+	column 'Mô tả'
+		dataType: string
+		lineageTag: 5def3e82-ad59-47e8-b7d6-91344bf43151
 		summarizeBy: none
-		sourceColumn: Nhà mặt tiền
+		sourceColumn: Mô tả
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Mô tả'
-		dataType: string
-		lineageTag: b3f4f284-9759-4813-995c-5fa58e6fb975
+	column 'Ngày đăng'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2116bcba-0a61-4a0e-876b-9f35724c7fda
 		summarizeBy: none
-		sourceColumn: Mô tả
+		sourceColumn: Ngày đăng
+
+		variation Variation
+			isDefault
+			relationship: 0c1bc912-bc50-4b4d-93bd-5ad7234ffbc0
+			defaultHierarchy: LocalDateTable_7478aafa-aae9-4eb5-8c25-cc4601a578b2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Đơn giá'
+		dataType: double
+		lineageTag: 70a130ef-cddc-4e69-9868-5ab330e1288f
+		summarizeBy: sum
+		sourceColumn: Đơn giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Phân loại Đường'
+		dataType: string
+		lineageTag: d236c1f2-aece-4a3f-96ea-0a3d05a6148c
+		summarizeBy: none
+		sourceColumn: Phân loại Đường
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Loại Mặt tiền'
+		dataType: string
+		lineageTag: 5a4e574a-f649-4c19-bb7a-46dab9dbaff2
+		summarizeBy: none
+		sourceColumn: Loại Mặt tiền
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Xu hướng giá'
+		dataType: string
+		lineageTag: f4ed4341-a051-45bd-a7b9-45796afbae15
+		summarizeBy: none
+		sourceColumn: Xu hướng giá
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Loại hình BĐS'
+		dataType: string
+		lineageTag: df10b522-248f-4e19-a3d1-e73976501f22
+		summarizeBy: none
+		sourceColumn: Loại hình BĐS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pháp lý Chuẩn hóa'
+		dataType: string
+		lineageTag: 3ec01539-5242-4a7e-bc5c-b0411365f7e3
+		summarizeBy: none
+		sourceColumn: Pháp lý Chuẩn hóa
 
 		annotation SummarizationSetBy = Automatic
 
@@ -288,22 +321,17 @@ table Fact_Listings
 		source =
 				let
 				    Source = batdongsan_real_estate_cleaned,
-				    #"Removed Duplicates" = Table.Distinct(Source, {"product_id", "posted_date"}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Removed Duplicates",{{"city", "Thành phố"}, {"district", "Quận"}, {"ward", "Phường"}, {"street", "Đường"}, {"title", "Bất động sản"}, {"full_address", "Địa chỉ"}, {"price_total", "Khoảng giá"}, {"price_per_m2", "Đơn giá"}, {"area", "Diện tích"}, {"frontage", "Mặt tiền"}, {"road_width", "Đường vào"}, {"bedrooms", "Số phòng ngủ"}, {"bathrooms", "Số phòng tắm, vệ sinh"}, {"floors", "Số tầng"}, {"direction", "Hướng nhà"}, {"interior", "Nội thất"}, {"legal_status", "Pháp lý"}, {"post_rank", "Loại tin"}, {"price_trend_1y", "Biến động giá"}, {"has_elevator", "Có thang máy"}, {"near_park", "Gần công viên"}, {"is_frontage_road", "Nhà mặt tiền"}, {"description", "Mô tả"}, {"posted_date", "Ngày đăng"}}),
-				    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}, Dim_Location, {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}, "Dim_Location", JoinKind.LeftOuter),
-				    #"Merged Queries1" = Table.NestedJoin(#"Merged Queries", {"Có thang máy", "Gần công viên", "Nhà mặt tiền"}, Dim_Features, {"Có thang máy", "Gần công viên", "Nhà mặt tiền"}, "Dim_Features", JoinKind.LeftOuter),
-				    #"Trimmed Text" = Table.TransformColumns(#"Merged Queries1",{{"Nội thất", Text.Trim, type text}}),
-				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Nội thất", Text.Clean, type text}}),
-				    #"Replaced Value" = Table.ReplaceValue(#"Cleaned Text",".","",Replacer.ReplaceText,{"Nội thất"}),
-				    #"Merged Queries2" = Table.NestedJoin(#"Replaced Value", {"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}, Dim_Property_Details, {"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}, "Dim_Property_Details", JoinKind.LeftOuter),
+				    #"Removed Duplicates" = Table.Distinct(Source, {"product_id", "Ngày đăng"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Duplicates", {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}, Dim_Location, {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}, "Dim_Location", JoinKind.LeftOuter),
+				    #"Merged Queries1" = Table.NestedJoin(#"Merged Queries", {"Có thang máy", "Gần công viên"}, Dim_Features, {"Có thang máy", "Gần công viên"}, "Dim_Features", JoinKind.LeftOuter),
+				    #"Merged Queries2" = Table.NestedJoin(#"Merged Queries1", {"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}, Dim_Property_Details, {"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}, "Dim_Property_Details", JoinKind.LeftOuter),
 				    #"Merged Queries3" = Table.NestedJoin(#"Merged Queries2", {"product_id"}, Dim_Product, {"product_id"}, "Dim_Product", JoinKind.LeftOuter),
 				    #"Expanded Dim_Location" = Table.ExpandTableColumn(#"Merged Queries3", "Dim_Location", {"Location_SKey"}, {"Location_SKey"}),
 				    #"Expanded Dim_Features" = Table.ExpandTableColumn(#"Expanded Dim_Location", "Dim_Features", {"Feature_SKey"}, {"Feature_SKey"}),
 				    #"Expanded Dim_Property_Details" = Table.ExpandTableColumn(#"Expanded Dim_Features", "Dim_Property_Details", {"Status_SKey"}, {"Status_SKey"}),
-				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded Dim_Product",{{"Đường vào", type number}})
+				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"})
 				in
-				    #"Changed Type"
+				    #"Expanded Dim_Product"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -1,38 +1,6 @@
 table Dim_Property_Details
 	lineageTag: 61bc28d9-a4c7-4ae8-86cc-9a61bd60bf63
 
-	column 'Hướng nhà'
-		dataType: string
-		lineageTag: e8dc0347-04df-49a9-a7b9-81656be067b5
-		summarizeBy: none
-		sourceColumn: Hướng nhà
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nội thất'
-		dataType: string
-		lineageTag: 17eb4c67-9042-47d2-af61-afa05efc5f49
-		summarizeBy: none
-		sourceColumn: Nội thất
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Pháp lý'
-		dataType: string
-		lineageTag: cb4d4a2e-e6e5-4fa8-be8c-b3e680bc26ed
-		summarizeBy: none
-		sourceColumn: Pháp lý
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Loại tin'
-		dataType: string
-		lineageTag: 66a26f5a-ae4a-4302-896e-d39266317652
-		summarizeBy: none
-		sourceColumn: Loại tin
-
-		annotation SummarizationSetBy = Automatic
-
 	column Status_SKey
 		dataType: int64
 		formatString: 0
@@ -42,22 +10,48 @@ table Dim_Property_Details
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Hướng nhà'
+		dataType: string
+		lineageTag: 9b08e4e5-810c-4218-b0a5-2bdab76a11ef
+		summarizeBy: none
+		sourceColumn: Hướng nhà
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nội thất'
+		dataType: string
+		lineageTag: 78e9ac28-02b3-426a-acc3-9e8e0240e4cf
+		summarizeBy: none
+		sourceColumn: Nội thất
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pháp lý'
+		dataType: string
+		lineageTag: 90dfb8b3-c463-4ed8-823f-c3f909fe70bd
+		summarizeBy: none
+		sourceColumn: Pháp lý
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Loại tin'
+		dataType: string
+		lineageTag: 78d90fc4-4b30-4b63-9f31-4cf7d9091e21
+		summarizeBy: none
+		sourceColumn: Loại tin
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dim_Property_Details = m
 		mode: import
 		source =
 				let
 				    Source = batdongsan_real_estate_cleaned,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"direction", "interior", "legal_status", "post_rank"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
-				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Status_SKey", 1, 1, Int64.Type),
-				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"direction", "Hướng nhà"}, {"interior", "Nội thất"}, {"legal_status", "Pháp lý"}, {"post_rank", "Loại tin"}}),
-				    #"Trimmed Text" = Table.TransformColumns(#"Renamed Columns",{{"Nội thất", Text.Trim, type text}}),
-				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Nội thất", Text.Clean, type text}}),
-				    #"Replaced Value" = Table.ReplaceValue(#"Cleaned Text",".","",Replacer.ReplaceText,{"Nội thất"}),
-				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","","Không rõ",Replacer.ReplaceValue,{"Hướng nhà"}),
-				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value1", each true)
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Status_SKey", 1, 1, Int64.Type)
 				in
-				    #"Filtered Rows"
+				    #"Added Index"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -18,8 +18,8 @@ ref table Dim_Features
 ref table Dim_Product
 ref table Fact_Listings
 ref table DateTableTemplate_7eb15d4c-d1f9-4d7a-b4ee-9f197c0b81b5
-ref table LocalDateTable_b314790c-daad-4f77-80d1-aa27f8b7631b
 ref table LocalDateTable_4275abd7-7c0a-44cc-993a-521f5c6f11de
+ref table LocalDateTable_7478aafa-aae9-4eb5-8c25-cc4601a578b2
 
 ref cultureInfo en-US
 

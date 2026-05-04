@@ -1,46 +1,6 @@
 table Dim_Location
 	lineageTag: 8450f79a-f010-4eea-adfa-84437913e865
 
-	column 'Thành phố'
-		dataType: string
-		lineageTag: 8e4f7b36-4e2c-4e62-b701-d9c53319fd44
-		summarizeBy: none
-		sourceColumn: Thành phố
-
-		annotation SummarizationSetBy = Automatic
-
-	column Quận
-		dataType: string
-		lineageTag: fed1137a-1218-4f7e-8432-9145043db24a
-		summarizeBy: none
-		sourceColumn: Quận
-
-		annotation SummarizationSetBy = Automatic
-
-	column Phường
-		dataType: string
-		lineageTag: 4b00cf5b-35b0-4faa-b3a3-4725d0d0c462
-		summarizeBy: none
-		sourceColumn: Phường
-
-		annotation SummarizationSetBy = Automatic
-
-	column Đường
-		dataType: string
-		lineageTag: ec7fd1b8-c5bf-498a-a2f6-9aeee43e28d3
-		summarizeBy: none
-		sourceColumn: Đường
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Địa chỉ'
-		dataType: string
-		lineageTag: 498a6aff-7ce4-482b-8a5e-026f1f5b093e
-		summarizeBy: none
-		sourceColumn: Địa chỉ
-
-		annotation SummarizationSetBy = Automatic
-
 	column Location_SKey
 		dataType: int64
 		formatString: 0
@@ -50,18 +10,56 @@ table Dim_Location
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Thành phố'
+		dataType: string
+		lineageTag: c7f6b949-ac4e-4308-ba29-0ae7839b59da
+		summarizeBy: none
+		sourceColumn: Thành phố
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quận
+		dataType: string
+		lineageTag: 07fd0a83-3d5d-48cf-98ba-8eafbf88da5a
+		summarizeBy: none
+		sourceColumn: Quận
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phường
+		dataType: string
+		lineageTag: c4a3b36e-814c-444d-8bcc-6f449578fb0f
+		summarizeBy: none
+		sourceColumn: Phường
+
+		annotation SummarizationSetBy = Automatic
+
+	column Đường
+		dataType: string
+		lineageTag: 7d23038a-6ae8-452d-83e8-d676368d878e
+		summarizeBy: none
+		sourceColumn: Đường
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Địa chỉ'
+		dataType: string
+		lineageTag: 3e94a557-f03f-4e64-9ce6-287ccd2a0907
+		summarizeBy: none
+		sourceColumn: Địa chỉ
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dim_Location = m
 		mode: import
 		source =
 				let
 				    Source = batdongsan_real_estate_cleaned,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"city", "district", "ward", "street", "full_address"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"city", "district", "ward", "street", "full_address"}),
-				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Location_SKey", 1, 1, Int64.Type),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Added Index",{{"Location_SKey", Int64.Type}}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"city", "Thành phố"}, {"district", "Quận"}, {"ward", "Phường"}, {"street", "Đường"}, {"full_address", "Địa chỉ"}})
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Location_SKey", 1, 1, Int64.Type)
 				in
-				    #"Renamed Columns"
+				    #"Added Index"
 
 	annotation PBI_NavigationStepName = Navigation
 

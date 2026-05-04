@@ -1,49 +1,285 @@
-expression batdongsan_real_estate_cleaned =
+expression batdongsan_real_estate_cleaned = ```
 		let
 		    Source = Csv.Document(File.Contents(DatasetFolderPath & "\batdongsan_real_estate_cleaned.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-		    #"Trimmed Boolean Columns" = Table.TransformColumns(#"Promoted Headers", {
-		        {"has_elevator", each Text.Trim(Text.From(_))},
-		        {"near_park", each Text.Trim(Text.From(_))},
-		        {"is_frontage_road", each Text.Trim(Text.From(_))}
+		    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers", {
+		        {"title", "Bất động sản"},
+		        {"description", "Mô tả"},
+		        {"price_total", "Khoảng giá"},
+		        {"price_per_m2", "Đơn giá"},
+		        {"area", "Diện tích"},
+		        {"frontage", "Mặt tiền"},
+		        {"road_width", "Đường vào"},
+		        {"bedrooms", "Số phòng ngủ"},
+		        {"bathrooms", "Số phòng tắm, vệ sinh"},
+		        {"floors", "Số tầng"},
+		        {"price_trend_1y", "Biến động giá"},
+		        {"city", "Thành phố"},
+		        {"district", "Quận"},
+		        {"ward", "Phường"},
+		        {"street", "Đường"},
+		        {"full_address", "Địa chỉ"},
+		        {"direction", "Hướng nhà"},
+		        {"interior", "Nội thất"},
+		        {"legal_status", "Pháp lý"},
+		        {"post_rank", "Loại tin"},
+		        {"has_elevator", "Có thang máy"},
+		        {"near_park", "Gần công viên"},
+		        {"is_frontage_road", "Nhà mặt tiền"},
+		        {"posted_date", "Ngày đăng"}
+		    }),
+		    #"Trimmed Boolean Columns" = Table.TransformColumns(#"Renamed Columns", {
+		        {"Có thang máy", each Text.Trim(Text.From(_))},
+		        {"Gần công viên", each Text.Trim(Text.From(_))},
+		        {"Nhà mặt tiền", each Text.Trim(Text.From(_))}
 		    }),
 		    #"Converted Boolean Text" = Table.TransformColumns(#"Trimmed Boolean Columns", {
-		        {"has_elevator", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
-		        {"near_park", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
-		        {"is_frontage_road", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null}
+		        {"Có thang máy", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
+		        {"Gần công viên", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null},
+		        {"Nhà mặt tiền", each if Text.Lower(_) = "true" then true else if Text.Lower(_) = "false" then false else null}
 		    }),
 		    #"Changed Type" = Table.TransformColumnTypes(#"Converted Boolean Text", {
 		        {"product_id", Int64.Type},
-		        {"title", type text},
+		        {"Bất động sản", type text},
 		        {"url", type text},
-		        {"description", type text},
-		        {"price_total", Int64.Type},
-		        {"price_per_m2", type number},
-		        {"area", type number},
-		        {"frontage", type number},
-		        {"road_width", type number},
-		        {"bedrooms", Int64.Type},
-		        {"bathrooms", Int64.Type},
-		        {"floors", Int64.Type},
-		        {"price_trend_1y", type number},
-		        {"city", type text},
-		        {"district", type text},
-		        {"ward", type text},
-		        {"street", type text},
-		        {"full_address", type text},
-		        {"direction", type text},
-		        {"interior", type text},
-		        {"legal_status", type text},
-		        {"post_rank", type text},
-		        {"has_elevator", type logical},
-		        {"near_park", type logical},
-		        {"is_frontage_road", type logical},
-		        {"posted_date", type datetime},
+		        {"Mô tả", type text},
+		        {"Khoảng giá", Int64.Type},
+		        {"Đơn giá", type number},
+		        {"Diện tích", type number},
+		        {"Mặt tiền", type number},
+		        {"Đường vào", type number},
+		        {"Số phòng ngủ", Int64.Type},
+		        {"Số phòng tắm, vệ sinh", Int64.Type},
+		        {"Số tầng", Int64.Type},
+		        {"Biến động giá", type number},
+		        {"Thành phố", type text},
+		        {"Quận", type text},
+		        {"Phường", type text},
+		        {"Đường", type text},
+		        {"Địa chỉ", type text},
+		        {"Hướng nhà", type text},
+		        {"Nội thất", type text},
+		        {"Pháp lý", type text},
+		        {"Loại tin", type text},
+		        {"Có thang máy", type logical},
+		        {"Gần công viên", type logical},
+		        {"Nhà mặt tiền", type logical},
+		        {"Ngày đăng", type datetime},
 		        {"expiry_date", type datetime}
-		    })
+		    }),
+		    #"Normalized Property Details" = Table.TransformColumns(#"Changed Type", {
+		        {"Hướng nhà", each let cleaned = if _ = null then null else Text.Trim(Text.Clean(Text.From(_))) in if cleaned = null or cleaned = "" then "Không rõ" else cleaned, type text},
+		        {"Nội thất", each 
+		    let 
+		        cleaned = 
+		            if _ = null then null 
+		            else 
+		                Text.Trim(
+		                    Text.Clean(
+		                        List.Accumulate(
+		                            {".", ",", "?"},
+		                            Text.From(_),
+		                            (state, current) => Text.Replace(state, current, "")
+		                        )
+		                    )
+		                ),
+		        lower = Text.Lower(cleaned)
+		    in 
+		        if cleaned = null or cleaned = "" or Text.Contains(lower, "sổ photo") or Text.Contains(lower, "tỷ") or Text.Contains(lower, "gu riêng") or Text.Contains(lower, "hoàn thiện bên ngoài") or Text.Contains(lower, "như hình") then "Không rõ"
+		        else if Text.Contains(lower, "trống") then "Không nội thất"
+		        else if Text.Contains(lower, "thô") then "Thô"
+		        else if Text.Contains(lower, "luxury") or Text.Contains(lower, "châu âu") or Text.Contains(lower, "nhật bản") or Text.Contains(lower, "nhập khẩu") or Text.Contains(lower, "cao cấp") or (Text.Contains(lower, "nội thất") and (Text.Contains(lower, "đẹp") or Text.Contains(lower, "hiện đại") or Text.Contains(lower, "tinh tế") or Text.Contains(lower, "sang trọng"))) then "Cao cấp"
+		        else if Text.Contains(lower, "chủ đầu tư") or Text.Contains(lower, "cđt") or Text.Contains(lower, "mới nguyên") or Text.Contains(lower, "nguyên bản") or Text.Contains(lower, "cơ bản") then "Cơ bản"
+		        else if Text.Contains(lower, "ful") or Text.Contains(lower, "đủ nội thất") or Text.Contains(lower, "đầy đủ") or Text.Contains(lower, "có nội thất") or Text.Contains(lower, "có sẵn") or Text.Contains(lower, "xịn") or Text.Contains(lower, "dính tường") or Text.Contains(lower, "ở luôn") or Text.Contains(lower, "máy lạnh") or Text.Contains(lower, "tủ bếp") or Text.Contains(lower, "sofa") or Text.Contains(lower, "tủ lạnh") or Text.Contains(lower, "giường") or Text.Contains(lower, "bếp") or Text.Contains(lower, "full") or Text.Contains(lower, "hoàn thiện nội thất") or Text.Contains(lower, "sẵn nội thất") or ((Text.Contains(lower, "tặng") or Text.Contains(lower, "để lại")) and (Text.Contains(lower, "nội thất") or Text.Contains(lower, "full"))) then "Đầy đủ"
+		        else "Không rõ", 
+		    type text
+		}
+		    }),
+		    #"Removed Columns" = Table.RemoveColumns(#"Normalized Property Details",{"Đơn giá"}),
+		    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Đơn giá", each Number.Round([Khoảng giá] / [Diện tích], 2), type number),
+		    Custom1 = let
+		    Source = #"Added Custom",
+		    // 0. Chuẩn hóa kiểu dữ liệu đầu vào
+		    TypedTable = Table.TransformColumnTypes(Source, {{"Đường vào", type number}}),
+		    
+		    // 1. Tính Median (Dựa trên phân phối của bạn, Median chắc chắn là 7)
+		    // Buffer list để tránh quét bảng nhiều lần
+		    RoadList = List.Buffer(List.RemoveNulls(TypedTable[#"Đường vào"])),
+		    MedianVal = List.Median(RoadList),
+		
+		    // 2. Biến đổi dữ liệu theo phân đoạn (Hybrid Rounding)
+		    TransformData = Table.TransformColumns(TypedTable, {
+		        {"Đường vào", each 
+		            let 
+		                val = if _ = null then MedianVal else _,
+		                result = 
+		                    if val <= 15 then 
+		                        // Vùng Bulk: Giữ độ chính xác 0.5m
+		                        Number.Round(val * 2, 0) / 2
+		                    else if val > 15 and val <= 30 then 
+		                        // Vùng Tail: Làm tròn về số nguyên
+		                        Number.Round(val, 0)
+		                    else 
+		                        // Capping tại 30 cho các giá trị ngoại lai
+		                        30
+		            in 
+		                result, 
+		            type number
+		        }
+		    }),
+		
+		    // 3. (Optional) Tạo thêm cột Grouping để làm Slicer cực nhanh
+		    AddGroup = Table.AddColumn(TransformData, "Phân loại Đường", each 
+		        if [Đường vào] <= 3 then "Ngõ nhỏ (<3m)"
+		        else if [Đường vào] <= 5 then "Ngõ xe ba gác (3-5m)"
+		        else if [Đường vào] <= 10 then "Đường xe hơi (5-10m)"
+		        else "Đường lớn (>10m)", 
+		        type text
+		    )
 		in
-		    #"Changed Type"
-	lineageTag: 1d5f6a1d-7f03-4565-9bb1-e2ffff6223e0
+		    AddGroup,
+		    Custom5 = let
+		    Source = Custom1,
+		    // 1. Chuyển kiểu và đưa vào Buffer để tính toán nhanh
+		    TypedTable = Table.TransformColumnTypes(Source, {{"Mặt tiền", type number}}),
+		    BufferedList = List.Buffer(List.RemoveNulls(TypedTable[#"Mặt tiền"])),
+		    MedianVal = List.Median(BufferedList),
+		
+		    // 2. Xử lý lệch (Skewness) bằng Hybrid Transformation
+		    TransformData = Table.TransformColumns(TypedTable, {
+		        {"Mặt tiền", each 
+		            let 
+		                val = if _ = null then MedianVal else _,
+		                result = 
+		                    if val > 20 then 20                      // Chặn tại P99 (Outliers)
+		                    else if val >= 10 then Number.Round(val * 2, 0) / 2 // Vùng 10-20m: bước 0.5m
+		                    else Number.Round(val, 1)                // Vùng < 10m: giữ 0.1m để đảm bảo độ chính xác
+		            in 
+		                result, 
+		            type number
+		        }
+		    }),
+		
+		    // 3. Kỹ thuật Feature Engineering: Tạo cột định danh "Mặt tiền tiêu chuẩn"
+		    // Giúp tách biệt nhóm "Mode" (5m) ra khỏi các nhóm khác để phân tích nhanh
+		    AddSpecialGroup = Table.AddColumn(TransformData, "Loại Mặt tiền", each 
+		        if [#"Mặt tiền"] = 5 then "Tiêu chuẩn (5m)"
+		        else if [#"Mặt tiền"] < 5 then "Nhỏ (<5m)"
+		        else if [#"Mặt tiền"] <= 10 then "Khá (5-10m)"
+		        else "Rất rộng (>10m)",
+		        type text
+		    )
+		in
+		    AddSpecialGroup,
+		    Custom6 = let
+		    // 0. Nguồn dữ liệu (Giả sử từ bước trước đó của bạn)
+		    Source = Custom5, 
+		    
+		    // 1. Chuẩn hóa kiểu dữ liệu và đưa vào Buffer để tính toán nhanh
+		    TypedTable = Table.TransformColumnTypes(Source, {
+		        {"Số phòng ngủ", Int64.Type}, 
+		        {"Số phòng tắm, vệ sinh", Int64.Type}
+		    }),
+		    
+		    // 2. Tính Median một lần duy nhất cho cả hai cột
+		    ListBR = List.Buffer(List.RemoveNulls(TypedTable[#"Số phòng ngủ"])),
+		    ListBT = List.Buffer(List.RemoveNulls(TypedTable[#"Số phòng tắm, vệ sinh"])),
+		    
+		    MedianBR = Number.Round(List.Median(ListBR), 0),
+		    MedianBT = Number.Round(List.Median(ListBT), 0),
+		
+		    // 3. Xử lý Null và tạo cột Loại BĐS dựa trên Logic kết hợp
+		    AddUnifiedCategory = Table.AddColumn(TypedTable, "Loại hình BĐS", each 
+		        let
+		            // Điền giá trị Median nếu Null
+		            br = if [Số phòng ngủ] = null then MedianBR else [Số phòng ngủ],
+		            bt = if [#"Số phòng tắm, vệ sinh"] = null then MedianBT else [#"Số phòng tắm, vệ sinh"],
+		            
+		            // Logic phân loại đa chiều
+		            category = 
+		                if br > 30 or bt > 15 then "Khách sạn / Tòa nhà lớn"
+		                else if br > 10 or bt > 6 then "Tòa nhà / CHDV"
+		                else "Nhà ở dân dụng"
+		        in 
+		            category, type text
+		    ),
+		
+		    // 4. Cập nhật lại giá trị Null trong các cột gốc để làm sạch dữ liệu
+		    FinalTable = Table.ReplaceValue(
+		        Table.ReplaceValue(
+		            AddUnifiedCategory,
+		            null, MedianBR, Replacer.ReplaceValue, {"Số phòng ngủ"}
+		        ),
+		        null, MedianBT, Replacer.ReplaceValue, {"Số phòng tắm, vệ sinh"}
+		    )
+		in
+		    FinalTable,
+		    Custom4 = let
+		    Source = Custom6,
+		    // 0. Ép kiểu và đưa vào Buffer để tính toán nhanh
+		    TypedTable = Table.TransformColumnTypes(Source, {{"Biến động giá", type number}}),
+		    BufferedList = List.Buffer(List.RemoveNulls(TypedTable[#"Biến động giá"])),
+		    
+		    // 1. Tính Median (Giá trị trung vị phản ánh đúng xu hướng hơn Average khi có Outliers)
+		    MedianVal = List.Median(BufferedList),
+		    
+		    // 2. Tiền xử lý: Rounding & Capping
+		    TransformData = Table.TransformColumns(TypedTable, {
+		        {"Biến động giá", each 
+		            let 
+		                val = if _ = null then MedianVal else _,
+		                // Làm tròn về 1 chữ số thập phân để giảm Dictionary Size
+		                rounded = Number.Round(val, 1),
+		                // Chặn trên tại 150% và chặn dưới tại -50% (để bảo vệ visuals)
+		                capped = if rounded > 150 then 150 else if rounded < -50 then -50 else rounded
+		            in 
+		                capped, 
+		            type number
+		        }
+		    }),
+		
+		    // 3. Phân nhóm (Binning) để tối ưu hóa việc Filter trên Report
+		    AddTrendGroup = Table.AddColumn(TransformData, "Xu hướng giá", each 
+		        if [Biến động giá] < 0 then "Giảm giá"
+		        else if [Biến động giá] <= 5 then "Ổn định (0-5%)"
+		        else if [Biến động giá] <= 20 then "Tăng trưởng (5-20%)"
+		        else if [Biến động giá] <= 50 then "Tăng trưởng nóng (20-50%)"
+		        else "Tăng trưởng đột biến (>50%)",
+		        type text
+		    )
+		in
+		    AddTrendGroup,
+		    Custom2 = let
+		    Source = #"Custom4", 
+		    
+		    // 1. CHUẨN HÓA: Cắt khoảng trắng dư và loại bỏ dấu chấm ở cuối chuỗi
+		    // Text.TrimEnd sẽ xóa tất cả dấu chấm xuất hiện ở cuối
+		    CleanText = Table.TransformColumns(Source, {
+		        {"Pháp lý", each Text.TrimEnd(Text.Trim(_), "."), type text}
+		    }),
+		
+		    // 2. PHÂN LOẠI: Dùng Keyword Mapping (Ưu tiên Sổ chung và HĐMB)
+		    AddLegalCategory = Table.AddColumn(CleanText, "Pháp lý Chuẩn hóa", each 
+		        let
+		            // Chuyển về chữ thường một lần để so sánh cho nhẹ
+		            txt = Text.Lower([Pháp lý]),
+		            category = 
+		                if Text.Contains(txt, "chung") or Text.Contains(txt, "sdc") then "Sổ chung"
+		                else if Text.Contains(txt, "hợp đồng") or Text.Contains(txt, "hđmb") or Text.Contains(txt, "hdmb") then "Hợp đồng mua bán"
+		                else if Text.Contains(txt, "sổ") or Text.Contains(txt, "sh") or Text.Contains(txt, "sr") then "Sổ hồng/Sổ đỏ"
+		                else if Text.Contains(txt, "chờ") or Text.Contains(txt, "hồ sơ") then "Đang chờ sổ"
+		                else "Chưa xác định"
+		        in 
+		            category, type text
+		    )
+		in
+		    AddLegalCategory,
+		    #"Reordered Columns" = Table.ReorderColumns(Custom2,{"product_id", "Bất động sản", "url", "Thành phố", "Quận", "Phường", "Đường", "Địa chỉ", "Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Hướng nhà", "Nội thất", "Pháp lý", "Pháp lý Chuẩn hóa", "Loại tin", "Biến động giá", "Xu hướng giá", "Có thang máy", "Gần công viên", "Nhà mặt tiền", "Mô tả", "Ngày đăng", "expiry_date"}),
+		    #"Removed Columns1" = Table.RemoveColumns(#"Reordered Columns",{"Nhà mặt tiền"})
+		in
+		    #"Removed Columns1"
+		```
+	lineageTag: c3da0044-4f7a-41c8-8b2f-707cdfdf3fe2
 
 	annotation PBI_NavigationStepName = Navigation
 
