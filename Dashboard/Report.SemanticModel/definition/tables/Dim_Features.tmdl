@@ -28,12 +28,48 @@ table Dim_Features
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Có dấu hiệu bán gấp'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2f053864-4652-4c88-9f36-008f4dca8a8d
+		summarizeBy: none
+		sourceColumn: Có dấu hiệu bán gấp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có từ khóa marketing'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4f58342-d7ba-4c72-b551-233730f4e2a8
+		summarizeBy: none
+		sourceColumn: Có từ khóa marketing
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có từ khóa dòng tiền'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 947d6fa7-32f8-4f28-91f5-8f85db09fb55
+		summarizeBy: none
+		sourceColumn: Có từ khóa dòng tiền
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có dấu hiệu pháp lý yếu'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d4e31f5d-6454-44f0-81ac-cfb0f5ceb905
+		summarizeBy: none
+		sourceColumn: Có dấu hiệu pháp lý yếu
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dim_Features = m
 		mode: import
 		source =
 				let
 				    Source = batdongsan_real_estate_cleaned,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Có thang máy", "Gần công viên"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Có thang máy", "Gần công viên", "Có dấu hiệu bán gấp", "Có từ khóa marketing", "Có từ khóa dòng tiền", "Có dấu hiệu pháp lý yếu"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
 				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Feature_SKey", 1, 1, Int64.Type)
 				in

@@ -316,6 +316,78 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Độ dài mô tả'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ba4f6ae-b6c3-467e-a1ca-dbc683019ce4
+		summarizeBy: none
+		sourceColumn: Độ dài mô tả
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Số dấu chấm than'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7171457f-df70-46af-8eb3-027227813657
+		summarizeBy: none
+		sourceColumn: Số dấu chấm than
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tỷ lệ chữ in hoa'
+		dataType: double
+		lineageTag: e3625fbb-2cc9-4129-b4b5-a2dcb2e48f7d
+		summarizeBy: none
+		sourceColumn: Tỷ lệ chữ in hoa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column desc_lower
+		dataType: string
+		lineageTag: 4131871b-2343-497c-9125-946c65027e2c
+		summarizeBy: none
+		sourceColumn: desc_lower
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có dấu hiệu bán gấp'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e4af66a8-e443-47af-a096-3b15233c3e59
+		summarizeBy: none
+		sourceColumn: Có dấu hiệu bán gấp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có từ khóa marketing'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a731acc4-67a6-4557-852b-80b50959a3ab
+		summarizeBy: none
+		sourceColumn: Có từ khóa marketing
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có từ khóa dòng tiền'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d8d54b33-749b-4613-977c-5bdcf116e3ce
+		summarizeBy: none
+		sourceColumn: Có từ khóa dòng tiền
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Có dấu hiệu pháp lý yếu'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dda9dd48-c507-482d-baf7-e89be9e243c5
+		summarizeBy: none
+		sourceColumn: Có dấu hiệu pháp lý yếu
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_Listings = m
 		mode: import
 		source =
@@ -323,7 +395,7 @@ table Fact_Listings
 				    Source = batdongsan_real_estate_cleaned,
 				    #"Removed Duplicates" = Table.Distinct(Source, {"product_id", "Ngày đăng"}),
 				    #"Merged Queries" = Table.NestedJoin(#"Removed Duplicates", {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}, Dim_Location, {"Thành phố", "Quận", "Phường", "Đường", "Địa chỉ"}, "Dim_Location", JoinKind.LeftOuter),
-				    #"Merged Queries1" = Table.NestedJoin(#"Merged Queries", {"Có thang máy", "Gần công viên"}, Dim_Features, {"Có thang máy", "Gần công viên"}, "Dim_Features", JoinKind.LeftOuter),
+				    #"Merged Queries1" = Table.NestedJoin(#"Merged Queries", {"Có thang máy", "Gần công viên", "Có dấu hiệu bán gấp", "Có từ khóa marketing", "Có từ khóa dòng tiền", "Có dấu hiệu pháp lý yếu"}, Dim_Features, {"Có thang máy", "Gần công viên", "Có dấu hiệu bán gấp", "Có từ khóa marketing", "Có từ khóa dòng tiền", "Có dấu hiệu pháp lý yếu"}, "Dim_Features", JoinKind.LeftOuter),
 				    #"Merged Queries2" = Table.NestedJoin(#"Merged Queries1", {"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}, Dim_Property_Details, {"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}, "Dim_Property_Details", JoinKind.LeftOuter),
 				    #"Merged Queries3" = Table.NestedJoin(#"Merged Queries2", {"product_id"}, Dim_Product, {"product_id"}, "Dim_Product", JoinKind.LeftOuter),
 				    #"Expanded Dim_Location" = Table.ExpandTableColumn(#"Merged Queries3", "Dim_Location", {"Location_SKey"}, {"Location_SKey"}),
