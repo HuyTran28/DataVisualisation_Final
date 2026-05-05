@@ -297,9 +297,12 @@ expression batdongsan_real_estate_cleaned = ```
 		in
 		    AddLegalCategory,
 		    #"Reordered Columns" = Table.ReorderColumns(Custom2,{"product_id", "Bất động sản", "url", "Thành phố", "Quận", "Phường", "Đường", "Địa chỉ", "Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Hướng nhà", "Nội thất", "Pháp lý", "Pháp lý Chuẩn hóa", "Loại tin", "Biến động giá", "Xu hướng giá", "Có thang máy", "Gần công viên", "Có dấu hiệu bán gấp", "Có từ khóa marketing", "Có từ khóa dòng tiền", "Có dấu hiệu pháp lý yếu", "Độ dài mô tả", "Số dấu chấm than", "Tỷ lệ chữ in hoa", "Nhà mặt tiền", "Mô tả", "Ngày đăng", "expiry_date"}),
-		    #"Removed Columns1" = Table.RemoveColumns(#"Reordered Columns",{"Nhà mặt tiền"})
+		    #"Removed Columns1" = Table.RemoveColumns(#"Reordered Columns",{"Nhà mặt tiền"}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Removed Columns1","Bà Rịa Vũng Tàu","Bà Rịa - Vũng Tàu",Replacer.ReplaceValue,{"Thành phố"}),
+		    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Hồ Chí Minh","Thành phố Hồ Chí Minh",Replacer.ReplaceValue,{"Thành phố"}),
+		    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Hòa Bình","Hoà Bình",Replacer.ReplaceValue,{"Thành phố"})
 		in
-		    #"Removed Columns1"
+		    #"Replaced Value2"
 		```
 	lineageTag: c3da0044-4f7a-41c8-8b2f-707cdfdf3fe2
 
