@@ -51,71 +51,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column product_id
-		dataType: int64
-		formatString: 0
-		lineageTag: 3fc458c6-ec92-4734-8de1-082769bd49d6
-		summarizeBy: sum
-		sourceColumn: product_id
-
-		annotation SummarizationSetBy = Automatic
-
-	column url
-		dataType: string
-		lineageTag: 03d37c6c-a51f-4265-973a-48293f7041c1
-		summarizeBy: none
-		sourceColumn: url
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Bất động sản'
-		dataType: string
-		lineageTag: 9654a485-fc32-42cd-a593-51d022d1b9cc
-		summarizeBy: none
-		sourceColumn: Bất động sản
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Thành phố'
-		dataType: string
-		lineageTag: b58a4754-1087-430f-9f43-6241b9fc23e4
-		summarizeBy: none
-		sourceColumn: Thành phố
-
-		annotation SummarizationSetBy = Automatic
-
-	column Quận
-		dataType: string
-		lineageTag: e4d0c349-21ba-4440-ba7d-43bd48ffd3eb
-		summarizeBy: none
-		sourceColumn: Quận
-
-		annotation SummarizationSetBy = Automatic
-
-	column Phường
-		dataType: string
-		lineageTag: a5a62351-6216-45ee-9f43-6cdb1eb17874
-		summarizeBy: none
-		sourceColumn: Phường
-
-		annotation SummarizationSetBy = Automatic
-
-	column Đường
-		dataType: string
-		lineageTag: 03fd9d21-4509-4598-8cc1-346d9a03f45c
-		summarizeBy: none
-		sourceColumn: Đường
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Địa chỉ'
-		dataType: string
-		lineageTag: 06fd8b0c-2fb8-41aa-bcdd-4e049754b473
-		summarizeBy: none
-		sourceColumn: Địa chỉ
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Khoảng giá'
 		dataType: int64
 		formatString: 0
@@ -184,38 +119,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Hướng nhà'
-		dataType: string
-		lineageTag: 7d3a370a-dbb0-4c87-a4bf-45d05ab48123
-		summarizeBy: none
-		sourceColumn: Hướng nhà
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nội thất'
-		dataType: string
-		lineageTag: a359b07d-e67c-40a7-8e42-e71984589bc5
-		summarizeBy: none
-		sourceColumn: Nội thất
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Pháp lý'
-		dataType: string
-		lineageTag: 32d96b28-d882-488c-93e8-6d1c89900a0c
-		summarizeBy: none
-		sourceColumn: Pháp lý
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Loại tin'
-		dataType: string
-		lineageTag: e368ba7f-efb7-472c-8305-15358264ffe1
-		summarizeBy: none
-		sourceColumn: Loại tin
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Biến động giá'
 		dataType: double
 		lineageTag: f0221bc6-b12a-4468-9d1b-f9a244c0dcd9
@@ -225,32 +128,6 @@ table Fact_Listings
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Có thang máy'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: c0627ccd-b3a7-4935-a039-4f197cef526b
-		summarizeBy: none
-		sourceColumn: Có thang máy
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Gần công viên'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: dedd8c5d-bfb3-4a97-a6e0-6cdf93b975b9
-		summarizeBy: none
-		sourceColumn: Gần công viên
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Mô tả'
-		dataType: string
-		lineageTag: 5def3e82-ad59-47e8-b7d6-91344bf43151
-		summarizeBy: none
-		sourceColumn: Mô tả
-
-		annotation SummarizationSetBy = Automatic
 
 	column 'Ngày đăng'
 		dataType: dateTime
@@ -308,86 +185,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Pháp lý Chuẩn hóa'
-		dataType: string
-		lineageTag: 3ec01539-5242-4a7e-bc5c-b0411365f7e3
-		summarizeBy: none
-		sourceColumn: Pháp lý Chuẩn hóa
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Độ dài mô tả'
-		dataType: int64
-		formatString: 0
-		lineageTag: 7ba4f6ae-b6c3-467e-a1ca-dbc683019ce4
-		summarizeBy: none
-		sourceColumn: Độ dài mô tả
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Số dấu chấm than'
-		dataType: int64
-		formatString: 0
-		lineageTag: 7171457f-df70-46af-8eb3-027227813657
-		summarizeBy: none
-		sourceColumn: Số dấu chấm than
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Tỷ lệ chữ in hoa'
-		dataType: double
-		lineageTag: e3625fbb-2cc9-4129-b4b5-a2dcb2e48f7d
-		summarizeBy: none
-		sourceColumn: Tỷ lệ chữ in hoa
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column desc_lower
-		dataType: string
-		lineageTag: 4131871b-2343-497c-9125-946c65027e2c
-		summarizeBy: none
-		sourceColumn: desc_lower
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Có dấu hiệu bán gấp'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: e4af66a8-e443-47af-a096-3b15233c3e59
-		summarizeBy: none
-		sourceColumn: Có dấu hiệu bán gấp
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Có từ khóa marketing'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: a731acc4-67a6-4557-852b-80b50959a3ab
-		summarizeBy: none
-		sourceColumn: Có từ khóa marketing
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Có từ khóa dòng tiền'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: d8d54b33-749b-4613-977c-5bdcf116e3ce
-		summarizeBy: none
-		sourceColumn: Có từ khóa dòng tiền
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Có dấu hiệu pháp lý yếu'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: dda9dd48-c507-482d-baf7-e89be9e243c5
-		summarizeBy: none
-		sourceColumn: Có dấu hiệu pháp lý yếu
-
-		annotation SummarizationSetBy = Automatic
-
 	partition Fact_Listings = m
 		mode: import
 		source =
@@ -401,9 +198,10 @@ table Fact_Listings
 				    #"Expanded Dim_Location" = Table.ExpandTableColumn(#"Merged Queries3", "Dim_Location", {"Location_SKey"}, {"Location_SKey"}),
 				    #"Expanded Dim_Features" = Table.ExpandTableColumn(#"Expanded Dim_Location", "Dim_Features", {"Feature_SKey"}, {"Feature_SKey"}),
 				    #"Expanded Dim_Property_Details" = Table.ExpandTableColumn(#"Expanded Dim_Features", "Dim_Property_Details", {"Status_SKey"}, {"Status_SKey"}),
-				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"})
+				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded Dim_Product",{"Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Biến động giá", "Xu hướng giá", "Ngày đăng", "expiry_date", "Location_SKey", "Feature_SKey", "Status_SKey", "Product_SKey"})
 				in
-				    #"Expanded Dim_Product"
+				    #"Removed Other Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

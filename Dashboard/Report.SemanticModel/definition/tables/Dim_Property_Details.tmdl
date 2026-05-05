@@ -42,12 +42,20 @@ table Dim_Property_Details
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Pháp lý Chuẩn hóa'
+		dataType: string
+		lineageTag: 3d070318-d38b-4793-9a40-e63c139312bf
+		summarizeBy: none
+		sourceColumn: Pháp lý Chuẩn hóa
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dim_Property_Details = m
 		mode: import
 		source =
 				let
 				    Source = batdongsan_real_estate_cleaned,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Hướng nhà", "Nội thất", "Pháp lý", "Loại tin"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Hướng nhà", "Nội thất", "Pháp lý", "Pháp lý Chuẩn hóa", "Loại tin"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
 				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Status_SKey", 1, 1, Int64.Type)
 				in

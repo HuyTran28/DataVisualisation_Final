@@ -43,12 +43,40 @@ table Dim_Product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Độ dài mô tả'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e511195-9566-4461-827d-d8562c2b0308
+		summarizeBy: none
+		sourceColumn: Độ dài mô tả
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Số dấu chấm than'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b14ccac-f57d-4c13-b806-d03f41a62780
+		summarizeBy: none
+		sourceColumn: Số dấu chấm than
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tỷ lệ chữ in hoa'
+		dataType: double
+		lineageTag: 755230ba-64c3-4b14-a7f9-24a858420ee6
+		summarizeBy: none
+		sourceColumn: Tỷ lệ chữ in hoa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition Dim_Product = m
 		mode: import
 		source =
 				let
 				    Source = batdongsan_real_estate_cleaned,
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Bất động sản", "url", "Mô tả", "product_id"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Bất động sản", "url", "Mô tả", "Độ dài mô tả", "Số dấu chấm than", "Tỷ lệ chữ in hoa", "product_id"}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"product_id", Int64.Type}}),
 				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"product_id"}),
 				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Product_SKey", 1, 1, Int64.Type)

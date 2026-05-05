@@ -13,6 +13,7 @@ table Dim_Location
 	column 'Thành phố'
 		dataType: string
 		lineageTag: c7f6b949-ac4e-4308-ba29-0ae7839b59da
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: Thành phố
 
@@ -21,6 +22,7 @@ table Dim_Location
 	column Quận
 		dataType: string
 		lineageTag: 07fd0a83-3d5d-48cf-98ba-8eafbf88da5a
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: Quận
 
@@ -29,6 +31,7 @@ table Dim_Location
 	column Phường
 		dataType: string
 		lineageTag: c4a3b36e-814c-444d-8bcc-6f449578fb0f
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: Phường
 
@@ -49,6 +52,21 @@ table Dim_Location
 		sourceColumn: Địa chỉ
 
 		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Thành phố Hierarchy'
+		lineageTag: 7b537024-a5e0-466b-8c24-775c728f07d2
+
+		level 'Thành phố'
+			lineageTag: b73bf5a4-170a-4a42-a72e-3cf91e152a57
+			column: 'Thành phố'
+
+		level Quận
+			lineageTag: a037a744-3e5c-4d63-9840-f01698a93e11
+			column: Quận
+
+		level Phường
+			lineageTag: 4f52b63c-4f23-4443-8417-69360bdac6fa
+			column: Phường
 
 	partition Dim_Location = m
 		mode: import
