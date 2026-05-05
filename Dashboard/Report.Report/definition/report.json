@@ -46,6 +46,11 @@
           "name": "adm29679588677686662.json",
           "path": "adm29679588677686662.json",
           "type": "ShapeMap"
+        },
+        {
+          "name": "hcm_districts_standard6529679076318834.json",
+          "path": "hcm_districts_standard6529679076318834.json",
+          "type": "ShapeMap"
         }
       ]
     }
