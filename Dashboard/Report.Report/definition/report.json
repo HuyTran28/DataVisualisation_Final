@@ -37,6 +37,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "adm29679588677686662.json",
+          "path": "adm29679588677686662.json",
+          "type": "ShapeMap"
+        }
+      ]
     }
   ],
   "settings": {
