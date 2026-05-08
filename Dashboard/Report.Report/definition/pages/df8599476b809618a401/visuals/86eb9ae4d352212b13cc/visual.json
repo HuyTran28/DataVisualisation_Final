@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "c02bb20754be385989ed",
+  "name": "86eb9ae4d352212b13cc",
   "position": {
-    "x": 0,
-    "y": 23.327693931221631,
-    "z": 0,
-    "height": 500.85931087622913,
-    "width": 569.47017537982219
+    "x": 542.73556231003045,
+    "y": 102.12765957446808,
+    "z": 1000,
+    "height": 583.58662613981767,
+    "width": 323.89057750759878,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -42,14 +43,14 @@
                           "Entity": "Fact_Listings"
                         }
                       },
-                      "Property": "Product_SKey"
+                      "Property": "Is_Fire_Risk"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey"
+              "queryRef": "CountNonNull(Fact_Listings.Is_Fire_Risk)",
+              "nativeQueryRef": "Count of Is_Fire_Risk"
             }
           ]
         }

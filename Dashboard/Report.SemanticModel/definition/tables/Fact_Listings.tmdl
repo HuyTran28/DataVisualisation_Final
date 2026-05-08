@@ -185,6 +185,22 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column Is_Overcrowded
+		dataType: boolean
+		lineageTag: e8d29b2b-42fa-4a25-a1c2-555a123b3210
+		summarizeBy: none
+		sourceColumn: Is_Overcrowded
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Fire_Risk
+		dataType: boolean
+		lineageTag: e8d29b2b-42fa-4a25-a1c2-555a123b3211
+		summarizeBy: none
+		sourceColumn: Is_Fire_Risk
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_Listings = m
 		mode: import
 		source =
@@ -199,9 +215,11 @@ table Fact_Listings
 				    #"Expanded Dim_Features" = Table.ExpandTableColumn(#"Expanded Dim_Location", "Dim_Features", {"Feature_SKey"}, {"Feature_SKey"}),
 				    #"Expanded Dim_Property_Details" = Table.ExpandTableColumn(#"Expanded Dim_Features", "Dim_Property_Details", {"Status_SKey"}, {"Status_SKey"}),
 				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"}),
-				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded Dim_Product",{"Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Biến động giá", "Xu hướng giá", "Ngày đăng", "expiry_date", "Location_SKey", "Feature_SKey", "Status_SKey", "Product_SKey"})
+				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded Dim_Product",{"Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Biến động giá", "Xu hướng giá", "Ngày đăng", "expiry_date", "Location_SKey", "Feature_SKey", "Status_SKey", "Product_SKey"}),
+				    #"Added Is_Overcrowded" = Table.AddColumn(#"Removed Other Columns", "Is_Overcrowded", each if [Diện tích] <> null and [Số phòng ngủ] <> null and [Diện tích] < 40 and [Số phòng ngủ] >= 3 then true else false, type logical),
+				    #"Added Is_Fire_Risk" = Table.AddColumn(#"Added Is_Overcrowded", "Is_Fire_Risk", each if [Số tầng] <> null and [Đường vào] <> null and [Số tầng] > 5 and [Đường vào] < 3 then true else false, type logical)
 				in
-				    #"Removed Other Columns"
+				    #"Added Is_Fire_Risk"
 
 	annotation PBI_NavigationStepName = Navigation
 

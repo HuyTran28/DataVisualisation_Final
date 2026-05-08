@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "9dd830de49aec7eadc90",
+  "name": "4f7825e18c87a1787cbb",
   "position": {
-    "x": 406.17631786127072,
-    "y": 46.655387862443263,
-    "z": 1000,
-    "height": 454.20392301378587,
-    "width": 569.47017537982219,
-    "tabOrder": 1000
+    "x": 903.58662613981767,
+    "y": 353.06990881458967,
+    "z": 0,
+    "height": 332.64437689969606,
+    "width": 342.370820668693
   },
   "visual": {
     "visualType": "shapeMap",
@@ -43,14 +42,14 @@
                           "Entity": "Fact_Listings"
                         }
                       },
-                      "Property": "Product_SKey"
+                      "Property": "Is_Fire_Risk"
                     }
                   },
                   "Function": 5
                 }
               },
-              "queryRef": "CountNonNull(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Product_SKey"
+              "queryRef": "CountNonNull(Fact_Listings.Is_Fire_Risk)",
+              "nativeQueryRef": "Count of Is_Fire_Risk"
             }
           ]
         }
@@ -359,6 +358,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "4152931ed2b5df21931d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Is_Fire_Risk"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

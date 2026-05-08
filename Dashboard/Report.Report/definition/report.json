@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY26SU04",
@@ -26,6 +26,10 @@
       }
     ]
   },
+  "publicCustomVisuals": [
+    "BoxandWhiskerByMAQ1823AD39DT234AB532063E128AX",
+    "BoxWhiskerChart1455240051538"
+  ],
   "resourcePackages": [
     {
       "name": "SharedResources",
