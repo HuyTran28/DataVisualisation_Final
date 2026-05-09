@@ -6,7 +6,8 @@
     "y": 23.327693931221631,
     "z": 0,
     "height": 500.85931087622913,
-    "width": 569.47017537982219
+    "width": 569.47017537982219,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -148,42 +149,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f061b8228cdfe78ace8c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Location"
-              }
-            },
-            "Property": "Thành phố"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c484a15027cd0c309798",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

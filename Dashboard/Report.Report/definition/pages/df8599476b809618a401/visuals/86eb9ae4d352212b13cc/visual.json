@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 583.58662613981767,
     "width": 323.89057750759878,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "shapeMap",
@@ -149,42 +149,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "432a1bbdbb64bd58130d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Location"
-              }
-            },
-            "Property": "Thành phố"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f5a90306de3dfeff78a6",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Is_Fire_Risk"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

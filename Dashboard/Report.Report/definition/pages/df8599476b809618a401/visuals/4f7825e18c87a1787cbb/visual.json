@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "4f7825e18c87a1787cbb",
   "position": {
     "x": 903.58662613981767,
     "y": 353.06990881458967,
     "z": 0,
     "height": 332.64437689969606,
-    "width": 342.370820668693
+    "width": 342.370820668693,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -358,25 +359,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "4152931ed2b5df21931d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Is_Fire_Risk"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

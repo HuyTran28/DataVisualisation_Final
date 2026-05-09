@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 454.20392301378587,
     "width": 569.47017537982219,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "shapeMap",
@@ -359,25 +359,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "7d0223721f57c2b9b2bc",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

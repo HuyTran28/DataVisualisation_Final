@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "642c8b84ccf477f37205",
   "position": {
     "x": 27.23404255319149,
     "y": 102.12765957446808,
-    "z": 1001,
+    "z": 2000,
     "height": 329.726443768997,
     "width": 487.29483282674772,
-    "tabOrder": 1001
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -359,20 +359,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "a0d35117aed090f4653c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Is_Overcrowded"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
