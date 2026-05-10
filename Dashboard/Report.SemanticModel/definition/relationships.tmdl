@@ -24,3 +24,11 @@ relationship 0c1bc912-bc50-4b4d-93bd-5ad7234ffbc0
 	fromColumn: Fact_Listings.'Ngày đăng'
 	toColumn: LocalDateTable_7478aafa-aae9-4eb5-8c25-cc4601a578b2.Date
 
+relationship AutoDetected_7d0fcbd8-59a5-46f5-82d5-43b2db7b8abe
+	fromColumn: Group2_ResidentialProperties.url
+	toColumn: Dim_Product.url
+
+relationship AutoDetected_65e8bf5c-9da7-4deb-aef3-58b9cf03d38c
+	fromColumn: Group2_MultiUnitBuildings.url
+	toColumn: Dim_Product.url
+

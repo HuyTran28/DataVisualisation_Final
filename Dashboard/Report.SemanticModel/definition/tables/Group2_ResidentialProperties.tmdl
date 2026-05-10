@@ -5,7 +5,7 @@ table Group2_ResidentialProperties
 		dataType: decimal
 		formatString: 0.000
 		lineageTag: 33333333-4444-5555-6666-7777777777777
-		summarizeBy: average
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
@@ -23,227 +23,227 @@ table Group2_ResidentialProperties
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column1
+	column product_id
 		dataType: string
-		lineageTag: 4c7518f4-2127-49a1-9787-52e08e2276cf
+		lineageTag: e98b2e6a-6ea9-4552-99cb-213d4a7d5949
 		summarizeBy: none
-		sourceColumn: Column1
+		sourceColumn: product_id
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column2
+	column title
 		dataType: string
-		lineageTag: d07960d6-37d0-426b-b374-25361a6d7ffe
+		lineageTag: a2bd7a1d-a3d1-4afb-b304-821a86f6538c
 		summarizeBy: none
-		sourceColumn: Column2
+		sourceColumn: title
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column3
+	column url
 		dataType: string
-		lineageTag: ac0ca92c-fcd9-450b-ad17-75f75a2b963d
+		lineageTag: 9560b5d8-dd58-447a-8243-8a7a17169cd1
 		summarizeBy: none
-		sourceColumn: Column3
+		sourceColumn: url
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column4
+	column city
 		dataType: string
-		lineageTag: 03efe189-d3b3-4960-98ec-8cdd5df203d0
+		lineageTag: e7d60640-ce8a-4cb2-97a6-116ca66da2d1
 		summarizeBy: none
-		sourceColumn: Column4
+		sourceColumn: city
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column5
+	column district
 		dataType: string
-		lineageTag: 0c65cc4c-1b55-4697-b250-6d4959077a88
+		lineageTag: 6df947b5-04bb-4558-b02f-95bd439b79d7
 		summarizeBy: none
-		sourceColumn: Column5
+		sourceColumn: district
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column6
+	column ward
 		dataType: string
-		lineageTag: 8180374f-e2ca-4c3f-88d8-71ba2e4dcd77
+		lineageTag: 06b79cc0-4c94-411d-a7c7-aee9f5e66c8e
 		summarizeBy: none
-		sourceColumn: Column6
+		sourceColumn: ward
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column7
+	column street
 		dataType: string
-		lineageTag: 3583ce4d-b17f-42e5-a1ae-db4336b9b194
+		lineageTag: 6993d96a-f23e-415b-a15b-c7d52f6caf6c
 		summarizeBy: none
-		sourceColumn: Column7
+		sourceColumn: street
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column8
+	column full_address
 		dataType: string
-		lineageTag: d1d2d7dc-3dcf-4d34-98cf-ba1ee530640b
+		lineageTag: 5277db87-33f5-408c-86b7-54d0d3e70d42
 		summarizeBy: none
-		sourceColumn: Column8
+		sourceColumn: full_address
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column9
+	column price_total
 		dataType: string
-		lineageTag: fada7558-8c88-4660-ac31-232c7796aed9
+		lineageTag: 551c99e0-9505-454a-bd53-e770bee58c70
 		summarizeBy: none
-		sourceColumn: Column9
+		sourceColumn: price_total
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column10
+	column price_per_m2
 		dataType: string
-		lineageTag: 436f0552-743d-416c-a7fe-7e2ab8ff6f04
+		lineageTag: 50de91e0-3b16-4abf-9232-a8015253be34
 		summarizeBy: none
-		sourceColumn: Column10
+		sourceColumn: price_per_m2
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column11
+	column area
 		dataType: string
-		lineageTag: a16bbc4b-d4a7-4ce5-9298-3f762c16ad1b
+		lineageTag: 591a62ff-3709-4573-9dd4-50f03439cbdc
 		summarizeBy: none
-		sourceColumn: Column11
+		sourceColumn: area
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column12
+	column frontage
 		dataType: string
-		lineageTag: d51db5cc-d2d0-48b6-8fa9-96a992badcd3
+		lineageTag: 008dcf4c-50ba-4139-908e-e4ad573c0524
 		summarizeBy: none
-		sourceColumn: Column12
+		sourceColumn: frontage
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column13
+	column road_width
 		dataType: string
-		lineageTag: d66a5797-30e7-49bb-8891-55d490445507
+		lineageTag: ac6410b7-ccf8-4c23-8ccb-eaae8d7fc16e
 		summarizeBy: none
-		sourceColumn: Column13
+		sourceColumn: road_width
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column14
+	column bedrooms
 		dataType: string
-		lineageTag: 519ab78b-ec86-43b0-a600-b71b6adee760
+		lineageTag: 5b47cfab-0b7d-4ea8-9a8d-617c2d03ed06
 		summarizeBy: none
-		sourceColumn: Column14
+		sourceColumn: bedrooms
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column15
+	column bathrooms
 		dataType: string
-		lineageTag: 6eaa68fc-2de8-439f-ba03-eca82ce9ad6e
+		lineageTag: cf9e8010-8ff1-472c-bae2-9a76c5c47ff6
 		summarizeBy: none
-		sourceColumn: Column15
+		sourceColumn: bathrooms
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column16
+	column floors
 		dataType: string
-		lineageTag: 793b81bb-7454-478d-b817-bcfc9abe49d1
+		lineageTag: 6a1b13f4-bf55-421f-9a30-d852adc27f6b
 		summarizeBy: none
-		sourceColumn: Column16
+		sourceColumn: floors
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column17
+	column direction
 		dataType: string
-		lineageTag: ce748fa7-02bb-486e-8276-39690516ed93
+		lineageTag: b5680b68-a2cb-4c37-8c8e-cc848eedfcb1
 		summarizeBy: none
-		sourceColumn: Column17
+		sourceColumn: direction
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column18
+	column interior
 		dataType: string
-		lineageTag: 2f9de1ec-5689-41a4-812e-4bffe8e22955
+		lineageTag: 6e00e28d-5abb-41dd-a7ef-1c43d34e8428
 		summarizeBy: none
-		sourceColumn: Column18
+		sourceColumn: interior
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column19
+	column legal_status
 		dataType: string
-		lineageTag: 68efc01e-9804-401f-90aa-b3f5cc873adf
+		lineageTag: cbba17dd-e615-4a07-bfb2-f40eddbc5226
 		summarizeBy: none
-		sourceColumn: Column19
+		sourceColumn: legal_status
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column20
+	column post_rank
 		dataType: string
-		lineageTag: fd130df9-6d1d-4781-8a6a-71ac374f35dd
+		lineageTag: 5ff19480-dbfe-413d-bea7-fa70ff17d727
 		summarizeBy: none
-		sourceColumn: Column20
+		sourceColumn: post_rank
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column21
+	column price_trend_1y
 		dataType: string
-		lineageTag: 5868be6b-a617-40ac-93a4-cc2cc6b320aa
+		lineageTag: 0703036b-598f-4579-9dcd-586f74713ece
 		summarizeBy: none
-		sourceColumn: Column21
+		sourceColumn: price_trend_1y
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column22
+	column has_elevator
 		dataType: string
-		lineageTag: 2cb9e97c-ea73-4afe-815c-bfd7507e006c
+		lineageTag: c40bec2c-a9c5-46a7-b7af-02c0146aabcd
 		summarizeBy: none
-		sourceColumn: Column22
+		sourceColumn: has_elevator
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column23
+	column near_park
 		dataType: string
-		lineageTag: 908fb465-dfa3-4832-ab10-765c904b28ba
+		lineageTag: b897e024-80bf-40dc-a4c7-afcfefec5d18
 		summarizeBy: none
-		sourceColumn: Column23
+		sourceColumn: near_park
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column24
+	column is_frontage_road
 		dataType: string
-		lineageTag: 220e47b0-2df3-489b-a5d7-cef179e08029
+		lineageTag: 42810a6f-4dc4-461b-bd8d-1a43520aa85c
 		summarizeBy: none
-		sourceColumn: Column24
+		sourceColumn: is_frontage_road
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column25
+	column description
 		dataType: string
-		lineageTag: 18b4aac8-06b8-48a1-afb3-40a8e54a78bc
+		lineageTag: 8cfc9794-91a6-4a09-8312-068e8ec2e622
 		summarizeBy: none
-		sourceColumn: Column25
+		sourceColumn: description
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column26
+	column posted_date
 		dataType: string
-		lineageTag: edbee956-8ab7-43cb-bcdc-fb102860780c
+		lineageTag: 87ae8351-3516-4dbc-8068-a46486abc1cf
 		summarizeBy: none
-		sourceColumn: Column26
+		sourceColumn: posted_date
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column27
+	column expiry_date
 		dataType: string
-		lineageTag: c87eea76-6e34-4f41-a334-9cc0d5bc4749
+		lineageTag: b3e2204e-3fa7-46a4-828b-1c21595db606
 		summarizeBy: none
-		sourceColumn: Column27
+		sourceColumn: expiry_date
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column28
+	column property_type
 		dataType: string
-		lineageTag: b2681025-1412-45e1-a3a5-77225a99e526
+		lineageTag: 3c3d462b-7018-4e4a-9e1b-1facfb4a7ca7
 		summarizeBy: none
-		sourceColumn: Column28
+		sourceColumn: property_type
 
 		annotation SummarizationSetBy = Automatic
 

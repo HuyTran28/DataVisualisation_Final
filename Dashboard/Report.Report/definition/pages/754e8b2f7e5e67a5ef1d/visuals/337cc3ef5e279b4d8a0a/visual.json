@@ -182,7 +182,8 @@
                 }
               },
               "queryRef": "Avg(Fact_Listings.Đơn giá)",
-              "nativeQueryRef": "Average of Đơn giá"
+              "nativeQueryRef": "Đơn giá trung bình",
+              "displayName": "Đơn giá trung bình"
             }
           ]
         }
