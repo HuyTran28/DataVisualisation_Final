@@ -224,6 +224,17 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Đơn giá'
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 234efce6-31ca-4370-8a65-db27e5f7ce0d
+		summarizeBy: sum
+		sourceColumn: Đơn giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column 'Phân loại Đường'
 		dataType: string
 		lineageTag: d236c1f2-aece-4a3f-96ea-0a3d05a6148c
@@ -271,52 +282,6 @@ table Fact_Listings
 		sourceColumn: Is_Fire_Risk
 
 		annotation SummarizationSetBy = Automatic
-
-	column PhanKhuc =
-			
-			// Bước 1: Tính các mốc bách phân vị dựa trên TOÀN BỘ dữ liệu và LÀM TRÒN
-			VAR MocBinhDan = ROUND(CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings')), 0)
-			VAR MocCaoCap = ROUND(CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings')), 0)
-			
-			// Bước 2: Phân loại
-			RETURN
-			SWITCH(
-			    TRUE(),
-			    ISBLANK('Fact_Listings'[Khoảng giá]), "Không xác định",
-			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, "Bình dân",
-			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, "Trung bình",
-			    "Cao cấp"
-			)
-		lineageTag: 90bfd98b-e4d0-4b17-9c66-b76cfa9322df
-		summarizeBy: none
-		sortByColumn: PhanKhuc_SapXep
-
-		changedProperty = SortByColumn
-
-		annotation SummarizationSetBy = Automatic
-
-	column PhanKhuc_SapXep =
-			
-			VAR MocBinhDan = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings'))
-			VAR MocCaoCap = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings'))
-			
-			RETURN
-			SWITCH(
-			    TRUE(),
-			    ISBLANK('Fact_Listings'[Khoảng giá]), 4,
-			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, 1,
-			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, 2,
-			    3
-			)
-		formatString: 0
-		lineageTag: b3cdbcdc-aaf7-418b-b348-0f38e3ee5bd4
-
-	column So_Ngay_Hien_Thi = DATEDIFF('Fact_Listings'[Ngày đăng], 'Fact_Listings'[expiry_date], DAY)
-		formatString: 0
-		lineageTag: 47401535-5f3a-4a4f-b794-5266d6f2092e
-		summarizeBy: sum
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
 		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
@@ -403,16 +368,51 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Đơn giá'
-		dataType: decimal
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: 234efce6-31ca-4370-8a65-db27e5f7ce0d
-		summarizeBy: sum
-		sourceColumn: Đơn giá
+	column PhanKhuc =
+			
+			// Bước 1: Tính các mốc bách phân vị dựa trên TOÀN BỘ dữ liệu và LÀM TRÒN
+			VAR MocBinhDan = ROUND(CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings')), 0)
+			VAR MocCaoCap = ROUND(CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings')), 0)
+			
+			// Bước 2: Phân loại
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK('Fact_Listings'[Khoảng giá]), "Không xác định",
+			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, "Bình dân",
+			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, "Trung bình",
+			    "Cao cấp"
+			)
+		lineageTag: 90bfd98b-e4d0-4b17-9c66-b76cfa9322df
+		summarizeBy: none
+		sortByColumn: PhanKhuc_SapXep
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+	column PhanKhuc_SapXep =
+			
+			VAR MocBinhDan = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings'))
+			VAR MocCaoCap = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings'))
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK('Fact_Listings'[Khoảng giá]), 4,
+			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, 1,
+			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, 2,
+			    3
+			)
+		formatString: 0
+		lineageTag: b3cdbcdc-aaf7-418b-b348-0f38e3ee5bd4
+
+	column So_Ngay_Hien_Thi = DATEDIFF('Fact_Listings'[Ngày đăng], 'Fact_Listings'[expiry_date], DAY)
+		formatString: 0
+		lineageTag: 47401535-5f3a-4a4f-b794-5266d6f2092e
+		summarizeBy: sum
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Fact_Listings = m
 		mode: import

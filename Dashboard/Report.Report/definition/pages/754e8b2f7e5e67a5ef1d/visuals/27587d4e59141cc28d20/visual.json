@@ -102,13 +102,6 @@
                   "Value": "'Tahoma'"
                 }
               }
-            },
-                            "fontFamily": {
-                              "expr": {
-                                "Literal": {
-                                  "Value": "'Tahoma'"
-                }
-              }
             }
           }
         }

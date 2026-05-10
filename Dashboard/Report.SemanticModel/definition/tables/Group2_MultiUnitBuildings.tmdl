@@ -242,11 +242,11 @@ table Group2_MultiUnitBuildings
 	partition Group2_MultiUnitBuildings = m
 		mode: import
 		source =
-			let
-				Source = Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_multi_unit_building.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-				Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
-			in
-				Promoted
+				let
+					Source = Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_multi_unit_building.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+					Promoted
 
 	annotation PBI_NavigationStepName = Navigation
 

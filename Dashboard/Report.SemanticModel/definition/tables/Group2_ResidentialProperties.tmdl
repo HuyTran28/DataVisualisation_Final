@@ -249,16 +249,14 @@ table Group2_ResidentialProperties
 
 	partition Group2_ResidentialProperties = m
 		mode: import
-		// Rebuild from direct file sources to avoid query-to-query privacy blocking
-		// NOTE: both source files come from the same segmented-by-type folder.
 		source =
-			let
-				ApartmentSource = Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_apartment.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-				ApartmentPromoted = Table.PromoteHeaders(ApartmentSource, [PromoteAllScalars=true]),
-				HouseSource = Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_house.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-				HousePromoted = Table.PromoteHeaders(HouseSource, [PromoteAllScalars=true])
-			in
-				Table.Combine({ApartmentPromoted, HousePromoted})
+				let
+					ApartmentSource = Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_apartment.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					ApartmentPromoted = Table.PromoteHeaders(ApartmentSource, [PromoteAllScalars=true]),
+					HouseSource = Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_house.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					HousePromoted = Table.PromoteHeaders(HouseSource, [PromoteAllScalars=true])
+				in
+					Table.Combine({ApartmentPromoted, HousePromoted})
 
 	annotation PBI_NavigationStepName = Navigation
 
