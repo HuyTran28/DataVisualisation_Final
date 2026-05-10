@@ -133,13 +133,15 @@ table Fact_Listings
 		annotation SummarizationSetBy = Automatic
 
 	column 'Khoảng giá'
-		dataType: int64
-		formatString: 0
+		dataType: decimal
+		formatString: #,0\ "₫";-#,0\ "₫";#,0\ "₫"
 		lineageTag: 10ba38ee-e25e-4078-bc51-e723929c7cb8
 		summarizeBy: sum
 		sourceColumn: Khoảng giá
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	column 'Diện tích'
 		dataType: double
@@ -224,17 +226,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Đơn giá'
-		dataType: decimal
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: 234efce6-31ca-4370-8a65-db27e5f7ce0d
-		summarizeBy: sum
-		sourceColumn: Đơn giá
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
-
 	column 'Phân loại Đường'
 		dataType: string
 		lineageTag: d236c1f2-aece-4a3f-96ea-0a3d05a6148c
@@ -284,14 +275,15 @@ table Fact_Listings
 		annotation SummarizationSetBy = Automatic
 
 	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
+		formatString: #,0.00\ "₫";-#,0.00\ "₫";#,0.00\ "₫"
 		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
 		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán 50 trieu","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	column 'Khoảng giá bán 50 trieu' =
 			IF(
@@ -303,6 +295,7 @@ table Fact_Listings
 					ROUNDUP('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05
 				)
 			)
+		formatString: #,0.00\ "₫";-#,0.00\ "₫";#,0.00\ "₫"
 		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
 		summarizeBy: none
 
@@ -333,7 +326,7 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	column 'Tỷ lệ sâu/rộng' = ```
 			
@@ -413,6 +406,17 @@ table Fact_Listings
 		summarizeBy: sum
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Đơn giá'
+		dataType: decimal
+		formatString: #,0.00\ "₫";-#,0.00\ "₫";#,0.00\ "₫"
+		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
+		summarizeBy: sum
+		sourceColumn: Đơn giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	partition Fact_Listings = m
 		mode: import
