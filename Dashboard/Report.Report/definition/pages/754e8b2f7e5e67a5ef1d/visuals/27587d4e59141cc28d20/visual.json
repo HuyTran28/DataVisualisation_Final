@@ -99,14 +99,14 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
                 }
               }
             },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
+                            "fontFamily": {
+                              "expr": {
+                                "Literal": {
+                                  "Value": "'Tahoma'"
                 }
               }
             }
