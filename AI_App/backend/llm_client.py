@@ -86,11 +86,12 @@ class LLMClient:
                     )
                     raw_text = response.choices[0].message.content
 
-                code, explanation = self._parse_response(raw_text)
+                parsed_data = self._parse_response(raw_text)
 
                 return {
-                    "code": code,
-                    "explanation": explanation,
+                    "code": parsed_data["code"],
+                    "explanation": parsed_data["explanation"],
+                    "parameters": parsed_data.get("parameters", []),
                     "raw_response": raw_text,
                 }
             except Exception as e:
@@ -106,34 +107,52 @@ class LLMClient:
                 return {
                     "code": "",
                     "explanation": f"Lỗi khi gọi {self.provider.capitalize()} API: {error_str}",
+                    "parameters": [],
                     "raw_response": "",
                     "error": error_str,
                 }
 
-    def _parse_response(self, raw_text: str) -> tuple[str, str]:
-        """Parse response từ LLM để tách code Python và phần giải thích."""
-        # Tìm code block ```python ... ```
-        code_pattern = r"```python\s*\n(.*?)```"
-        code_matches = re.findall(code_pattern, raw_text, re.DOTALL)
-
-        if code_matches:
-            code = code_matches[0].strip()
-        else:
-            fallback_pattern = r"```\s*\n(.*?)```"
-            fallback_matches = re.findall(fallback_pattern, raw_text, re.DOTALL)
-            code = fallback_matches[0].strip() if fallback_matches else ""
-
-        # Tìm phần giải thích
-        explanation_pattern = r"\*\*Giải thích:\*\*\s*(.*)"
-        explanation_match = re.search(explanation_pattern, raw_text, re.DOTALL)
-
-        if explanation_match:
-            explanation = explanation_match.group(1).strip()
-        else:
-            parts = raw_text.split("```")
-            if len(parts) > 2:
-                explanation = parts[-1].strip()
+    def _parse_response(self, raw_text: str) -> dict:
+        """Parse response từ LLM để lấy code, explanation và parameters."""
+        import json
+        
+        # Thử tìm chuỗi JSON (bỏ qua markdown json ```json ... ```)
+        json_pattern = r"```(?:json)?\s*(\{.*?\})\s*```"
+        match = re.search(json_pattern, raw_text, re.DOTALL)
+        json_str = match.group(1) if match else raw_text
+        
+        # Loại bỏ các ký tự rác nếu có ở đầu/cuối
+        start_idx = json_str.find('{')
+        end_idx = json_str.rfind('}')
+        if start_idx != -1 and end_idx != -1 and end_idx >= start_idx:
+            json_str = json_str[start_idx:end_idx+1]
+        
+        try:
+            parsed = json.loads(json_str)
+            return {
+                "code": parsed.get("code", ""),
+                "explanation": parsed.get("explanation", "Không có giải thích."),
+                "parameters": parsed.get("parameters", [])
+            }
+        except json.JSONDecodeError:
+            # Fallback về phương pháp cũ nếu LLM không trả về JSON hợp lệ
+            code_pattern = r"```python\s*\n(.*?)```"
+            code_matches = re.findall(code_pattern, raw_text, re.DOTALL)
+            code = code_matches[0].strip() if code_matches else ""
+            
+            if not code:
+                return {"code": "", "explanation": raw_text.strip(), "parameters": []}
+            
+            explanation_pattern = r"\*\*Giải thích:\*\*\s*(.*)"
+            exp_match = re.search(explanation_pattern, raw_text, re.DOTALL)
+            if exp_match:
+                explanation = exp_match.group(1).strip()
             else:
-                explanation = "Không có giải thích từ AI."
-
-        return code, explanation
+                parts = raw_text.split("```")
+                explanation = parts[-1].strip() if len(parts) > 2 else "Không có giải thích chi tiết."
+            
+            return {
+                "code": code,
+                "explanation": explanation,
+                "parameters": []
+            }

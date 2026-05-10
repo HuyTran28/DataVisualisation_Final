@@ -36,6 +36,7 @@ class SessionLogger:
         executed_code: str,
         result_summary: str,
         error: str = "",
+        explanation: str = "",
     ) -> dict:
         """
         Ghi một phiên tương tác vào log.
@@ -46,6 +47,7 @@ class SessionLogger:
             executed_code: Code sau khi user chỉnh sửa và chạy.
             result_summary: Tóm tắt kết quả thực thi.
             error: Thông báo lỗi (nếu có).
+            explanation: Giải thích từ AI.
 
         Returns:
             dict: Entry log vừa ghi.
@@ -53,6 +55,7 @@ class SessionLogger:
         entry = {
             "timestamp": datetime.now().isoformat(),
             "user_prompt": user_prompt,
+            "explanation": explanation,
             "generated_code": generated_code,
             "executed_code": executed_code,
             "code_modified": generated_code.strip() != executed_code.strip(),

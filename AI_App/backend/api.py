@@ -137,6 +137,7 @@ class LogRequest(BaseModel):
     executed_code: str
     result_summary: str
     error: str = ""
+    explanation: str = ""
 
 
 # =============================================
@@ -190,6 +191,7 @@ async def generate_code(request: GenerateRequest):
     return {
         "code": result["code"],
         "explanation": result["explanation"],
+        "parameters": result.get("parameters", []),
     }
 
 
@@ -221,6 +223,7 @@ async def save_log(request: LogRequest):
         executed_code=request.executed_code,
         result_summary=request.result_summary,
         error=request.error,
+        explanation=request.explanation,
     )
     return {"status": "logged", "entry": entry}
 
