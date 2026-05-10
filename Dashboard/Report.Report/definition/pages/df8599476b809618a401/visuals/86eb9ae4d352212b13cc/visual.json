@@ -1,17 +1,5 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-=======
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
->>>>>>> f8c8d31587f260d793e2e449612309d70b590f43
-=======
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
->>>>>>> f8c8d31587f260d793e2e449612309d70b590f43
-=======
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
->>>>>>> f8c8d31587f260d793e2e449612309d70b590f43
   "name": "86eb9ae4d352212b13cc",
   "position": {
     "x": 542.73556231003045,
