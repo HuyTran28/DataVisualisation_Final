@@ -1,0 +1,249 @@
+table Group2_MultiUnitBuildings
+	lineageTag: f5e4d3c2-b1a0-98f7-e6d5-c4b3a2918271
+
+	column Is_Fire_Risk = IF(AND([floors] > 5, [road_width] < 3), "High Risk", "Safe")
+		dataType: string
+		lineageTag: 22222222-3333-4444-5555-7777777777777
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Risk_Level = IF([road_width] < 2, "CRITICAL", IF([road_width] < 3, "HIGH", IF([floors] > 7, "MEDIUM", "LOW")))
+		dataType: string
+		lineageTag: 33333333-4444-5555-6666-8888888888888
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 1de3f0b9-5e9e-4125-8fa8-01a806b42a42
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: c3fb3beb-a530-4ae6-8015-a87d2c7e59a1
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 809183d9-5c0d-4681-9f01-6d3102722748
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 9b5dbbc3-6ea9-4d4b-be91-b5452bd3745e
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 15ca65e8-c1d9-4b8e-a9a2-28138999865f
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 419b00fc-6c45-4cd7-a301-20912f74d9b3
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 48d77a34-65a3-4c50-b1ff-eec369813288
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: c822b735-d4eb-49eb-aace-00fd25adc770
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 84871098-fc11-4161-ab6c-3e4afa3c1e98
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: b31047d5-e4c0-4b43-8a38-bb54f2900b03
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: b87563b0-9c98-40e1-8743-57eea07e180f
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: 52a1834c-0717-411a-8c9f-d1c9ffd54a35
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: f7451b59-b9b6-44c9-a103-85fb77f2c5e1
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column14
+		dataType: string
+		lineageTag: b38ba4a0-7061-4376-a369-52efc51a93f3
+		summarizeBy: none
+		sourceColumn: Column14
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column15
+		dataType: string
+		lineageTag: 649d4f3d-88d0-47b7-af12-e3fb04486400
+		summarizeBy: none
+		sourceColumn: Column15
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column16
+		dataType: string
+		lineageTag: 330118a3-137a-464e-acc9-4cebfe8144d9
+		summarizeBy: none
+		sourceColumn: Column16
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column17
+		dataType: string
+		lineageTag: 9ca17aff-7bb9-4c93-9dc4-1c82ea3e10df
+		summarizeBy: none
+		sourceColumn: Column17
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column18
+		dataType: string
+		lineageTag: e5f43b23-a00a-4cfa-85fc-1d9751446d51
+		summarizeBy: none
+		sourceColumn: Column18
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column19
+		dataType: string
+		lineageTag: 34f7bc28-a3d6-4662-8c9e-c980bd28e641
+		summarizeBy: none
+		sourceColumn: Column19
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column20
+		dataType: string
+		lineageTag: d554a6f6-8a20-445f-a656-7644a21958c7
+		summarizeBy: none
+		sourceColumn: Column20
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column21
+		dataType: string
+		lineageTag: 8698b7f5-f7d6-4ca9-aa7c-8d36710e924e
+		summarizeBy: none
+		sourceColumn: Column21
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column22
+		dataType: string
+		lineageTag: 070111fd-94d3-4d93-867e-934f807982a9
+		summarizeBy: none
+		sourceColumn: Column22
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column23
+		dataType: string
+		lineageTag: a745205b-2bc4-4614-bace-fa6bf6c051c1
+		summarizeBy: none
+		sourceColumn: Column23
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column24
+		dataType: string
+		lineageTag: 033c0b55-da3d-487e-9684-e4ec7195bf29
+		summarizeBy: none
+		sourceColumn: Column24
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column25
+		dataType: string
+		lineageTag: 7780a151-2858-4a24-8d6b-de4573234d89
+		summarizeBy: none
+		sourceColumn: Column25
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column26
+		dataType: string
+		lineageTag: 3c427995-094b-47ff-aaeb-173429e6bab8
+		summarizeBy: none
+		sourceColumn: Column26
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column27
+		dataType: string
+		lineageTag: 31e58117-26d0-4145-ae06-8cdfb24c097c
+		summarizeBy: none
+		sourceColumn: Column27
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column28
+		dataType: string
+		lineageTag: 4a9f6489-d386-4f55-9279-54410814e632
+		summarizeBy: none
+		sourceColumn: Column28
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Group2_MultiUnitBuildings = m
+		mode: import
+		source = batdongsan_multi_unit_building
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
