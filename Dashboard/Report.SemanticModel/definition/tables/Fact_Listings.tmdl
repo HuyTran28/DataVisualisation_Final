@@ -71,6 +71,17 @@ table Fact_Listings
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: d9812020-6fa3-4bd1-988d-c2fc42fc4fde
 
+	measure '% Sổ hồng' =
+			
+			DIVIDE(
+			    CALCULATE(COUNT('Fact_Listings'[Product_SKey]), 'Dim_Property_Details'[Pháp lý Chuẩn hóa] = "Sổ hồng/Sổ đỏ"),
+			    COUNT('Fact_Listings'[Product_SKey]),
+			    0
+			)
+		lineageTag: 78235c3e-e75f-4a2a-89ce-48af9b7832d1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column expiry_date
 		dataType: dateTime
 		formatString: Long Date
@@ -241,6 +252,8 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Loại Mặt tiền (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
 	column 'Xu hướng giá'
 		dataType: string
 		lineageTag: f4ed4341-a051-45bd-a7b9-45796afbae15
@@ -273,6 +286,52 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column PhanKhuc =
+			
+			// Bước 1: Tính các mốc bách phân vị dựa trên TOÀN BỘ dữ liệu và LÀM TRÒN
+			VAR MocBinhDan = ROUND(CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings')), 0)
+			VAR MocCaoCap = ROUND(CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings')), 0)
+			
+			// Bước 2: Phân loại
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK('Fact_Listings'[Khoảng giá]), "Không xác định",
+			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, "Bình dân",
+			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, "Trung bình",
+			    "Cao cấp"
+			)
+		lineageTag: 90bfd98b-e4d0-4b17-9c66-b76cfa9322df
+		summarizeBy: none
+		sortByColumn: PhanKhuc_SapXep
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhanKhuc_SapXep =
+			
+			VAR MocBinhDan = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings'))
+			VAR MocCaoCap = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings'))
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK('Fact_Listings'[Khoảng giá]), 4,
+			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, 1,
+			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, 2,
+			    3
+			)
+		formatString: 0
+		lineageTag: b3cdbcdc-aaf7-418b-b348-0f38e3ee5bd4
+
+	column So_Ngay_Hien_Thi = DATEDIFF('Fact_Listings'[Ngày đăng], 'Fact_Listings'[expiry_date], DAY)
+		formatString: 0
+		lineageTag: 47401535-5f3a-4a4f-b794-5266d6f2092e
+		summarizeBy: sum
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
 		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
 		summarizeBy: sum
@@ -282,48 +341,6 @@ table Fact_Listings
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán 50 trieu","ObjectType":4},"LinkType":"UsedInGroup"}]
-
-	column 'Khoảng giá bán 50 trieu' =
-			IF(
-				ISBLANK('Fact_Listings'[Giá bán (tỷ đồng)]),
-				BLANK(),
-				IF(
-					'Fact_Listings'[Giá bán (tỷ đồng)] >= 0,
-					ROUNDDOWN('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05,
-					ROUNDUP('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05
-				)
-			)
-		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
-		summarizeBy: none
-
-		extendedProperty GroupingMetadata =
-				{
-				  "version": 0,
-				  "groupedColumns": [
-				    {
-				      "Column": {
-				        "Expression": {
-				          "SourceRef": {
-				            "Entity": "Fact_Listings"
-				          }
-				        },
-				        "Property": "Giá bán (tỷ đồng)"
-				      }
-				    }
-				  ],
-				  "binningMetadata": {
-				    "binSize": {
-				      "value": 0.05,
-				      "unit": 0
-				    }
-				  }
-				}
-
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.05}}}}
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Khoảng đơn giá/m²' =
 			IF(
@@ -400,50 +417,82 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column PhanKhuc =
-			
-			// Bước 1: Tính các mốc bách phân vị dựa trên TOÀN BỘ dữ liệu
-			VAR MocBinhDan = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings'))
-			VAR MocCaoCap = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings'))
-			// Bước 2: Phân loại
-			RETURN
-			SWITCH(
-			TRUE(),
-			ISBLANK('Fact_Listings'[Khoảng giá]), "Không xác định",
-			'Fact_Listings'[Khoảng giá] <= MocBinhDan, "Bình dân",
-			'Fact_Listings'[Khoảng giá] <= MocCaoCap, "Trung bình",
-			"Cao cấp"
+	column 'Khoảng giá bán 50 trieu' =
+			IF(
+				ISBLANK('Fact_Listings'[Giá bán (tỷ đồng)]),
+				BLANK(),
+				IF(
+					'Fact_Listings'[Giá bán (tỷ đồng)] >= 0,
+					ROUNDDOWN('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05,
+					ROUNDUP('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05
+				)
 			)
-		lineageTag: 90bfd98b-e4d0-4b17-9c66-b76cfa9322df
+		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
 		summarizeBy: none
-		sortByColumn: PhanKhuc_SapXep
 
-		changedProperty = SortByColumn
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Giá bán (tỷ đồng)"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 0.05,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.05}}}}
 
 		annotation SummarizationSetBy = Automatic
 
-	column PhanKhuc_SapXep =
-			
-			VAR MocBinhDan = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.25), ALL('Fact_Listings'))
-			VAR MocCaoCap = CALCULATE(PERCENTILE.INC('Fact_Listings'[Khoảng giá], 0.75), ALL('Fact_Listings'))
-			
-			RETURN
-			SWITCH(
-			    TRUE(),
-			    ISBLANK('Fact_Listings'[Khoảng giá]), 4,
-			    'Fact_Listings'[Khoảng giá] <= MocBinhDan, 1,
-			    'Fact_Listings'[Khoảng giá] <= MocCaoCap, 2,
-			    3
-			)
-		formatString: 0
-		lineageTag: b3cdbcdc-aaf7-418b-b348-0f38e3ee5bd4
-
-	column So_Ngay_Hien_Thi = DATEDIFF('Fact_Listings'[Ngày đăng], 'Fact_Listings'[expiry_date], DAY)
-		formatString: 0
-		lineageTag: 47401535-5f3a-4a4f-b794-5266d6f2092e
-		summarizeBy: sum
-
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Loại Mặt tiền (groups)' =
+			SWITCH(
+				TRUE,
+				ISBLANK('Fact_Listings'[Loại Mặt tiền]),
+				"(Blank)",
+				'Fact_Listings'[Loại Mặt tiền] IN {"Khá (5-10m)",
+					"Rất rộng (>10m)",
+					"Tiêu chuẩn (5m)"},
+				"Khá (5-10m) & Rất rộng (>10m) & Tiêu chuẩn (5m)",
+				'Fact_Listings'[Loại Mặt tiền]
+			)
+		lineageTag: d345930d-0724-4608-af31-25cac56135a4
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Loại Mặt tiền"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Loại Mặt tiền"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Khá (5-10m) & Rất rộng (>10m) & Tiêu chuẩn (5m)","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Loại Mặt tiền"}}],"Values":[[{"Literal":{"Value":"'Khá (5-10m)'"}}],[{"Literal":{"Value":"'Rất rộng (>10m)'"}}],[{"Literal":{"Value":"'Tiêu chuẩn (5m)'"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Fact_Listings = m
 		mode: import

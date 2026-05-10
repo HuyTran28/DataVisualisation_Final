@@ -247,20 +247,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "2aa900ffbaa3dbda2a7f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Số tin đăng"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

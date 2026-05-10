@@ -125,5 +125,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "508419bf17c5cd2eaabb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Loại hình BĐS"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

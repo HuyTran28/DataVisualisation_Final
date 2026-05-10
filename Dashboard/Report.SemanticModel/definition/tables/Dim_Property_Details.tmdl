@@ -50,6 +50,8 @@ table Dim_Property_Details
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Dim_Property_Details","TableItemName":"Pháp lý Chuẩn hóa (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
 	column Nhom_Loai_Tin = ```
 			
 			IF(
@@ -60,6 +62,42 @@ table Dim_Property_Details
 			```
 		lineageTag: 496a91d8-ce89-4635-9eaa-546492517c1f
 		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pháp lý Chuẩn hóa (groups)' =
+			SWITCH(
+				TRUE,
+				ISBLANK('Dim_Property_Details'[Pháp lý Chuẩn hóa]),
+				"(Blank)",
+				'Dim_Property_Details'[Pháp lý Chuẩn hóa] IN {"Chưa xác định",
+					"Hợp đồng mua bán"},
+				"Chưa xác định & Hợp đồng mua bán",
+				'Dim_Property_Details'[Pháp lý Chuẩn hóa] IN {"Sổ hồng/Sổ đỏ"},
+				"Sổ hồng/Sổ đỏ",
+				'Dim_Property_Details'[Pháp lý Chuẩn hóa]
+			)
+		lineageTag: 95d351d7-f438-467c-83c4-a9ceb6143e20
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Dim_Property_Details"
+				          }
+				        },
+				        "Property": "Pháp lý Chuẩn hóa"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"Dim_Property_Details"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Pháp lý Chuẩn hóa"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Chưa xác định & Hợp đồng mua bán","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Pháp lý Chuẩn hóa"}}],"Values":[[{"Literal":{"Value":"'Chưa xác định'"}}],[{"Literal":{"Value":"'Hợp đồng mua bán'"}}]]}}},{"DisplayName":"Sổ hồng/Sổ đỏ","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Pháp lý Chuẩn hóa"}}],"Values":[[{"Literal":{"Value":"'Sổ hồng/Sổ đỏ'"}}]]}}}]}
 
 		annotation SummarizationSetBy = Automatic
 
