@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "0a4d1f52b588c8ce9f02",
   "position": {
     "x": 688.57142857142867,
     "y": 461.42857142857144,
-    "z": 6003,
+    "z": 7000,
     "height": 241.42857142857144,
     "width": 202.85714285714286,
-    "tabOrder": 6003
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "pieChart",
@@ -96,51 +96,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "44956ca06724afb41c66",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "efbe21c84b1e30c6bbb5",
-        "field": {
-          "GroupRef": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Property_Details"
-              }
-            },
-            "Property": "Pháp lý Chuẩn hóa (groups)",
-            "GroupedColumns": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Property_Details"
-                    }
-                  },
-                  "Property": "Pháp lý Chuẩn hóa"
-                }
-              }
-            ]
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "ed73b8cb9039c49505bb",
         "field": {
