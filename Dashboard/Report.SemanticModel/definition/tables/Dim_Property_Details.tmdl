@@ -50,6 +50,19 @@ table Dim_Property_Details
 
 		annotation SummarizationSetBy = Automatic
 
+	column Nhom_Loai_Tin = ```
+			
+			IF(
+			    'Dim_Property_Details'[Loại tin] = "Tin thường", 
+			    "Tin thường", 
+			    "Tin VIP"
+			)
+			```
+		lineageTag: 496a91d8-ce89-4635-9eaa-546492517c1f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dim_Property_Details = m
 		mode: import
 		source =

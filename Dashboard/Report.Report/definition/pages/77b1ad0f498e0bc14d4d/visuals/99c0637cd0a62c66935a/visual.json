@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "99c0637cd0a62c66935a",
+  "position": {
+    "x": 407,
+    "y": 20,
+    "z": 1000,
+    "height": 340,
+    "width": 855,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Features"
+                    }
+                  },
+                  "Property": "Có dấu hiệu bán gấp"
+                }
+              },
+              "queryRef": "Dim_Features.Có dấu hiệu bán gấp",
+              "nativeQueryRef": "Có dấu hiệu bán gấp"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Property_Details"
+                        }
+                      },
+                      "Property": "Nhom_Loai_Tin"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Dim_Property_Details.Nhom_Loai_Tin)",
+              "nativeQueryRef": "Nhom_Loai_Tin"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_Listings"
+                        }
+                      },
+                      "Property": "So_Ngay_Hien_Thi"
+                    }
+                  },
+                  "Function": 6
+                }
+              },
+              "queryRef": "Sum(Fact_Listings.So_Ngay_Hien_Thi)",
+              "nativeQueryRef": "Median of So_Ngay_Hien_Thi",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Listings"
+                    }
+                  },
+                  "Property": "Đơn giá"
+                }
+              },
+              "queryRef": "Fact_Listings.Đơn giá",
+              "nativeQueryRef": "Đơn giá"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

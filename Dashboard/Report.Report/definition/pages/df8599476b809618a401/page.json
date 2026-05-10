@@ -1,8 +1,15 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "df8599476b809618a401",
   "displayName": "Tab2",
   "displayOption": "FitToPage",
   "height": 720,
-  "width": 1280
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "4f7825e18c87a1787cbb",
+      "target": "86eb9ae4d352212b13cc",
+      "type": "NoFilter"
+    }
+  ]
 }

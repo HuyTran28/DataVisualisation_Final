@@ -1,2 +1,6673 @@
 cultureInfo en-US
 
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dim_location": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim location": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dim_Location": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "location": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim placement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim scene": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim venue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "placement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "scene": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "venue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "dim address": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim place": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_location.location_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "ConceptualProperty": "Location_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "location S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Location_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "locality s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "placement s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "scene s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "venue s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "address s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "place s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "position s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "setting s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "site s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "spot s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_location.thành_phố": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "ConceptualProperty": "Thành phố"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "thành phố": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "state or province": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_location.quận": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "ConceptualProperty": "Quận"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quận": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "state or province": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_location.phường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "ConceptualProperty": "Phường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "phường": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "state or province": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_location.đường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "ConceptualProperty": "Đường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "đường": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_location.địa_chỉ": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "ConceptualProperty": "Địa chỉ"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "địa chỉ": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_location.thành_phố_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "Hierarchy": "Thành phố Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "thành phố hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "thành phố ladder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "thành phố grading": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "thành phố order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "thành phố pyramid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_location.thành_phố_hierarchy.thành_phố": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "Hierarchy": "Thành phố Hierarchy",
+			          "HierarchyLevel": "Thành phố"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "thành phố": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_location.thành_phố_hierarchy.quận": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "Hierarchy": "Thành phố Hierarchy",
+			          "HierarchyLevel": "Quận"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quận": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_location.thành_phố_hierarchy.phường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Location",
+			          "Hierarchy": "Thành phố Hierarchy",
+			          "HierarchyLevel": "Phường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "phường": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Location"
+			    },
+			    "dim_property_detail": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim property detail": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dim_Property_Details": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "detail": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "property detail": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim property aspect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "dim property element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "dim property fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "property aspect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "property element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "property fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dim property part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "dim property feature": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "dim property point": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "dim property factor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "dim_property_detail.status_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details",
+			          "ConceptualProperty": "Status_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Status_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "category s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "importance s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prestige s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prominence s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "condition s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "grade s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "level s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "position s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "rank s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_property_detail.hướng_nhà": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details",
+			          "ConceptualProperty": "Hướng nhà"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hướng nhà": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_property_detail.nội_thất": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details",
+			          "ConceptualProperty": "Nội thất"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nội thất": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_property_detail.pháp_lý": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details",
+			          "ConceptualProperty": "Pháp lý"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pháp lý": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_property_detail.loại_tin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details",
+			          "ConceptualProperty": "Loại tin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "loại tin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "loại container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "loại box": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loại caddie": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loại caddy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "loại flask": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "loại canister": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "loại can": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "loại cylinder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ]
+			    },
+			    "dim_property_detail.pháp_lý_chuẩn_hóa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Property_Details",
+			          "ConceptualProperty": "Pháp lý Chuẩn hóa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pháp lý chuẩn hóa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim feature": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dim_Features": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "feature": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim eye": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim nose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim mouth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim ear": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dim chin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "eye": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "nose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "mouth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ear": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "chin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.feature_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Feature_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "feature S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Feature_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "feature s solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s recipe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s resolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.có_thang_máy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Có thang máy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "có thang máy": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.gần_công_viên": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Gần công viên"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gần công viên": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.có_dấu_hiệu_bán_gấp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Có dấu hiệu bán gấp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "có dấu hiệu bán gấp": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.có_từ_khóa_marketing": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Có từ khóa marketing"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "có từ khóa marketing": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "có từ khóa promotion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "có từ khóa presentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "có từ khóa advertising": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "có từ khóa selling": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "có từ khóa publicizing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.có_từ_khóa_dòng_tiền": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Có từ khóa dòng tiền"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "có từ khóa dòng tiền": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_feature.có_dấu_hiệu_pháp_lý_yếu": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Features",
+			          "ConceptualProperty": "Có dấu hiệu pháp lý yếu"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "có dấu hiệu pháp lý yếu": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim product": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dim_Product": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dim artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "dim item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "url"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "url": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "website": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "site": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "web address": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.571
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.product_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "product_id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "product id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "product_id": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "product identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "product identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "product identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "product credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "merchandise": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "produce": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "artifact id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "item id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "dim_product.product_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "Product_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "product S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Product_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "artifact s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "item s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "merchandise s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "produce s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "product s solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s recipe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s resolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.bất_động_sản": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "Bất động sản"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "bất động sản": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.mô_tả": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "Mô tả"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mô tả": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.độ_dài_mô_tả": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "Độ dài mô tả"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "độ dài mô tả": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.số_dấu_chấm_than": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "Số dấu chấm than"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "số dấu chấm than": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_product.tỷ_lệ_chữ_in_hoa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Product",
+			          "ConceptualProperty": "Tỷ lệ chữ in hoa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tỷ lệ chữ in hoa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fact listing": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Fact_Listings": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "listing": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "fact citation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fact entry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "citation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "entry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fact item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fact list": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "fact catalogue": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "fact catalog": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "fact inventory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.expiry_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "expiry_date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expiry date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expiry_date": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "expiry moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "expiry period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.expiry_date.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "expiry_date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expiry date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.expiry_date.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "expiry_date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expiry year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expiry date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expiry date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "expiry yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "expiry moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "expiry period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.expiry_date.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "expiry_date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expiry quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expiry date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expiry date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.846
+			          }
+			        },
+			        {
+			          "expiry qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "expiry moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "expiry period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.expiry_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "expiry_date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expiry month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expiry date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expiry date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "expiry mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "expiry moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "expiry period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.expiry_date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "expiry_date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expiry day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "expiry date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date day": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "expiry moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "expiry period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.location_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Location_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "location S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Location_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "locality s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "placement s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "scene s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "venue s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "address s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "place s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "position s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "setting s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "site s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "spot s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.feature_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Feature_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "feature S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Feature_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "feature s solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s recipe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "feature s resolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.status_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Status_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "status S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Status_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "category s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "importance s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prestige s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prominence s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "condition s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "grade s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "level s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "position s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "rank s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.product_S_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Product_SKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "product S key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Product_SKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "S key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "artifact s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "item s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "merchandise s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "produce s key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "product s solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s recipe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s interpretation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "product s resolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.khoảng_giá": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Khoảng giá"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "khoảng giá": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.diện_tích": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Diện tích"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diện tích": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.mặt_tiền": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Mặt tiền"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mặt tiền": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.đường_vào": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Đường vào"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "đường vào": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.số_phòng_ngủ": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Số phòng ngủ"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "số phòng ngủ": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.số_phòng_tắm_vệ_sinh": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Số phòng tắm, vệ sinh"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "số phòng tắm, vệ sinh": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.số_tầng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Số tầng"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "số tầng": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.biến_động_giá": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Biến động giá"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "biến động giá": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.ngày_đăng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Ngày đăng"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngày đăng": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.ngày_đăng.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "Ngày đăng",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngày đăng date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.ngày_đăng.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "Ngày đăng",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngày đăng year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ngày đăng yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.ngày_đăng.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "Ngày đăng",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngày đăng quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ngày đăng qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.846
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.ngày_đăng.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "Ngày đăng",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngày đăng month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ngày đăng mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.ngày_đăng.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "VariationSource": "Ngày đăng",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngày đăng day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_listing.đơn_giá": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Đơn giá"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "đơn giá": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.phân_loại_đường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Phân loại Đường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "phân loại đường": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.loại_mặt_tiền": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Loại Mặt tiền"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "loại mặt tiền": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.xu_hướng_giá": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Xu hướng giá"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "xu hướng giá": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.loại_hình_BĐ": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Loại hình BĐS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "loại hình BĐ": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.is_overcrowded": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Is_Overcrowded"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is overcrowded": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Is_Overcrowded": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.is_fire_risk": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Is_Fire_Risk"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is fire risk": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Is_Fire_Risk": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "risk": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "fire risk": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is fire danger": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is fire jeopardy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "fire danger": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fire jeopardy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "is fire peril": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is fire hazard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is fire menace": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is fire threat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "danger": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "jeopardy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.giá_bán_tỷ_đồng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Giá bán (tỷ đồng)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "giá bán (tỷ đồng)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "giá bán": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.khoảng_giá_bán_50_trieu": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Khoảng giá bán 50 trieu"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "khoảng giá bán 50 trieu": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.số_tin_đăng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Số tin đăng"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "số tin đăng": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.điểm_đỉnh": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Điểm đỉnh"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "điểm đỉnh": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.vùng_giá_có_nhiều_tin_nhất": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Vùng giá có nhiều tin nhất"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vùng giá có nhiều tin nhất": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.ngưỡng_rẻ_bất_thường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Ngưỡng rẻ bất thường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ngưỡng rẻ bất thường": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.số_tin_rẻ_bất_thường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Số tin rẻ bất thường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "số tin rẻ bất thường": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.tin_rẻ_bất_thường": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "% tin rẻ bất thường"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% tin rẻ bất thường": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage tin rẻ bất thường": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "pct tin rẻ bất thường": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "Tỷ lệ tin đăng rẻ bất thường": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.khoảng_đơn_giá_m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Khoảng đơn giá/m²"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "khoảng đơn giá/m²": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "khoảng đơn giá": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "khoảng đơn giá m²": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "m²": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.tỷ_lệ_sâu_rộng": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Tỷ lệ sâu/rộng"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tỷ lệ sâu/rộng": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tỷ lệ sâu": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tỷ lệ sâu rộng": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rộng": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.nhóm_hình_dáng_thửa_đất": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Nhóm hình dáng thửa đất"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nhóm hình dáng thửa đất": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.month": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_months"
+			        }
+			      ]
+			    },
+			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.quarter": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_quarters"
+			        }
+			      ]
+			    },
+			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.year": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_years"
+			        }
+			      ]
+			    },
+			    "fact_listing_ngày_đăng_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăngs_have_ngày_đăng_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "fact_listing_expiry_date_date_hierarchy_has_fact_listing_expiry_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.expiry_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.expiry_date.day": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.expiry_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.expiry_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "expiry_date_hierarchies_have_expiry_days"
+			        }
+			      ]
+			    },
+			    "fact_listing_expiry_date_date_hierarchy_has_fact_listing_expiry_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.expiry_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.expiry_date.month": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.expiry_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.expiry_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "expiry_date_hierarchies_have_expiry_months"
+			        }
+			      ]
+			    },
+			    "fact_listing_expiry_date_date_hierarchy_has_fact_listing_expiry_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.expiry_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.expiry_date.quarter": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.expiry_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.expiry_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "expiry_date_hierarchies_have_expiry_quarters"
+			        }
+			      ]
+			    },
+			    "fact_listing_expiry_date_date_hierarchy_has_fact_listing_expiry_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.expiry_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.expiry_date.year": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.expiry_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.expiry_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "expiry_date_hierarchies_have_expiry_years"
+			        }
+			      ]
+			    },
+			    "fact_listing_expiry_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.expiry_date": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date"
+			          }
+			        },
+			        "fact_listing.expiry_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.expiry_date"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.expiry_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "expiry_dates_have_expiry_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "dim_location_thành_phố_hierarchy_quận_has_dim_location_thành_phố_hierarchy_phường": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location.thành_phố_hierarchy.quận": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.quận"
+			          }
+			        },
+			        "dim_location.thành_phố_hierarchy.phường": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.phường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.phường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "quậns_have_phườngs"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy.phường"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "phườngs_have_quậns"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy.phường"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "phườngs_are_in_quậns"
+			        }
+			      ]
+			    },
+			    "dim_location_thành_phố_hierarchy_thành_phố_has_dim_location_thành_phố_hierarchy_quận": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location.thành_phố_hierarchy.thành_phố": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.thành_phố"
+			          }
+			        },
+			        "dim_location.thành_phố_hierarchy.quận": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.quận"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy.thành_phố"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "thành_phố_have_quậns"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.thành_phố"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "quậns_have_thành_phố"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.thành_phố"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "quậns_are_in_thành_phố"
+			        }
+			      ]
+			    },
+			    "dim_location_thành_phố_hierarchy_has_phường": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location.thành_phố_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy"
+			          }
+			        },
+			        "dim_location.thành_phố_hierarchy.phường": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.phường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.phường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "thành_phố_hierarchies_have_phườngs"
+			        }
+			      ]
+			    },
+			    "dim_location_thành_phố_hierarchy_has_quận": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location.thành_phố_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy"
+			          }
+			        },
+			        "dim_location.thành_phố_hierarchy.quận": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.quận"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.quận"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "thành_phố_hierarchies_have_quậns"
+			        }
+			      ]
+			    },
+			    "dim_location_thành_phố_hierarchy_has_thành_phố": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location.thành_phố_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy"
+			          }
+			        },
+			        "dim_location.thành_phố_hierarchy.thành_phố": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy.thành_phố"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location.thành_phố_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy.thành_phố"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "thành_phố_hierarchies_have_thành_phố"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_dim_product": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "dim_product"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_dim_products"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "fact_listing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_dim_feature": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "dim_feature"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_dim_features"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "fact_listing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_dim_property_detail": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_dim_property_details"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "fact_listing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_dim_location": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "dim_location"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_dim_locations"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "fact_listing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_nhóm_hình_dáng_thửa_đất": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.nhóm_hình_dáng_thửa_đất": {
+			          "Target": {
+			            "Entity": "fact_listing.nhóm_hình_dáng_thửa_đất"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.nhóm_hình_dáng_thửa_đất"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_nhóm_hình_dáng_thửa_đấts"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_tỷ_lệ_sâu_rộng": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.tỷ_lệ_sâu_rộng": {
+			          "Target": {
+			            "Entity": "fact_listing.tỷ_lệ_sâu_rộng"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.tỷ_lệ_sâu_rộng"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_tỷ_lệ_sâu_rộngs"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_khoảng_đơn_giá_m": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.khoảng_đơn_giá_m": {
+			          "Target": {
+			            "Entity": "fact_listing.khoảng_đơn_giá_m"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.khoảng_đơn_giá_m"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_khoảng_đơn_giá_m"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_tin_rẻ_bất_thường": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.tin_rẻ_bất_thường": {
+			          "Target": {
+			            "Entity": "fact_listing.tin_rẻ_bất_thường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.tin_rẻ_bất_thường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have__tin_rẻ_bất_thường"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_số_tin_rẻ_bất_thường": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.số_tin_rẻ_bất_thường": {
+			          "Target": {
+			            "Entity": "fact_listing.số_tin_rẻ_bất_thường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.số_tin_rẻ_bất_thường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_số_tin_rẻ_bất_thường"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_ngưỡng_rẻ_bất_thường": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.ngưỡng_rẻ_bất_thường": {
+			          "Target": {
+			            "Entity": "fact_listing.ngưỡng_rẻ_bất_thường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngưỡng_rẻ_bất_thường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_ngưỡng_rẻ_bất_thường"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_vùng_giá_có_nhiều_tin_nhất": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.vùng_giá_có_nhiều_tin_nhất": {
+			          "Target": {
+			            "Entity": "fact_listing.vùng_giá_có_nhiều_tin_nhất"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.vùng_giá_có_nhiều_tin_nhất"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_vùng_giá_có_nhiều_tin_nhất"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_điểm_đỉnh": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.điểm_đỉnh": {
+			          "Target": {
+			            "Entity": "fact_listing.điểm_đỉnh"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.điểm_đỉnh"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_điểm_đỉnh"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_số_tin_đăng": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.số_tin_đăng": {
+			          "Target": {
+			            "Entity": "fact_listing.số_tin_đăng"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.số_tin_đăng"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_số_tin_đăng"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_khoảng_giá_bán_50_trieu": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.khoảng_giá_bán_50_trieu": {
+			          "Target": {
+			            "Entity": "fact_listing.khoảng_giá_bán_50_trieu"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.khoảng_giá_bán_50_trieu"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_khoảng_giá_bán_50_trieus"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_giá_bán_tỷ_đồng": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.giá_bán_tỷ_đồng": {
+			          "Target": {
+			            "Entity": "fact_listing.giá_bán_tỷ_đồng"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.giá_bán_tỷ_đồng"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_giá_bán_tỷ_đồng"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_is_fire_risk": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.is_fire_risk": {
+			          "Target": {
+			            "Entity": "fact_listing.is_fire_risk"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.is_fire_risk"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_is_fire_risks"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_is_overcrowded": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.is_overcrowded": {
+			          "Target": {
+			            "Entity": "fact_listing.is_overcrowded"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.is_overcrowded"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_is_overcrowded"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_loại_hình_BĐ": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.loại_hình_BĐ": {
+			          "Target": {
+			            "Entity": "fact_listing.loại_hình_BĐ"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.loại_hình_BĐ"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_loại_hình_BĐ"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_xu_hướng_giá": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.xu_hướng_giá": {
+			          "Target": {
+			            "Entity": "fact_listing.xu_hướng_giá"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.xu_hướng_giá"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_xu_hướng_giá"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_loại_mặt_tiền": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.loại_mặt_tiền": {
+			          "Target": {
+			            "Entity": "fact_listing.loại_mặt_tiền"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.loại_mặt_tiền"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_loại_mặt_tiềns"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_phân_loại_đường": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.phân_loại_đường": {
+			          "Target": {
+			            "Entity": "fact_listing.phân_loại_đường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.phân_loại_đường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_phân_loại_đườngs"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_đơn_giá": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.đơn_giá": {
+			          "Target": {
+			            "Entity": "fact_listing.đơn_giá"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.đơn_giá"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_đơn_giá"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_ngày_đăng": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.ngày_đăng": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_ngày_đăngs"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_biến_động_giá": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.biến_động_giá": {
+			          "Target": {
+			            "Entity": "fact_listing.biến_động_giá"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.biến_động_giá"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_biến_động_giá"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_số_tầng": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.số_tầng": {
+			          "Target": {
+			            "Entity": "fact_listing.số_tầng"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.số_tầng"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_số_tầngs"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_số_phòng_tắm_vệ_sinh": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.số_phòng_tắm_vệ_sinh": {
+			          "Target": {
+			            "Entity": "fact_listing.số_phòng_tắm_vệ_sinh"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.số_phòng_tắm_vệ_sinh"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_số_phòng_tắm_vệ_sinh"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_số_phòng_ngủ": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.số_phòng_ngủ": {
+			          "Target": {
+			            "Entity": "fact_listing.số_phòng_ngủ"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.số_phòng_ngủ"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_số_phòng_ngủ"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_đường_vào": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.đường_vào": {
+			          "Target": {
+			            "Entity": "fact_listing.đường_vào"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.đường_vào"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_đường_vàos"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_mặt_tiền": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.mặt_tiền": {
+			          "Target": {
+			            "Entity": "fact_listing.mặt_tiền"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.mặt_tiền"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_mặt_tiềns"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_diện_tích": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.diện_tích": {
+			          "Target": {
+			            "Entity": "fact_listing.diện_tích"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.diện_tích"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_diện_tíches"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_khoảng_giá": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.khoảng_giá": {
+			          "Target": {
+			            "Entity": "fact_listing.khoảng_giá"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.khoảng_giá"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_khoảng_giá"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_expiry_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.expiry_date": {
+			          "Target": {
+			            "Entity": "fact_listing.expiry_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.expiry_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_expiry_dates"
+			        }
+			      ]
+			    },
+			    "dim_product_has_tỷ_lệ_chữ_in_hoa": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.tỷ_lệ_chữ_in_hoa": {
+			          "Target": {
+			            "Entity": "dim_product.tỷ_lệ_chữ_in_hoa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.tỷ_lệ_chữ_in_hoa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_tỷ_lệ_chữ_in_hoa"
+			        }
+			      ]
+			    },
+			    "dim_product_has_số_dấu_chấm_than": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.số_dấu_chấm_than": {
+			          "Target": {
+			            "Entity": "dim_product.số_dấu_chấm_than"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.số_dấu_chấm_than"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_số_dấu_chấm_than"
+			        }
+			      ]
+			    },
+			    "dim_product_has_độ_dài_mô_tả": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.độ_dài_mô_tả": {
+			          "Target": {
+			            "Entity": "dim_product.độ_dài_mô_tả"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.độ_dài_mô_tả"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_độ_dài_mô_tả"
+			        }
+			      ]
+			    },
+			    "dim_product_has_mô_tả": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.mô_tả": {
+			          "Target": {
+			            "Entity": "dim_product.mô_tả"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.mô_tả"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_mô_tả"
+			        }
+			      ]
+			    },
+			    "dim_product_has_bất_động_sản": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.bất_động_sản": {
+			          "Target": {
+			            "Entity": "dim_product.bất_động_sản"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.bất_động_sản"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_bất_động_sảns"
+			        }
+			      ]
+			    },
+			    "dim_product_has_product_S_key": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.product_S_key": {
+			          "Target": {
+			            "Entity": "dim_product.product_S_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.product_S_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_product_S_keys"
+			        }
+			      ]
+			    },
+			    "dim_product_has_product_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.product_id": {
+			          "Target": {
+			            "Entity": "dim_product.product_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.product_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_product_ids"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Name": {
+			              "Role": "dim_product.product_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "product_ids_are_names_IDs_of_dim_products"
+			        }
+			      ]
+			    },
+			    "dim_product_has_url": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.url": {
+			          "Target": {
+			            "Entity": "dim_product.url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_urls"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_có_dấu_hiệu_pháp_lý_yếu": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.có_dấu_hiệu_pháp_lý_yếu": {
+			          "Target": {
+			            "Entity": "dim_feature.có_dấu_hiệu_pháp_lý_yếu"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.có_dấu_hiệu_pháp_lý_yếu"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_có_dấu_hiệu_pháp_lý_yếus"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_có_từ_khóa_dòng_tiền": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.có_từ_khóa_dòng_tiền": {
+			          "Target": {
+			            "Entity": "dim_feature.có_từ_khóa_dòng_tiền"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.có_từ_khóa_dòng_tiền"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_có_từ_khóa_dòng_tiềns"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_có_từ_khóa_marketing": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.có_từ_khóa_marketing": {
+			          "Target": {
+			            "Entity": "dim_feature.có_từ_khóa_marketing"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.có_từ_khóa_marketing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_có_từ_khóa_marketing"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_có_dấu_hiệu_bán_gấp": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.có_dấu_hiệu_bán_gấp": {
+			          "Target": {
+			            "Entity": "dim_feature.có_dấu_hiệu_bán_gấp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.có_dấu_hiệu_bán_gấp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_có_dấu_hiệu_bán_gấps"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_gần_công_viên": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.gần_công_viên": {
+			          "Target": {
+			            "Entity": "dim_feature.gần_công_viên"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.gần_công_viên"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_gần_công_viêns"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_có_thang_máy": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.có_thang_máy": {
+			          "Target": {
+			            "Entity": "dim_feature.có_thang_máy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.có_thang_máy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_có_thang_máys"
+			        }
+			      ]
+			    },
+			    "dim_feature_has_feature_S_key": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Features"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_feature": {
+			          "Target": {
+			            "Entity": "dim_feature"
+			          }
+			        },
+			        "dim_feature.feature_S_key": {
+			          "Target": {
+			            "Entity": "dim_feature.feature_S_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_feature"
+			            },
+			            "Object": {
+			              "Role": "dim_feature.feature_S_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_features_have_feature_S_keys"
+			        }
+			      ]
+			    },
+			    "dim_property_detail_has_pháp_lý_chuẩn_hóa": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Property_Details"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        },
+			        "dim_property_detail.pháp_lý_chuẩn_hóa": {
+			          "Target": {
+			            "Entity": "dim_property_detail.pháp_lý_chuẩn_hóa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail.pháp_lý_chuẩn_hóa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_pháp_lý_chuẩn_hóas"
+			        }
+			      ]
+			    },
+			    "dim_property_detail_has_loại_tin": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Property_Details"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        },
+			        "dim_property_detail.loại_tin": {
+			          "Target": {
+			            "Entity": "dim_property_detail.loại_tin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail.loại_tin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_loại_tins"
+			        }
+			      ]
+			    },
+			    "dim_property_detail_has_pháp_lý": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Property_Details"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        },
+			        "dim_property_detail.pháp_lý": {
+			          "Target": {
+			            "Entity": "dim_property_detail.pháp_lý"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail.pháp_lý"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_pháp_lý"
+			        }
+			      ]
+			    },
+			    "dim_property_detail_has_nội_thất": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Property_Details"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        },
+			        "dim_property_detail.nội_thất": {
+			          "Target": {
+			            "Entity": "dim_property_detail.nội_thất"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail.nội_thất"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_nội_thấts"
+			        }
+			      ]
+			    },
+			    "dim_property_detail_has_hướng_nhà": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Property_Details"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        },
+			        "dim_property_detail.hướng_nhà": {
+			          "Target": {
+			            "Entity": "dim_property_detail.hướng_nhà"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail.hướng_nhà"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_hướng_nhà"
+			        }
+			      ]
+			    },
+			    "dim_property_detail_has_status_S_key": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Property_Details"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_property_detail": {
+			          "Target": {
+			            "Entity": "dim_property_detail"
+			          }
+			        },
+			        "dim_property_detail.status_S_key": {
+			          "Target": {
+			            "Entity": "dim_property_detail.status_S_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_property_detail"
+			            },
+			            "Object": {
+			              "Role": "dim_property_detail.status_S_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_property_details_have_status_S_keys"
+			        }
+			      ]
+			    },
+			    "dim_location_has_thành_phố_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.thành_phố_hierarchy": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_thành_phố_hierarchies"
+			        }
+			      ]
+			    },
+			    "dim_location_has_địa_chỉ": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.địa_chỉ": {
+			          "Target": {
+			            "Entity": "dim_location.địa_chỉ"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.địa_chỉ"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_địa_chỉ"
+			        }
+			      ]
+			    },
+			    "dim_location_has_đường": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.đường": {
+			          "Target": {
+			            "Entity": "dim_location.đường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.đường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_đườngs"
+			        }
+			      ]
+			    },
+			    "dim_location_has_phường": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.phường": {
+			          "Target": {
+			            "Entity": "dim_location.phường"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.phường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_phườngs"
+			        }
+			      ]
+			    },
+			    "dim_location_has_quận": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.quận": {
+			          "Target": {
+			            "Entity": "dim_location.quận"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.quận"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_quậns"
+			        }
+			      ]
+			    },
+			    "dim_location_has_thành_phố": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.thành_phố": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.thành_phố"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_thành_phố"
+			        }
+			      ]
+			    },
+			    "dim_location_has_location_S_key": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.location_S_key": {
+			          "Target": {
+			            "Entity": "dim_location.location_S_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Object": {
+			              "Role": "dim_location.location_S_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_have_location_S_keys"
+			        }
+			      ]
+			    },
+			    "fact_listing_in_dim_location": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_location"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_location"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_are_in_dim_locations"
+			        }
+			      ]
+			    },
+			    "dim_location_in_phường": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.phường": {
+			          "Target": {
+			            "Entity": "dim_location.phường"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_location.phường"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_location.phường"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_are_in_phườngs"
+			        }
+			      ]
+			    },
+			    "dim_location_in_quận": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.quận": {
+			          "Target": {
+			            "Entity": "dim_location.quận"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_location.quận"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_location.quận"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_are_in_quậns"
+			        }
+			      ]
+			    },
+			    "dim_location_in_thành_phố": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Location"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_location": {
+			          "Target": {
+			            "Entity": "dim_location"
+			          }
+			        },
+			        "dim_location.thành_phố": {
+			          "Target": {
+			            "Entity": "dim_location.thành_phố"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_location.thành_phố"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_location"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_location.thành_phố"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_locations_are_in_thành_phố"
+			        }
+			      ]
+			    },
+			    "fact_listing_is_overcrowded": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.is_overcrowded": {
+			          "Target": {
+			            "Entity": "fact_listing.is_overcrowded"
+			          }
+			        }
+			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "fact_listing.is_overcrowded"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Adjectives": [
+			              {
+			                "overcrowded": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "some_fact_listing_are_overcrowded_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.day": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_days"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+
