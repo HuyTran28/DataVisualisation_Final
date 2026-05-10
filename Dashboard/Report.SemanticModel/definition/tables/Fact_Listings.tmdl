@@ -134,14 +134,12 @@ table Fact_Listings
 
 	column 'Khoảng giá'
 		dataType: decimal
-		formatString: #,0\ "₫";-#,0\ "₫";#,0\ "₫"
+		formatString: #,0
 		lineageTag: 10ba38ee-e25e-4078-bc51-e723929c7cb8
 		summarizeBy: sum
 		sourceColumn: Khoảng giá
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	column 'Diện tích'
 		dataType: double
@@ -226,6 +224,17 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Đơn giá'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
+		summarizeBy: sum
+		sourceColumn: Đơn giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng đơn giá/m²","ObjectType":4},"LinkType":"UsedInGroup"}]
+
 	column 'Phân loại Đường'
 		dataType: string
 		lineageTag: d236c1f2-aece-4a3f-96ea-0a3d05a6148c
@@ -275,15 +284,13 @@ table Fact_Listings
 		annotation SummarizationSetBy = Automatic
 
 	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
-		formatString: #,0.00\ "₫";-#,0.00\ "₫";#,0.00\ "₫"
+		formatString: #,0.00
 		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
 		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán 50 trieu","ObjectType":4},"LinkType":"UsedInGroup"}]
-
-		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	column 'Khoảng giá bán 50 trieu' =
 			IF(
@@ -295,7 +302,7 @@ table Fact_Listings
 					ROUNDUP('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05
 				)
 			)
-		formatString: #,0.00\ "₫";-#,0.00\ "₫";#,0.00\ "₫"
+		formatString: #,0.00
 		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
 		summarizeBy: none
 
@@ -325,8 +332,6 @@ table Fact_Listings
 		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.05}}}}
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	column 'Tỷ lệ sâu/rộng' = ```
 			
@@ -407,16 +412,42 @@ table Fact_Listings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Đơn giá'
-		dataType: decimal
-		formatString: #,0.00\ "₫";-#,0.00\ "₫";#,0.00\ "₫"
-		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
-		summarizeBy: sum
-		sourceColumn: Đơn giá
+	column 'Khoảng đơn giá/m²' =
+			IF(
+				ISBLANK('Fact_Listings'[Đơn giá]),
+				BLANK(),
+				INT('Fact_Listings'[Đơn giá])
+			)
+		formatString: #,0.00
+		lineageTag: d1307432-4440-42a8-8972-92439a23c6bc
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Đơn giá"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 1.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":1.0}}}}
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"vi-VN"}
 
 	partition Fact_Listings = m
 		mode: import
