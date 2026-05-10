@@ -51,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.Giá bán (tỷ đồng))",
-              "nativeQueryRef": "Sum of Giá bán (tỷ đồng)"
+              "nativeQueryRef": "Tổng Giá bán (tỷ đồng)",
+              "displayName": "Tổng Giá bán (tỷ đồng)"
             },
             {
               "field": {
@@ -131,7 +132,8 @@
                 }
               },
               "queryRef": "Count(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey1"
+              "nativeQueryRef": "Số lượng tin",
+              "displayName": "Số lượng tin"
             }
           ]
         }
