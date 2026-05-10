@@ -3338,22 +3338,6 @@ cultureInfo en-US
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "fact_listing.đơn_giá": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_Listings",
-			          "ConceptualProperty": "Đơn giá"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "đơn giá": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_listing.phân_loại_đường": {
 			      "Definition": {
 			        "Binding": {
@@ -3736,40 +3720,6 @@ cultureInfo en-US
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "fact_listing.khoảng_đơn_giá_m": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_Listings",
-			          "ConceptualProperty": "Khoảng đơn giá/m²"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "khoảng đơn giá/m²": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "khoảng đơn giá": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "khoảng đơn giá m²": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "m²": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
