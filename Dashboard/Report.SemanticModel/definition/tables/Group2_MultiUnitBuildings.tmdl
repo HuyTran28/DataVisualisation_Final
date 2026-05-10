@@ -1,0 +1,249 @@
+table Group2_MultiUnitBuildings
+	lineageTag: f5e4d3c2-b1a0-98f7-e6d5-c4b3a2918271
+
+	column Is_Fire_Risk = IF(AND([floors] > 5, [road_width] < 3), "High Risk", "Safe")
+		dataType: string
+		lineageTag: 22222222-3333-4444-5555-7777777777777
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Risk_Level = IF([road_width] < 2, "CRITICAL", IF([road_width] < 3, "HIGH", IF([floors] > 7, "MEDIUM", "LOW")))
+		dataType: string
+		lineageTag: 33333333-4444-5555-6666-8888888888888
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: d918945b-1293-42f7-8c17-c94ba1136f6c
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: e383e82a-761f-4e5f-802d-b8713147dc87
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 2410701a-af40-48da-81cf-53c5c3b2163d
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 2bfc013a-8232-47b3-8ea3-597472fd8975
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column district
+		dataType: string
+		lineageTag: f6893493-bae0-4435-95bc-eb7e9c5205b7
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column ward
+		dataType: string
+		lineageTag: 3871e2a6-3aed-45e2-a02b-0cc6fdd2eece
+		summarizeBy: none
+		sourceColumn: ward
+
+		annotation SummarizationSetBy = Automatic
+
+	column street
+		dataType: string
+		lineageTag: 632343f9-b8f6-4549-b04d-6a8acbadf411
+		summarizeBy: none
+		sourceColumn: street
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_address
+		dataType: string
+		lineageTag: 74915a3d-3cd2-440c-89e2-c65a0151a2d4
+		summarizeBy: none
+		sourceColumn: full_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_total
+		dataType: string
+		lineageTag: 4653f96f-005f-404f-aa56-9028503d0b3d
+		summarizeBy: none
+		sourceColumn: price_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_per_m2
+		dataType: string
+		lineageTag: 4afa62ba-ed9b-4fd0-acf4-2608e905e807
+		summarizeBy: none
+		sourceColumn: price_per_m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: string
+		lineageTag: 49032d49-6a6a-40c1-9233-c8a0a91f50bf
+		summarizeBy: none
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column frontage
+		dataType: string
+		lineageTag: 980540ca-7c3c-41c6-bc53-ac482f90c6a0
+		summarizeBy: none
+		sourceColumn: frontage
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_width
+		dataType: string
+		lineageTag: bf731b4f-f35b-4280-ab83-cd0bc53d88f2
+		summarizeBy: none
+		sourceColumn: road_width
+
+		annotation SummarizationSetBy = Automatic
+
+	column bedrooms
+		dataType: string
+		lineageTag: 259f32a8-ab98-4049-879a-8ffa920c308e
+		summarizeBy: none
+		sourceColumn: bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column bathrooms
+		dataType: string
+		lineageTag: 73445a94-8608-4cbf-91e7-68806d1b716d
+		summarizeBy: none
+		sourceColumn: bathrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column floors
+		dataType: string
+		lineageTag: 7d0e6291-10c6-403a-8718-59c2eb34272a
+		summarizeBy: none
+		sourceColumn: floors
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: f599357b-eaa9-4d50-b3c9-cdd061b30ebf
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column interior
+		dataType: string
+		lineageTag: bb77ac18-e606-4726-8299-c9e0652afadf
+		summarizeBy: none
+		sourceColumn: interior
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_status
+		dataType: string
+		lineageTag: e222775f-859d-4258-b80b-c3551fb1ac9e
+		summarizeBy: none
+		sourceColumn: legal_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column post_rank
+		dataType: string
+		lineageTag: 494c7a26-54bb-487d-9fa9-cbfed5e12768
+		summarizeBy: none
+		sourceColumn: post_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_trend_1y
+		dataType: string
+		lineageTag: 3fe4d719-d808-49fe-a3e8-cbc2d201d76d
+		summarizeBy: none
+		sourceColumn: price_trend_1y
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_elevator
+		dataType: string
+		lineageTag: 79a302ba-3291-496c-b781-e21a93a10463
+		summarizeBy: none
+		sourceColumn: has_elevator
+
+		annotation SummarizationSetBy = Automatic
+
+	column near_park
+		dataType: string
+		lineageTag: 01931e15-7a55-4366-8167-227476c51d78
+		summarizeBy: none
+		sourceColumn: near_park
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_frontage_road
+		dataType: string
+		lineageTag: 09d60c06-63f5-473b-b05f-15b8cfbe6057
+		summarizeBy: none
+		sourceColumn: is_frontage_road
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: a162208a-d92e-4362-b8ab-61c673f40c3f
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column posted_date
+		dataType: string
+		lineageTag: 96dddad6-47c4-4409-a69f-8ad639f2228f
+		summarizeBy: none
+		sourceColumn: posted_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column expiry_date
+		dataType: string
+		lineageTag: ba39d8f8-6247-4bc6-8ec4-89de86b0262e
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column property_type
+		dataType: string
+		lineageTag: cd42a430-77fa-4e67-b0ee-140e29fe8122
+		summarizeBy: none
+		sourceColumn: property_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Group2_MultiUnitBuildings = m
+		mode: import
+		source = batdongsan_multi_unit_building
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

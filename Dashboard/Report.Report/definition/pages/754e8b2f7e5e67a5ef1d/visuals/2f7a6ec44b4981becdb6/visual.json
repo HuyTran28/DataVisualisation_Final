@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2f7a6ec44b4981becdb6",
   "position": {
-    "x": 240.98457105120968,
-    "y": 96.7216985851794,
+    "x": 241.51024305264747,
+    "y": 96.055210305030243,
     "z": 0,
-    "height": 593.44499809889737,
-    "width": 519.67421104240452,
-    "tabOrder": 0
+    "height": 622.98664969262472,
+    "width": 518.69813564716333,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -51,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.Giá bán (tỷ đồng))",
-              "nativeQueryRef": "Sum of Giá bán (tỷ đồng)"
+              "nativeQueryRef": "Tổng Giá bán (tỷ đồng)",
+              "displayName": "Tổng Giá bán (tỷ đồng)"
             },
             {
               "field": {
@@ -131,7 +132,8 @@
                 }
               },
               "queryRef": "Count(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey1"
+              "nativeQueryRef": "Số lượng tin",
+              "displayName": "Số lượng tin"
             }
           ]
         }
@@ -355,6 +357,18 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

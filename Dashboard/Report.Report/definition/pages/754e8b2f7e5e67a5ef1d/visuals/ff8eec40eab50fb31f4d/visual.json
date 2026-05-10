@@ -7,30 +7,14 @@
     "z": 4000,
     "height": 360.65718116507571,
     "width": 519.67421104240452,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_Listings"
-                    }
-                  },
-                  "Property": "Khoảng đơn giá/m²"
-                }
-              },
-              "queryRef": "Fact_Listings.Khoảng đơn giá/m²",
-              "nativeQueryRef": "Khoảng đơn giá/m²",
-              "active": true
-            }
-          ]
+          "projections": []
         },
         "Y": {
           "projections": [
@@ -104,59 +88,10 @@
             "titleFontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tahoma'"
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
-          }
-        }
-      ],
-      "xAxisReferenceLine": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "displayName": {
-              "expr": {
-                "Literal": {
-                  "Value": "'X-Axis Constant Line 1'"
-                }
-              }
-            },
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "44.2D"
-                }
-              }
-            },
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "42D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "1"
           }
         }
       ],
@@ -170,6 +105,68 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "referenceLine": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "displayName": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Max line 1'"
+                }
+              }
+            },
+            "value": {
+              "expr": {
+                "Aggregation": {
+                  "Expression": {
+                    "SelectRef": {
+                      "ExpressionName": "Fact_Listings.Số tin đăng"
+                    }
+                  },
+                  "Function": 4
+                }
+              }
+            },
+            "dataLabelShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "dataLabelVerticalPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'under'"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_Listings.Số tin đăng",
+            "id": "1"
           }
         }
       ]
@@ -197,57 +194,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9d957fc6fa57c70b7cf0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Khoảng đơn giá/m²"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "f",
-              "Entity": "Fact_Listings",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 3,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "f"
-                        }
-                      },
-                      "Property": "Khoảng đơn giá/m²"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "600L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
   }
 }

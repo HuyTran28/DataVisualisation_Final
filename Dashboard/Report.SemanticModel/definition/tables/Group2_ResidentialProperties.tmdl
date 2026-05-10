@@ -1,0 +1,257 @@
+table Group2_ResidentialProperties
+	lineageTag: a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6
+
+	column Bedroom_Density = DIVIDE([bedrooms], [area])
+		dataType: decimal
+		formatString: 0.000
+		lineageTag: 33333333-4444-5555-6666-7777777777777
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Cramped = IF(AND([area] < 40, [bedrooms] >= 3), "Cramped", "Normal")
+		dataType: string
+		lineageTag: 44444444-5555-6666-7777-8888888888888
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Interior_Type = IF(SEARCH("Cơ bản", [interior], , 0) > 0 || SEARCH("Thô", [interior], , 0) > 0, "Bare/Basic", IF(SEARCH("Đầy đủ", [interior], , 0) > 0, "Full Furniture", "Other"))
+		dataType: string
+		lineageTag: 55555555-6666-7777-8888-9999999999999
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: e98b2e6a-6ea9-4552-99cb-213d4a7d5949
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: a2bd7a1d-a3d1-4afb-b304-821a86f6538c
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 9560b5d8-dd58-447a-8243-8a7a17169cd1
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: e7d60640-ce8a-4cb2-97a6-116ca66da2d1
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column district
+		dataType: string
+		lineageTag: 6df947b5-04bb-4558-b02f-95bd439b79d7
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column ward
+		dataType: string
+		lineageTag: 06b79cc0-4c94-411d-a7c7-aee9f5e66c8e
+		summarizeBy: none
+		sourceColumn: ward
+
+		annotation SummarizationSetBy = Automatic
+
+	column street
+		dataType: string
+		lineageTag: 6993d96a-f23e-415b-a15b-c7d52f6caf6c
+		summarizeBy: none
+		sourceColumn: street
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_address
+		dataType: string
+		lineageTag: 5277db87-33f5-408c-86b7-54d0d3e70d42
+		summarizeBy: none
+		sourceColumn: full_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_total
+		dataType: string
+		lineageTag: 551c99e0-9505-454a-bd53-e770bee58c70
+		summarizeBy: none
+		sourceColumn: price_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_per_m2
+		dataType: string
+		lineageTag: 50de91e0-3b16-4abf-9232-a8015253be34
+		summarizeBy: none
+		sourceColumn: price_per_m2
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: string
+		lineageTag: 591a62ff-3709-4573-9dd4-50f03439cbdc
+		summarizeBy: none
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column frontage
+		dataType: string
+		lineageTag: 008dcf4c-50ba-4139-908e-e4ad573c0524
+		summarizeBy: none
+		sourceColumn: frontage
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_width
+		dataType: string
+		lineageTag: ac6410b7-ccf8-4c23-8ccb-eaae8d7fc16e
+		summarizeBy: none
+		sourceColumn: road_width
+
+		annotation SummarizationSetBy = Automatic
+
+	column bedrooms
+		dataType: string
+		lineageTag: 5b47cfab-0b7d-4ea8-9a8d-617c2d03ed06
+		summarizeBy: none
+		sourceColumn: bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column bathrooms
+		dataType: string
+		lineageTag: cf9e8010-8ff1-472c-bae2-9a76c5c47ff6
+		summarizeBy: none
+		sourceColumn: bathrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column floors
+		dataType: string
+		lineageTag: 6a1b13f4-bf55-421f-9a30-d852adc27f6b
+		summarizeBy: none
+		sourceColumn: floors
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: b5680b68-a2cb-4c37-8c8e-cc848eedfcb1
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column interior
+		dataType: string
+		lineageTag: 6e00e28d-5abb-41dd-a7ef-1c43d34e8428
+		summarizeBy: none
+		sourceColumn: interior
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_status
+		dataType: string
+		lineageTag: cbba17dd-e615-4a07-bfb2-f40eddbc5226
+		summarizeBy: none
+		sourceColumn: legal_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column post_rank
+		dataType: string
+		lineageTag: 5ff19480-dbfe-413d-bea7-fa70ff17d727
+		summarizeBy: none
+		sourceColumn: post_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_trend_1y
+		dataType: string
+		lineageTag: 0703036b-598f-4579-9dcd-586f74713ece
+		summarizeBy: none
+		sourceColumn: price_trend_1y
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_elevator
+		dataType: string
+		lineageTag: c40bec2c-a9c5-46a7-b7af-02c0146aabcd
+		summarizeBy: none
+		sourceColumn: has_elevator
+
+		annotation SummarizationSetBy = Automatic
+
+	column near_park
+		dataType: string
+		lineageTag: b897e024-80bf-40dc-a4c7-afcfefec5d18
+		summarizeBy: none
+		sourceColumn: near_park
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_frontage_road
+		dataType: string
+		lineageTag: 42810a6f-4dc4-461b-bd8d-1a43520aa85c
+		summarizeBy: none
+		sourceColumn: is_frontage_road
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 8cfc9794-91a6-4a09-8312-068e8ec2e622
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column posted_date
+		dataType: string
+		lineageTag: 87ae8351-3516-4dbc-8068-a46486abc1cf
+		summarizeBy: none
+		sourceColumn: posted_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column expiry_date
+		dataType: string
+		lineageTag: b3e2204e-3fa7-46a4-828b-1c21595db606
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column property_type
+		dataType: string
+		lineageTag: 3c3d462b-7018-4e4a-9e1b-1facfb4a7ca7
+		summarizeBy: none
+		sourceColumn: property_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Group2_ResidentialProperties = m
+		mode: import
+		source = Table.Combine({batdongsan_apartment, batdongsan_house})
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
