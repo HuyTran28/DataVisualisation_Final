@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ff8eec40eab50fb31f4d",
   "position": {
     "x": 760.65878209361426,
@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 360.65718116507571,
     "width": 519.67421104240452,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -111,7 +111,20 @@
           }
         }
       ],
-      "xAxisReferenceLine": [
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "referenceLine": [
         {
           "properties": {
             "show": {
@@ -124,14 +137,33 @@
             "displayName": {
               "expr": {
                 "Literal": {
-                  "Value": "'X-Axis Constant Line 1'"
+                  "Value": "'Max line 1'"
                 }
               }
             },
             "value": {
               "expr": {
+                "Aggregation": {
+                  "Expression": {
+                    "SelectRef": {
+                      "ExpressionName": "Fact_Listings.Số tin đăng"
+                    }
+                  },
+                  "Function": 4
+                }
+              }
+            },
+            "dataLabelShow": {
+              "expr": {
                 "Literal": {
-                  "Value": "44.2D"
+                  "Value": "true"
+                }
+              }
+            },
+            "dataLabelVerticalPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'under'"
                 }
               }
             },
@@ -141,35 +173,16 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 9,
-                      "Percent": -0.5
+                      "Percent": 0
                     }
                   }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "42D"
                 }
               }
             }
           },
           "selector": {
+            "metadata": "Fact_Listings.Số tin đăng",
             "id": "1"
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
           }
         }
       ]
@@ -249,7 +262,7 @@
         }
       },
       {
-        "name": "2aa900ffbaa3dbda2a7f",
+        "name": "68ae84d7fdb7d843ca11",
         "field": {
           "Measure": {
             "Expression": {
