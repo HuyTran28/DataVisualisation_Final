@@ -118,28 +118,7 @@ expression batdongsan_real_estate_cleaned = ```
 		}
 		    }),
 		    #"Removed Columns" = Table.RemoveColumns(#"Normalized Property Details",{"Đơn giá"}),
-		    #"Added Custom" = let
-		    Source = #"Removed Columns",
-		    
-		    // Tạo cột mới với logic xử lý an toàn và tối ưu hóa Cardinality
-		    AddDonGia = Table.AddColumn(Source, "Đơn giá", each 
-		        let
-		            TuSo = [Khoảng giá],
-		            MauSo = [Diện tích],
-		            
-		            // 1. Kiểm tra an toàn để tránh lỗi Infinity/Error
-		            RawValue = if MauSo = 0 or MauSo = null then 0 else TuSo / MauSo,
-		            
-		            // 2. Làm tròn thông minh: 
-		            // Nếu đơn giá > 100, làm tròn về số nguyên (0 decimal)
-		            // Nếu đơn giá < 100, giữ 1 chữ số thập phân để đảm bảo độ nhạy
-		            FinalValue = if RawValue > 100 then Number.Round(RawValue, 0) else Number.Round(RawValue, 1)
-		        in
-		            FinalValue, 
-		        Currency.Type // Sử dụng Fixed Decimal để VertiPaq nén tốt hơn
-		    )
-		in
-		    AddDonGia,
+		    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Đơn giá", each Number.Round([Khoảng giá] / [Diện tích], 2), type number),
 		    Custom1 = let
 		    Source = #"Added Custom",
 		    // 0. Chuẩn hóa kiểu dữ liệu đầu vào
