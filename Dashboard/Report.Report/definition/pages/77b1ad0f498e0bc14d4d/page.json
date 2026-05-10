@@ -4,5 +4,24 @@
   "displayName": "Tab1",
   "displayOption": "FitToPage",
   "height": 720,
-  "width": 1280
+  "width": 1280,
+  "objects": {
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#CCDFF1'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
 }
