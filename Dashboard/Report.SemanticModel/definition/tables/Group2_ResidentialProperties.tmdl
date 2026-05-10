@@ -1,0 +1,257 @@
+table Group2_ResidentialProperties
+	lineageTag: a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6
+
+	column Bedroom_Density = DIVIDE([bedrooms], [area])
+		dataType: decimal
+		formatString: 0.000
+		lineageTag: 33333333-4444-5555-6666-7777777777777
+		summarizeBy: average
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Cramped = IF(AND([area] < 40, [bedrooms] >= 3), "Cramped", "Normal")
+		dataType: string
+		lineageTag: 44444444-5555-6666-7777-8888888888888
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Interior_Type = IF(SEARCH("Cơ bản", [interior], , 0) > 0 || SEARCH("Thô", [interior], , 0) > 0, "Bare/Basic", IF(SEARCH("Đầy đủ", [interior], , 0) > 0, "Full Furniture", "Other"))
+		dataType: string
+		lineageTag: 55555555-6666-7777-8888-9999999999999
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 4c7518f4-2127-49a1-9787-52e08e2276cf
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: d07960d6-37d0-426b-b374-25361a6d7ffe
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: ac0ca92c-fcd9-450b-ad17-75f75a2b963d
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 03efe189-d3b3-4960-98ec-8cdd5df203d0
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 0c65cc4c-1b55-4697-b250-6d4959077a88
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 8180374f-e2ca-4c3f-88d8-71ba2e4dcd77
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 3583ce4d-b17f-42e5-a1ae-db4336b9b194
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: d1d2d7dc-3dcf-4d34-98cf-ba1ee530640b
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: fada7558-8c88-4660-ac31-232c7796aed9
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 436f0552-743d-416c-a7fe-7e2ab8ff6f04
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: a16bbc4b-d4a7-4ce5-9298-3f762c16ad1b
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: d51db5cc-d2d0-48b6-8fa9-96a992badcd3
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: d66a5797-30e7-49bb-8891-55d490445507
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column14
+		dataType: string
+		lineageTag: 519ab78b-ec86-43b0-a600-b71b6adee760
+		summarizeBy: none
+		sourceColumn: Column14
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column15
+		dataType: string
+		lineageTag: 6eaa68fc-2de8-439f-ba03-eca82ce9ad6e
+		summarizeBy: none
+		sourceColumn: Column15
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column16
+		dataType: string
+		lineageTag: 793b81bb-7454-478d-b817-bcfc9abe49d1
+		summarizeBy: none
+		sourceColumn: Column16
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column17
+		dataType: string
+		lineageTag: ce748fa7-02bb-486e-8276-39690516ed93
+		summarizeBy: none
+		sourceColumn: Column17
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column18
+		dataType: string
+		lineageTag: 2f9de1ec-5689-41a4-812e-4bffe8e22955
+		summarizeBy: none
+		sourceColumn: Column18
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column19
+		dataType: string
+		lineageTag: 68efc01e-9804-401f-90aa-b3f5cc873adf
+		summarizeBy: none
+		sourceColumn: Column19
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column20
+		dataType: string
+		lineageTag: fd130df9-6d1d-4781-8a6a-71ac374f35dd
+		summarizeBy: none
+		sourceColumn: Column20
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column21
+		dataType: string
+		lineageTag: 5868be6b-a617-40ac-93a4-cc2cc6b320aa
+		summarizeBy: none
+		sourceColumn: Column21
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column22
+		dataType: string
+		lineageTag: 2cb9e97c-ea73-4afe-815c-bfd7507e006c
+		summarizeBy: none
+		sourceColumn: Column22
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column23
+		dataType: string
+		lineageTag: 908fb465-dfa3-4832-ab10-765c904b28ba
+		summarizeBy: none
+		sourceColumn: Column23
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column24
+		dataType: string
+		lineageTag: 220e47b0-2df3-489b-a5d7-cef179e08029
+		summarizeBy: none
+		sourceColumn: Column24
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column25
+		dataType: string
+		lineageTag: 18b4aac8-06b8-48a1-afb3-40a8e54a78bc
+		summarizeBy: none
+		sourceColumn: Column25
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column26
+		dataType: string
+		lineageTag: edbee956-8ab7-43cb-bcdc-fb102860780c
+		summarizeBy: none
+		sourceColumn: Column26
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column27
+		dataType: string
+		lineageTag: c87eea76-6e34-4f41-a334-9cc0d5bc4749
+		summarizeBy: none
+		sourceColumn: Column27
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column28
+		dataType: string
+		lineageTag: b2681025-1412-45e1-a3a5-77225a99e526
+		summarizeBy: none
+		sourceColumn: Column28
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Group2_ResidentialProperties = m
+		mode: import
+		source = Table.Combine({batdongsan_apartment, batdongsan_house})
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
