@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2f7a6ec44b4981becdb6",
   "position": {
     "x": 240.98457105120968,
@@ -132,24 +132,6 @@
               },
               "queryRef": "Count(Fact_Listings.Product_SKey)",
               "nativeQueryRef": "Count of Product_SKey1"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_Listings"
-                    }
-                  },
-                  "Property": "Điểm đỉnh"
-                }
-              },
-              "queryRef": "Fact_Listings.Điểm đỉnh",
-              "nativeQueryRef": "Điểm đỉnh"
             }
           ]
         }
@@ -286,20 +268,6 @@
           "selector": {
             "metadata": "Count(Fact_Listings.Product_SKey)"
           }
-        },
-        {
-          "properties": {
-            "labelPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Above'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Fact_Listings.Điểm đỉnh"
-          }
         }
       ],
       "lineStyles": [
@@ -351,6 +319,49 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "referenceLine": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "displayName": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Max line 1'"
+                }
+              }
+            },
+            "value": {
+              "expr": {
+                "Aggregation": {
+                  "Expression": {
+                    "SelectRef": {
+                      "ExpressionName": "Count(Fact_Listings.Product_SKey)"
+                    }
+                  },
+                  "Function": 4
+                }
+              }
+            },
+            "dataLabelShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Count(Fact_Listings.Product_SKey)",
+            "id": "1"
           }
         }
       ]
@@ -440,7 +451,7 @@
         }
       },
       {
-        "name": "fcd3c1e97a6c4564af89",
+        "name": "dbcaefc1a8782a7aa4b4",
         "field": {
           "Column": {
             "Expression": {
@@ -454,26 +465,7 @@
         "type": "Advanced"
       },
       {
-        "name": "24a7f572b233a16d481b",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 2
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f4dd0b1207037728d623",
+        "name": "9de4d53b3c8c08dd0a31",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -492,7 +484,7 @@
         "type": "Advanced"
       },
       {
-        "name": "376e82b6deeead1b4e0a",
+        "name": "659a49dddb479b0a95d9",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -511,7 +503,7 @@
         "type": "Advanced"
       },
       {
-        "name": "ffa5f28cd9ecadea0366",
+        "name": "da60e927ba68e252ccbf",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -530,15 +522,20 @@
         "type": "Advanced"
       },
       {
-        "name": "a09ebe3fde3d3d258e3e",
+        "name": "3c638e9bfb81324275d9",
         "field": {
-          "Measure": {
+          "Aggregation": {
             "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
               }
             },
-            "Property": "Điểm đỉnh"
+            "Function": 2
           }
         },
         "type": "Advanced"
