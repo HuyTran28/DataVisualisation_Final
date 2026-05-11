@@ -23,227 +23,107 @@ table Group2_ResidentialProperties
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column1
-		dataType: string
-		lineageTag: 4c7518f4-2127-49a1-9787-52e08e2276cf
+	column product_id
+		dataType: int64
+		lineageTag: f1e2d3c4-b5a6-47a8-9b0c-d1e2f3a4b7c8
 		summarizeBy: none
-		sourceColumn: Column1
+		sourceColumn: product_id
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column2
-		dataType: string
-		lineageTag: d07960d6-37d0-426b-b374-25361a6d7ffe
-		summarizeBy: none
-		sourceColumn: Column2
+	column price_total
+		dataType: decimal
+		lineageTag: f2e3d4c5-b6a7-48a9-0b1c-d2e3f4a5b6c7
+		summarizeBy: sum
+		sourceColumn: price_total
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column3
-		dataType: string
-		lineageTag: ac0ca92c-fcd9-450b-ad17-75f75a2b963d
-		summarizeBy: none
-		sourceColumn: Column3
+	column price_per_m2
+		dataType: decimal
+		lineageTag: f3e4d5c6-b7a8-49aa-1b2c-d3e4f5a6b7c8
+		summarizeBy: average
+		sourceColumn: price_per_m2
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column4
-		dataType: string
-		lineageTag: 03efe189-d3b3-4960-98ec-8cdd5df203d0
+	column area
+		dataType: decimal
+		lineageTag: f4e5d6c7-b8a9-4abb-2b3c-d4e5f6a7b8c9
 		summarizeBy: none
-		sourceColumn: Column4
+		sourceColumn: area
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column5
-		dataType: string
-		lineageTag: 0c65cc4c-1b55-4697-b250-6d4959077a88
+	column frontage
+		dataType: decimal
+		lineageTag: f5e6d7c8-b9aa-4bcc-3b4c-d5e6f7a8b9c0
 		summarizeBy: none
-		sourceColumn: Column5
+		sourceColumn: frontage
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column6
-		dataType: string
-		lineageTag: 8180374f-e2ca-4c3f-88d8-71ba2e4dcd77
+	column road_width
+		dataType: decimal
+		lineageTag: f6e7d8c9-babb-4cdd-4b5c-d6e7f8a9b0c1
 		summarizeBy: none
-		sourceColumn: Column6
+		sourceColumn: road_width
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column7
-		dataType: string
-		lineageTag: 3583ce4d-b17f-42e5-a1ae-db4336b9b194
+	column bedrooms
+		dataType: int64
+		lineageTag: f7e8d9ca-bcbc-4dee-5b6c-d7e8f9a0b1c2
 		summarizeBy: none
-		sourceColumn: Column7
+		sourceColumn: bedrooms
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column8
-		dataType: string
-		lineageTag: d1d2d7dc-3dcf-4d34-98cf-ba1ee530640b
+	column bathrooms
+		dataType: int64
+		lineageTag: f8e9dacb-cdcd-4eff-6b7c-d8e9f0a1b2c3
 		summarizeBy: none
-		sourceColumn: Column8
+		sourceColumn: bathrooms
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column9
-		dataType: string
-		lineageTag: fada7558-8c88-4660-ac31-232c7796aed9
+	column floors
+		dataType: int64
+		lineageTag: f9eadbcd-dede-50ff-7b8c-d9eaf0b2c3d4
 		summarizeBy: none
-		sourceColumn: Column9
+		sourceColumn: floors
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column10
+	column direction
 		dataType: string
-		lineageTag: 436f0552-743d-416c-a7fe-7e2ab8ff6f04
+		lineageTag: faebcdef-e1f0-5110-8b9c-eafb01c2d3e4
 		summarizeBy: none
-		sourceColumn: Column10
+		sourceColumn: direction
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column11
+	column interior
 		dataType: string
-		lineageTag: a16bbc4b-d4a7-4ce5-9298-3f762c16ad1b
+		lineageTag: fbfddf01-f2g1-5221-9c0d-fbfc12d3e4f5
 		summarizeBy: none
-		sourceColumn: Column11
+		sourceColumn: interior
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column12
-		dataType: string
-		lineageTag: d51db5cc-d2d0-48b6-8fa9-96a992badcd3
+	column posted_date
+		dataType: datetime
+		lineageTag: fcfeef12-f3h2-5332-ad1e-fcfd23e4f506
 		summarizeBy: none
-		sourceColumn: Column12
+		sourceColumn: posted_date
 
 		annotation SummarizationSetBy = Automatic
 
-	column Column13
-		dataType: string
-		lineageTag: d66a5797-30e7-49bb-8891-55d490445507
+	column expiry_date
+		dataType: datetime
+		lineageTag: fdff0013-f4i3-5443-be2f-fdfe34f50617
 		summarizeBy: none
-		sourceColumn: Column13
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column14
-		dataType: string
-		lineageTag: 519ab78b-ec86-43b0-a600-b71b6adee760
-		summarizeBy: none
-		sourceColumn: Column14
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column15
-		dataType: string
-		lineageTag: 6eaa68fc-2de8-439f-ba03-eca82ce9ad6e
-		summarizeBy: none
-		sourceColumn: Column15
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column16
-		dataType: string
-		lineageTag: 793b81bb-7454-478d-b817-bcfc9abe49d1
-		summarizeBy: none
-		sourceColumn: Column16
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column17
-		dataType: string
-		lineageTag: ce748fa7-02bb-486e-8276-39690516ed93
-		summarizeBy: none
-		sourceColumn: Column17
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column18
-		dataType: string
-		lineageTag: 2f9de1ec-5689-41a4-812e-4bffe8e22955
-		summarizeBy: none
-		sourceColumn: Column18
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column19
-		dataType: string
-		lineageTag: 68efc01e-9804-401f-90aa-b3f5cc873adf
-		summarizeBy: none
-		sourceColumn: Column19
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column20
-		dataType: string
-		lineageTag: fd130df9-6d1d-4781-8a6a-71ac374f35dd
-		summarizeBy: none
-		sourceColumn: Column20
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column21
-		dataType: string
-		lineageTag: 5868be6b-a617-40ac-93a4-cc2cc6b320aa
-		summarizeBy: none
-		sourceColumn: Column21
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column22
-		dataType: string
-		lineageTag: 2cb9e97c-ea73-4afe-815c-bfd7507e006c
-		summarizeBy: none
-		sourceColumn: Column22
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column23
-		dataType: string
-		lineageTag: 908fb465-dfa3-4832-ab10-765c904b28ba
-		summarizeBy: none
-		sourceColumn: Column23
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column24
-		dataType: string
-		lineageTag: 220e47b0-2df3-489b-a5d7-cef179e08029
-		summarizeBy: none
-		sourceColumn: Column24
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column25
-		dataType: string
-		lineageTag: 18b4aac8-06b8-48a1-afb3-40a8e54a78bc
-		summarizeBy: none
-		sourceColumn: Column25
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column26
-		dataType: string
-		lineageTag: edbee956-8ab7-43cb-bcdc-fb102860780c
-		summarizeBy: none
-		sourceColumn: Column26
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column27
-		dataType: string
-		lineageTag: c87eea76-6e34-4f41-a334-9cc0d5bc4749
-		summarizeBy: none
-		sourceColumn: Column27
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column28
-		dataType: string
-		lineageTag: b2681025-1412-45e1-a3a5-77225a99e526
-		summarizeBy: none
-		sourceColumn: Column28
+		sourceColumn: expiry_date
 
 		annotation SummarizationSetBy = Automatic
 
