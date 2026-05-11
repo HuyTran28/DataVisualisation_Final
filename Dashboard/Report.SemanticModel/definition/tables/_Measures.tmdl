@@ -12,7 +12,7 @@ table _Measures
 		lineageTag: 22222222-3333-4444-5555-666666666666
 
 	measure Cramped_Percentage = DIVIDE([Anomaly_Count_Cramped], [Total_Residential], 0) * 100
-		formatString: "0.0%"
+		formatString: 0.0%
 		displayFolder: Group 2 - Cramped Functionality
 		lineageTag: 33333333-4444-5555-6666-777777777777
 
@@ -37,7 +37,7 @@ table _Measures
 		lineageTag: 77777777-8888-9999-aaaa-bbbbbbbbbbbb
 
 	measure Fire_Risk_Percentage = DIVIDE([Fire_Risk_Count], [Total_Multi_Unit], 0) * 100
-		formatString: "0.0%"
+		formatString: 0.0%
 		displayFolder: Group 2 - Fire Risk
 		lineageTag: 88888888-9999-aaaa-bbbb-cccccccccccc
 
@@ -72,9 +72,17 @@ table _Measures
 		lineageTag: eeeeeeee-ffff-0000-1111-2222222222222
 
 	measure Bare_Shell_Discount_Pct = DIVIDE([Average_Price_Full] - [Average_Price_Bare], [Average_Price_Full], 0) * 100
-		formatString: "0.0%"
+		formatString: 0.0%
 		displayFolder: Group 2 - Bare Shell Discount
 		lineageTag: ffffffff-0000-1111-2222-3333333333333
+
+	column _Measures
+		dataType: string
+		lineageTag: e27efe27-caf1-421e-8db3-1f3365ea355e
+		summarizeBy: none
+		sourceColumn: _Measures
+
+		annotation SummarizationSetBy = Automatic
 
 	partition _Measures = m
 		mode: import

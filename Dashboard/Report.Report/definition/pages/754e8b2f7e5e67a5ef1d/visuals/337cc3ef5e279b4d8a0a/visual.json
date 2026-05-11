@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "337cc3ef5e279b4d8a0a",
   "position": {
     "x": 760.65878209361426,
     "y": 360.65718116507571,
-    "z": 7000,
+    "z": 8000,
     "height": 359.01783034159808,
     "width": 519.67421104240452,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -46,12 +46,11 @@
                       "Property": "Diện tích"
                     }
                   },
-                  "Function": 0
+                  "Function": 1
                 }
               },
-              "queryRef": "Sum(Fact_Listings.Diện tích)",
-              "nativeQueryRef": "Diện tích",
-              "displayName": "Diện tích"
+              "queryRef": "Avg(Fact_Listings.Diện tích)",
+              "nativeQueryRef": "Average of Diện tích"
             }
           ]
         },
@@ -94,7 +93,7 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.Đơn giá)",
-              "nativeQueryRef": "Đơn giá",
+              "nativeQueryRef": "Sum of Đơn giá",
               "displayName": "Đơn giá"
             },
             {
@@ -179,12 +178,12 @@
                       "Property": "Đơn giá"
                     }
                   },
-                  "Function": 0
+                  "Function": 1
                 }
               },
-              "queryRef": "Sum(Fact_Listings.Đơn giá)",
-              "nativeQueryRef": "Đơn giá",
-              "displayName": "Đơn giá"
+              "queryRef": "Avg(Fact_Listings.Đơn giá)",
+              "nativeQueryRef": "Đơn giá trung bình",
+              "displayName": "Đơn giá trung bình"
             }
           ]
         }
@@ -204,7 +203,7 @@
             "titleFontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
                 }
               }
             }
@@ -224,7 +223,7 @@
             "titleFontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
                 }
               }
             }
@@ -279,7 +278,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
                 }
               }
             }

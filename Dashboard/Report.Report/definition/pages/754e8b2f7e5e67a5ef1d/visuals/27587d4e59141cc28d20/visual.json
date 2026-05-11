@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "27587d4e59141cc28d20",
   "position": {
-    "x": 11.475455764343318,
-    "y": 126.2300134077765,
+    "x": 0,
+    "y": 245.62689492286304,
     "z": 1000,
-    "height": 147.54157411298553,
-    "width": 227.86976446338875,
-    "tabOrder": 1000
+    "height": 148.19946732776094,
+    "width": 238.76580847250375,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "cardVisual",
@@ -99,14 +99,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
+                  "Value": "'Tahoma'"
                 }
               }
             }

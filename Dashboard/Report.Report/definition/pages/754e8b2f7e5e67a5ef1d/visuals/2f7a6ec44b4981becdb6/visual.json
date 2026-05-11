@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "2f7a6ec44b4981becdb6",
   "position": {
-    "x": 240.98457105120968,
-    "y": 96.7216985851794,
+    "x": 241.51024305264747,
+    "y": 96.055210305030243,
     "z": 0,
-    "height": 593.44499809889737,
-    "width": 519.67421104240452
+    "height": 622.98664969262472,
+    "width": 518.69813564716333,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -50,7 +51,8 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.Giá bán (tỷ đồng))",
-              "nativeQueryRef": "Sum of Giá bán (tỷ đồng)"
+              "nativeQueryRef": "Tổng Giá bán (tỷ đồng)",
+              "displayName": "Tổng Giá bán (tỷ đồng)"
             },
             {
               "field": {
@@ -130,7 +132,8 @@
                 }
               },
               "queryRef": "Count(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey1"
+              "nativeQueryRef": "Số lượng tin",
+              "displayName": "Số lượng tin"
             }
           ]
         }
@@ -173,7 +176,14 @@
             "titleFontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -193,7 +203,7 @@
             "titleFontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
                 }
               }
             },
@@ -235,6 +245,20 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "optimizeLabelDisplay": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "enableValueDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -356,6 +380,18 @@
                   "Value": "true"
                 }
               }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           },
           "selector": {
@@ -379,7 +415,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
                 }
               }
             }
@@ -448,96 +484,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "dbcaefc1a8782a7aa4b4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Khoảng giá bán 50 trieu"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9de4d53b3c8c08dd0a31",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Location"
-                  }
-                },
-                "Property": "Thành phố"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "659a49dddb479b0a95d9",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Location"
-                  }
-                },
-                "Property": "Quận"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "da60e927ba68e252ccbf",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Property_Details"
-                  }
-                },
-                "Property": "Loại tin"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3c638e9bfb81324275d9",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 2
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

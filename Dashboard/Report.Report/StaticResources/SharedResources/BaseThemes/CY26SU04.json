@@ -62,22 +62,22 @@
   "textClasses": {
     "callout": {
       "fontSize": 24,
-      "fontFace": "DIN",
+      "fontFace": "Tahoma",
       "color": "#252423"
     },
     "title": {
       "fontSize": 12,
-      "fontFace": "DIN",
+      "fontFace": "Tahoma",
       "color": "#252423"
     },
     "header": {
       "fontSize": 12,
-      "fontFace": "Segoe UI Semibold",
+      "fontFace": "Tahoma",
       "color": "#252423"
     },
     "label": {
       "fontSize": 10,
-      "fontFace": "Segoe UI",
+      "fontFace": "Tahoma",
       "color": "#252423"
     }
   },
@@ -400,7 +400,7 @@
         "referenceLabelValue": [
           {
             "$id": "default",
-            "valueFontFamily": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+            "valueFontFamily": "'Tahoma'",
             "fontColor": {
               "solid": {
                 "color": "foreground"
@@ -411,7 +411,7 @@
         "value": [
           {
             "$id": "default",
-            "fontFamily": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif"
+            "fontFamily": "'Tahoma'"
           }
         ],
         "label": [
@@ -538,7 +538,7 @@
         "value": [
           {
             "$id": "default",
-            "fontFamily": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+            "fontFamily": "'Tahoma'"
           }
         ]
       }

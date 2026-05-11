@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 6250,
+    "z": 7000,
     "height": 96.7216985851794,
     "width": 760.65878209361426,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "textbox",
@@ -22,8 +22,8 @@
                     "value": "BÓC TRẦN CHIÊU TRÒ GIÁ BĐS",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "36pt"
+                      "fontFamily": "Tahoma",
+                      "fontSize": "32pt"
                     }
                   }
                 ],
