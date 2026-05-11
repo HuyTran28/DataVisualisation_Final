@@ -24,4 +24,3 @@ relationship 0c1bc912-bc50-4b4d-93bd-5ad7234ffbc0
 	fromColumn: Fact_Listings.'Ngày đăng'
 	toColumn: LocalDateTable_7478aafa-aae9-4eb5-8c25-cc4601a578b2.Date
 
-

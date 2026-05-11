@@ -294,51 +294,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d48e6a3f0590640c9af7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Vùng giá có nhiều tin nhất"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f74563b5f68e37da6d22",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "% tin rẻ bất thường"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4b10aac87b8311c3f3b4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Ngưỡng rẻ bất thường"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

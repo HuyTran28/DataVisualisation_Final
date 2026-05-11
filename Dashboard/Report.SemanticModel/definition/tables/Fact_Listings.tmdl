@@ -82,6 +82,12 @@ table Fact_Listings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Đơn giá TB Loại BĐS này' = CALCULATE(AVERAGE(Fact_Listings[Đơn giá]), ALLEXCEPT(Fact_Listings, Fact_Listings[Loại hình BĐS]))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ee9a8b3a-5683-405e-bdff-7cec040765d6
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column expiry_date
 		dataType: dateTime
 		formatString: Long Date
@@ -224,6 +230,17 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Đơn giá'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
+		summarizeBy: sum
+		sourceColumn: Đơn giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng đơn giá/m²","ObjectType":4},"LinkType":"UsedInGroup"}]
+
 	column 'Phân loại Đường'
 		dataType: string
 		lineageTag: d236c1f2-aece-4a3f-96ea-0a3d05a6148c
@@ -269,85 +286,6 @@ table Fact_Listings
 		lineageTag: e8d29b2b-42fa-4a25-a1c2-555a123b3211
 		summarizeBy: none
 		sourceColumn: Is_Fire_Risk
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
-		formatString: #,0.00
-		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán","ObjectType":4},"LinkType":"UsedInGroup"}]
-
-	column 'Khoảng giá bán' =
-			IF(
-				ISBLANK('Fact_Listings'[Giá bán (tỷ đồng)]),
-				BLANK(),
-				INT('Fact_Listings'[Giá bán (tỷ đồng)] / 0.5) * 0.5
-			)
-		formatString: #,0.00
-		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
-		summarizeBy: none
-
-		extendedProperty GroupingMetadata =
-				{
-				  "version": 0,
-				  "groupedColumns": [
-				    {
-				      "Column": {
-				        "Expression": {
-				          "SourceRef": {
-				            "Entity": "Fact_Listings"
-				          }
-				        },
-				        "Property": "Giá bán (tỷ đồng)"
-				      }
-				    }
-				  ],
-				  "binningMetadata": {
-				    "binSize": {
-				      "value": 0.5,
-				      "unit": 0
-				    }
-				  }
-				}
-
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.5}}}}
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Tỷ lệ sâu/rộng' = ```
-			
-			DIVIDE(
-			    'Fact_Listings'[Diện tích],
-			    'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền] 
-			)
-			```
-		lineageTag: 61fcde6b-8556-4f33-9ecf-2ecacd406db3
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nhóm hình dáng thửa đất' =
-			
-			VAR TyLe =
-			    DIVIDE(
-			        'Fact_Listings'[Diện tích],
-			        'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền]
-			    )
-			RETURN
-			    SWITCH(
-			        TRUE(),
-			        ISBLANK('Fact_Listings'[Mặt tiền]) || ISBLANK('Fact_Listings'[Mặt tiền]), "Thiếu thông tin",
-			        TyLe < 1.5, "Mặt tiền rộng",
-			        TyLe < 3, "Cân đối",
-			        TyLe < 5, "Nhà hẹp dài",
-			        "Ống siêu dài"
-			    )
-		lineageTag: 945d6bae-2123-44bb-abc0-8f33c5c78492
-		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -397,16 +335,84 @@ table Fact_Listings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Đơn giá'
-		dataType: decimal
+	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
 		formatString: #,0.00
-		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
+		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
 		summarizeBy: sum
-		sourceColumn: Đơn giá
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng đơn giá/m²","ObjectType":4},"LinkType":"UsedInGroup"}]
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Tỷ lệ sâu/rộng' = ```
+			
+			DIVIDE(
+			    'Fact_Listings'[Diện tích],
+			    'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền] 
+			)
+			```
+		lineageTag: 61fcde6b-8556-4f33-9ecf-2ecacd406db3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nhóm hình dáng thửa đất' =
+			
+			VAR TyLe =
+			    DIVIDE(
+			        'Fact_Listings'[Diện tích],
+			        'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền]
+			    )
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK('Fact_Listings'[Mặt tiền]) || ISBLANK('Fact_Listings'[Mặt tiền]), "Thiếu thông tin",
+			        TyLe < 1.5, "Mặt tiền rộng",
+			        TyLe < 3, "Cân đối",
+			        TyLe < 5, "Nhà hẹp dài",
+			        "Ống siêu dài"
+			    )
+		lineageTag: 945d6bae-2123-44bb-abc0-8f33c5c78492
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Khoảng giá bán' =
+			IF(
+				ISBLANK('Fact_Listings'[Giá bán (tỷ đồng)]),
+				BLANK(),
+				INT('Fact_Listings'[Giá bán (tỷ đồng)] / 0.5) * 0.5
+			)
+		formatString: #,0.00
+		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Giá bán (tỷ đồng)"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 0.5,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.5}}}}
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Khoảng đơn giá/m²' =
 			IF(

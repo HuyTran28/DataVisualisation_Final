@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DatasetFolderPath","batdongsan_real_estate_cleaned","batdongsan_apartment","batdongsan_house","batdongsan_multi_unit_building","Dim_Location","Dim_Property_Details","Dim_Features","Dim_Product","Fact_Listings","Group2_ResidentialProperties","Group2_MultiUnitBuildings","_Measures"]
+annotation PBI_QueryOrder = ["DatasetFolderPath","batdongsan_real_estate_cleaned","batdongsan_apartment","batdongsan_house","batdongsan_multi_unit_building","Dim_Location","Dim_Property_Details","Dim_Features","Dim_Product","Fact_Listings","_Measures"]
 
 annotation PBI_ProTooling = ["DevMode","TMDL-Extension"]
 
@@ -20,14 +20,7 @@ ref table Fact_Listings
 ref table DateTableTemplate_7eb15d4c-d1f9-4d7a-b4ee-9f197c0b81b5
 ref table LocalDateTable_4275abd7-7c0a-44cc-993a-521f5c6f11de
 ref table LocalDateTable_7478aafa-aae9-4eb5-8c25-cc4601a578b2
-ref table Group2_ResidentialProperties
-ref table Group2_MultiUnitBuildings
 ref table _Measures
 
 ref cultureInfo en-US
 
-ref expression DatasetFolderPath
-ref expression batdongsan_real_estate_cleaned
-ref expression batdongsan_apartment
-ref expression batdongsan_house
-ref expression batdongsan_multi_unit_building
