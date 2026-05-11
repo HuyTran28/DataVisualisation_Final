@@ -1,18 +1,37 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "337cc3ef5e279b4d8a0a",
   "position": {
-    "x": 760.65878209361426,
-    "y": 360.65718116507571,
+    "x": 640.13774150290544,
+    "y": 419.0732248398258,
     "z": 8000,
-    "height": 359.01783034159808,
-    "width": 519.67421104240452,
+    "height": 301.08173435094284,
+    "width": 640.13774150290544,
     "tabOrder": 6000
   },
   "visual": {
     "visualType": "scatterChart",
     "query": {
       "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Listings"
+                    }
+                  },
+                  "Property": "Listing_ID"
+                }
+              },
+              "queryRef": "Fact_Listings.Listing_ID",
+              "nativeQueryRef": "Listing_ID",
+              "active": true
+            }
+          ]
+        },
         "Series": {
           "projections": [
             {
@@ -31,91 +50,8 @@
             }
           ]
         },
-        "Size": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_Listings"
-                        }
-                      },
-                      "Property": "Diện tích"
-                    }
-                  },
-                  "Function": 1
-                }
-              },
-              "queryRef": "Avg(Fact_Listings.Diện tích)",
-              "nativeQueryRef": "Average of Diện tích"
-            }
-          ]
-        },
         "Tooltips": {
           "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_Listings"
-                        }
-                      },
-                      "Property": "Mặt tiền"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Fact_Listings.Mặt tiền)",
-              "nativeQueryRef": "Mặt tiền",
-              "displayName": "Mặt tiền"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_Listings"
-                        }
-                      },
-                      "Property": "Đơn giá"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Fact_Listings.Đơn giá)",
-              "nativeQueryRef": "Sum of Đơn giá",
-              "displayName": "Đơn giá"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_Listings"
-                        }
-                      },
-                      "Property": "Diện tích"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Fact_Listings.Diện tích)",
-              "nativeQueryRef": "Diện tích",
-              "displayName": "Diện tích"
-            },
             {
               "field": {
                 "Aggregation": {
@@ -129,12 +65,11 @@
                       "Property": "Khoảng giá"
                     }
                   },
-                  "Function": 0
+                  "Function": 1
                 }
               },
               "queryRef": "Sum(Fact_Listings.Khoảng giá)",
-              "nativeQueryRef": "Khoảng giá",
-              "displayName": "Khoảng giá"
+              "nativeQueryRef": "Average of Khoảng giá"
             }
           ]
         },
@@ -158,8 +93,7 @@
               },
               "queryRef": "Sum(Fact_Listings.Tỷ lệ sâu/rộng)",
               "nativeQueryRef": "Average of Tỷ lệ sâu/rộng",
-              "active": true,
-              "displayName": "Tỷ lệ sâu/rộng"
+              "active": true
             }
           ]
         },
@@ -181,9 +115,8 @@
                   "Function": 1
                 }
               },
-              "queryRef": "Avg(Fact_Listings.Đơn giá)",
-              "nativeQueryRef": "Đơn giá trung bình",
-              "displayName": "Đơn giá trung bình"
+              "queryRef": "Sum(Fact_Listings.Đơn giá)",
+              "nativeQueryRef": "Average of Đơn giá"
             }
           ]
         }
@@ -196,7 +129,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tỷ lệ sâu/rộng trung bình'"
+                  "Value": "'Tỷ lệ sâu/rộng (Diện tích / Mặt tiền²)'"
                 }
               }
             },
@@ -204,6 +137,41 @@
               "expr": {
                 "Literal": {
                   "Value": "'Tahoma'"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "logAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -216,7 +184,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Đơn giá TB (triệu/m²)'"
+                  "Value": "'Đơn giá (triệu VNĐ / m²)'"
                 }
               }
             },
@@ -224,6 +192,27 @@
               "expr": {
                 "Literal": {
                   "Value": "'Tahoma'"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
                 }
               }
             }
@@ -236,7 +225,21 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
                 }
               }
             }
@@ -249,14 +252,347 @@
             "showGradientLegend": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "show": {
               "expr": {
                 "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "markers": [
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "40D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhóm hình dáng thửa đất"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Nhà hẹp dài'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "bubbles": [
+        {
+          "properties": {
+            "markerRangeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'auto'"
+                }
+              }
+            },
+            "bubbleSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "-15L"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "markerShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'circle'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhóm hình dáng thửa đất"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cân đối'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "colorByCategory": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D55E00'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhóm hình dáng thửa đất"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Ống siêu dài'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2E5A88'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhóm hình dáng thửa đất"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Mặt tiền rộng'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E69F00'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhóm hình dáng thửa đất"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Nhà hẹp dài'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D9D9D9'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhóm hình dáng thửa đất"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cân đối'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showOnCategoryAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "trend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "displayName": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Trend line 1'"
                 }
               }
             }
@@ -271,7 +607,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Đơn giá/m² giảm khi đất quá sâu và hẹp'"
+                  "Value": "'Tỷ lệ sâu/rộng càng cao → Đơn giá càng giảm'"
                 }
               }
             },
@@ -281,11 +617,204 @@
                   "Value": "'Tahoma'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "28cbab9e03e4f3335822",
+        "ordinal": 0,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Tỷ lệ sâu/rộng"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Fact_Listings",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 3,
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "f"
+                            }
+                          },
+                          "Property": "Tỷ lệ sâu/rộng"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "20L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "4cc3bef69d6a9b6d5e1d",
+        "ordinal": 1,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Đơn giá"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fdb1104b4b19afc7bfb0",
+        "ordinal": 2,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Khoảng giá"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "282e365cf88ccfd3bd60",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Listing_ID"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0e599a305cbf8e738e19",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Khoảng giá"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "04d3b8d1f0a63af961ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Nhóm hình dáng thửa đất"
+          }
+        },
+        "type": "Categorical"
+      }
+    ],
+    "filterSortOrder": "Custom"
   }
 }

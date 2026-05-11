@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "14a3098a96d1477b8a22",
   "position": {
-    "x": 4.1166518702155814,
-    "y": 96.055210305030243,
+    "x": 1047.0049500852606,
+    "y": 65.098753373176834,
     "z": 9000,
-    "height": 134.47729442704232,
-    "width": 241.51024305264747,
+    "height": 99.004354088373091,
+    "width": 233.27053292055029,
     "tabOrder": 8000
   },
   "visual": {
@@ -73,7 +73,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -86,7 +86,22 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'Tahoma'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -95,5 +110,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ec468c504899d4a78a3a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Loại hình BĐS"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
