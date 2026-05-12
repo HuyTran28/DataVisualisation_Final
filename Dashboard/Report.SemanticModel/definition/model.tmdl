@@ -26,3 +26,6 @@ ref cultureInfo en-US
 
 ref expression DatasetFolderPath
 ref expression batdongsan_real_estate_cleaned
+ref expression batdongsan_apartment
+ref expression batdongsan_house
+ref expression batdongsan_multi_unit_building
