@@ -134,6 +134,77 @@ table _Measures
 			```
 		lineageTag: 6ca9c5cf-e4c4-4d79-8ded-a02b24620bfb
 
+	measure Avg_PricePerM2 =
+		AVERAGEX(
+			FILTER(
+				'Fact_Listings',
+				NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Diện tích] > 0
+			),
+			DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
+		)
+		formatString: #,0.00
+		displayFolder: Price - Normalized
+		lineageTag: pnorm-0001-0000-0000-000000000001
+
+	measure Median_PricePerM2_ByType =
+		CALCULATE(
+			MEDIANX(
+				FILTER(
+					'Fact_Listings',
+					NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Diện tích] > 0
+					),
+				DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
+			),
+			ALLEXCEPT('Fact_Listings', 'Fact_Listings'[Loại hình BĐS])
+		)
+		formatString: #,0.00
+		displayFolder: Price - Normalized
+		lineageTag: pnorm-0002-0000-0000-000000000002
+
+	measure PricePerM2_Index =
+		DIVIDE(
+			[Avg_PricePerM2],
+			[Median_PricePerM2_ByType],
+			BLANK()
+		)
+		formatString: 0.00
+		displayFolder: Price - Normalized
+		lineageTag: pnorm-0003-0000-0000-000000000003
+
+	measure PricePerM2_PctRank =
+		VAR cur = DIVIDE(SELECTEDVALUE('Fact_Listings'[Đơn giá]), SELECTEDVALUE('Fact_Listings'[Diện tích]), BLANK())
+		VAR tbl = FILTER(
+			ALL('Fact_Listings'),
+			NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Loại hình BĐS] = SELECTEDVALUE('Fact_Listings'[Loại hình BĐS])
+		)
+		VAR r = RANKX(tbl, DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK()), cur, , DESC)
+		VAR total = COUNTROWS(tbl)
+		RETURN DIVIDE(r, total, BLANK())
+		formatString: 0.00
+		displayFolder: Price - Normalized
+		lineageTag: pnorm-0004-0000-0000-000000000004
+
+	measure PricePerM2_Z =
+		VAR cur = DIVIDE(SELECTEDVALUE('Fact_Listings'[Đơn giá]), SELECTEDVALUE('Fact_Listings'[Diện tích]), BLANK())
+		VAR mean = CALCULATE(
+			AVERAGEX(
+				FILTER('Fact_Listings', NOT(ISBLANK('Fact_Listings'[Diện tích]))),
+				DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
+			),
+			ALLEXCEPT('Fact_Listings', 'Fact_Listings'[Loại hình BĐS])
+		)
+		VAR sd = CALCULATE(
+			STDEVX.P(
+				FILTER('Fact_Listings', NOT(ISBLANK('Fact_Listings'[Diện tích]))),
+				DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
+			),
+			ALLEXCEPT('Fact_Listings', 'Fact_Listings'[Loại hình BĐS])
+		)
+		RETURN IF(ISBLANK(cur) || sd = 0, BLANK(), (cur - mean) / sd)
+		formatString: 0.00
+		displayFolder: Price - Normalized
+		lineageTag: pnorm-0005-0000-0000-000000000005
+
 	column _Measures
 		dataType: string
 		lineageTag: e27efe27-caf1-421e-8db3-1f3365ea355e
