@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "83af5da8c3d0d9330dc2",
   "position": {
-    "x": 12.222222222222221,
-    "y": 158.88888888888889,
+    "x": 11.694352159468439,
+    "y": 158.40531561461793,
     "z": 0,
-    "height": 550,
-    "width": 382.22222222222223,
+    "height": 550.69767441860461,
+    "width": 382.72425249169436,
     "tabOrder": 0
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Fact_Listings.PhanKhuc",
-              "nativeQueryRef": "PhanKhuc",
-              "active": true
+              "nativeQueryRef": "Phân khúc",
+              "active": true,
+              "displayName": "Phân khúc"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Dim_Property_Details.Nhom_Loai_Tin",
-              "nativeQueryRef": "Nhom_Loai_Tin"
+              "nativeQueryRef": "Loại tin",
+              "displayName": "Loại tin"
             }
           ]
         },
@@ -69,7 +71,8 @@
                 }
               },
               "queryRef": "CountNonNull(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey"
+              "nativeQueryRef": "Số lượng tin",
+              "displayName": "Số lượng tin"
             }
           ]
         }
