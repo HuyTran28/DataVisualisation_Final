@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "337cc3ef5e279b4d8a0a",
   "position": {
     "x": 640.13774150290544,
@@ -777,39 +777,6 @@
               }
             },
             "Property": "Listing_ID"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "317ce53551b0e76bdeda",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Nhóm hình dáng thửa đất"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0430d1f5cd01147a4d6f",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Khoảng giá"
-              }
-            },
-            "Function": 1
           }
         },
         "type": "Advanced"

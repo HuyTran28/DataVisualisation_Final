@@ -20,45 +20,6 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Dim_Location",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Thành phố"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Thành phố Hồ Chí Minh'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
         "howCreated": "User"
       }
     ]
@@ -66,27 +27,72 @@
   "visualInteractions": [
     {
       "source": "a9720d26234c0342df63",
-      "target": "20ae5d77f8bc7929af9a",
+      "target": "3ae7a3b7e70cd2baa667",
       "type": "NoFilter"
     },
     {
-      "source": "20ae5d77f8bc7929af9a",
+      "source": "1f596bd0b4afde9e2f30",
+      "target": "ffd6d27e3329e71a764a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ffd6d27e3329e71a764a",
       "target": "a9720d26234c0342df63",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ffd6d27e3329e71a764a",
+      "target": "1f596bd0b4afde9e2f30",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ffd6d27e3329e71a764a",
+      "target": "3ae7a3b7e70cd2baa667",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ffd6d27e3329e71a764a",
+      "target": "3b9f93f4ec808311fe25",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1f596bd0b4afde9e2f30",
+      "target": "3ae7a3b7e70cd2baa667",
+      "type": "DataFilter"
+    },
+    {
+      "source": "517eb7c2dc074c68718a",
+      "target": "1f596bd0b4afde9e2f30",
+      "type": "NoFilter"
+    },
+    {
+      "source": "517eb7c2dc074c68718a",
+      "target": "3b9f93f4ec808311fe25",
+      "type": "DataFilter"
+    },
+    {
+      "source": "517eb7c2dc074c68718a",
+      "target": "ffd6d27e3329e71a764a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "a9720d26234c0342df63",
+      "target": "1f596bd0b4afde9e2f30",
       "type": "NoFilter"
     },
     {
       "source": "a9720d26234c0342df63",
-      "target": "3ae7a3b7e70cd2baa667",
+      "target": "ffd6d27e3329e71a764a",
       "type": "NoFilter"
     },
     {
-      "source": "3ae7a3b7e70cd2baa667",
-      "target": "20ae5d77f8bc7929af9a",
+      "source": "a9720d26234c0342df63",
+      "target": "5b6001f416663ebbe0f4",
       "type": "NoFilter"
     },
     {
-      "source": "20ae5d77f8bc7929af9a",
-      "target": "3ae7a3b7e70cd2baa667",
+      "source": "a9720d26234c0342df63",
+      "target": "3b9f93f4ec808311fe25",
       "type": "NoFilter"
     }
   ]

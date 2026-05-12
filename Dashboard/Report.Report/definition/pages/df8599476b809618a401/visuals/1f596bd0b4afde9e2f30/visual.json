@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "9dd830de49aec7eadc90",
+  "name": "1f596bd0b4afde9e2f30",
   "position": {
-    "x": 406.17631786127072,
-    "y": 46.655387862443263,
-    "z": 1000,
-    "height": 454.20392301378587,
-    "width": 569.47017537982219,
-    "tabOrder": 1000
+    "x": 239.99999999999997,
+    "y": 64.545454545454547,
+    "z": 4000,
+    "height": 336.36363636363632,
+    "width": 382.72727272727269,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -200,6 +200,26 @@
             }
           }
         }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bản đồ nhiệt biến động giá trung bình'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -248,7 +268,35 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Quận Tân Phú'"
+                          "Value": "'Huyện Bình Chánh'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Huyện Cần Giờ'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Huyện Hóc Môn'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Huyện Nhà Bè'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Quận 1'"
                         }
                       }
                     ],
@@ -270,41 +318,6 @@
                       {
                         "Literal": {
                           "Value": "'Quận 12'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Quận Bình Tân'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Quận Tân Bình'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Huyện Bình Chánh'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Huyện Cần Giờ'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Huyện Nhà Bè'"
                         }
                       }
                     ],
@@ -360,14 +373,14 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Quận Bình Thạnh'"
+                          "Value": "'Quận Bình Tân'"
                         }
                       }
                     ],
                     [
                       {
                         "Literal": {
-                          "Value": "'Quận 1'"
+                          "Value": "'Quận Bình Thạnh'"
                         }
                       }
                     ],
@@ -388,7 +401,14 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Huyện Hóc Môn'"
+                          "Value": "'Quận Tân Bình'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Quận Tân Phú'"
                         }
                       }
                     ],

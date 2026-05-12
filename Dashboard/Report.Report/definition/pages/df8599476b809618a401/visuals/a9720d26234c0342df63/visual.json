@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "a9720d26234c0342df63",
   "position": {
-    "x": 610.60070671378094,
-    "y": 64.452296819787989,
-    "z": 2000,
-    "height": 322.26148409893995,
-    "width": 669.39929328621906,
-    "tabOrder": 2000
+    "x": 622.38805970149247,
+    "y": 384.17910447761193,
+    "z": 1000,
+    "height": 335.82089552238807,
+    "width": 657.31343283582089,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -321,53 +321,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "e377f35b5d06f26aa31d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Loại hình BĐS"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c851a3ca1966734b090e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e61df7158052fc128a8b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Số phòng ngủ"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

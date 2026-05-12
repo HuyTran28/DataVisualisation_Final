@@ -1,51 +1,34 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "20ae5d77f8bc7929af9a",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ffd6d27e3329e71a764a",
   "position": {
-    "x": 0,
-    "y": 386.95384615384614,
-    "z": 0,
-    "height": 332.8,
-    "width": 610.46153846153845,
-    "tabOrder": 0
+    "x": 307.27272727272725,
+    "y": 400.90909090909088,
+    "z": 5000,
+    "height": 319.09090909090907,
+    "width": 315.45454545454544,
+    "tabOrder": 5000
   },
   "visual": {
-    "visualType": "BoxWhiskerChart1455240051538",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Groups": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Property_Details"
+                      "Entity": "Dim_Location"
                     }
                   },
-                  "Property": "Nội thất"
+                  "Property": "Quận"
                 }
               },
-              "queryRef": "Dim_Property_Details.Nội thất",
-              "nativeQueryRef": "Nội thất"
-            }
-          ]
-        },
-        "Samples": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_Listings"
-                    }
-                  },
-                  "Property": "Product_SKey"
-                }
-              },
-              "queryRef": "Fact_Listings.Product_SKey",
-              "nativeQueryRef": "Product_SKey"
+              "queryRef": "Dim_Location.Quận",
+              "nativeQueryRef": "Quận",
+              "active": true
             }
           ]
         },
@@ -61,14 +44,15 @@
                           "Entity": "Fact_Listings"
                         }
                       },
-                      "Property": "Đơn giá"
+                      "Property": "Biến động giá"
                     }
                   },
-                  "Function": 0
+                  "Function": 1
                 }
               },
-              "queryRef": "Sum(Fact_Listings.Đơn giá)",
-              "nativeQueryRef": "Sum of Đơn giá"
+              "queryRef": "Avg(Fact_Listings.Biến động giá)",
+              "nativeQueryRef": "Biến động giá trung bình",
+              "displayName": "Biến động giá trung bình"
             }
           ]
         }
@@ -85,23 +69,10 @@
                         "Entity": "Fact_Listings"
                       }
                     },
-                    "Property": "Đơn giá"
+                    "Property": "Biến động giá"
                   }
                 },
-                "Function": 0
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
+                "Function": 1
               }
             },
             "direction": "Descending"
@@ -110,94 +81,85 @@
       }
     },
     "objects": {
-      "chartOptions": [
+      "grid": [
         {
           "properties": {
-            "margin": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "xAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "yAxis": [
-        {
-          "properties": {
-            "start": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "scaleType": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "title": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Đơn giá (Triệu VND/m2)'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "gridLines": [
-        {
-          "properties": {
-            "show": {
+            "gridHorizontal": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "steppedLayoutIndentation": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {}
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Compact'"
                 }
               }
             }
@@ -206,13 +168,13 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
+      "stylePreset": [
         {
           "properties": {
-            "show": {
+            "name": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Default'"
                 }
               }
             }
@@ -225,15 +187,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ce973fa04c3221c26cfa",
+        "name": "aec521a03173290b4981",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim_Property_Details"
+                "Entity": "Dim_Location"
               }
             },
-            "Property": "Nội thất"
+            "Property": "Quận"
           }
         },
         "type": "Categorical",
@@ -242,7 +204,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "Dim_Property_Details",
+              "Entity": "Dim_Location",
               "Type": 0
             }
           ],
@@ -260,7 +222,7 @@
                                 "Source": "d"
                               }
                             },
-                            "Property": "Nội thất"
+                            "Property": "Quận"
                           }
                         }
                       ],
@@ -268,7 +230,7 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'Không rõ'"
+                              "Value": "'Quận 2'"
                             }
                           }
                         ]

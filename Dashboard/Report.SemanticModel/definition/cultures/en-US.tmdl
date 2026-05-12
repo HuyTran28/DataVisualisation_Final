@@ -4180,8 +4180,7 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "_measure": {
-			            "State": "Generated",
-			            "Weight": 0.87
+			            "State": "Generated"
 			          }
 			        },
 			        {
@@ -4658,9 +4657,425 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "fact_listing.đơn_giá_bins": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Đơn giá (bins)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "đơn giá (bins)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "đơn giá (bin)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "đơn giá": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "fact_listing.diện_tích_bins": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Diện tích (bins)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diện tích (bins)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "diện tích (bin)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "diện tích": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.avg_price_per_M2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Avg_PricePerM2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg price per M2": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Avg_PricePerM2": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "average price per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "avg value per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg worth per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg fee per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg charge per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg amount per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg bill per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg rate per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg expense per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "avg cost per m2": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.median_price_tho": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "MedianPrice_Tho"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "median price tho": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MedianPrice_Tho": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "median value tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median worth tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median fee tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median charge tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median amount tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median bill tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median rate tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median expense tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median cost tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "median outlay tho": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.median_price_khong_noi_that": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "MedianPrice_KhongNoiThat"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "median price khong noi that": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MedianPrice_KhongNoiThat": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.median_price_phap_ly_yeu_hem_nho": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "MedianPrice_PhapLyYeuHemNho"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "median price phap ly yeu hem nho": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MedianPrice_PhapLyYeuHemNho": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.ty_le_nhoi_nhet": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Ty_Le_Nhoi_Nhet"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ty le nhoi nhet": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Ty_Le_Nhoi_Nhet": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Tỷ lệ nhồi nhét": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.quarter": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_quarters"
+			        }
+			      ]
+			    },
 			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_year": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
@@ -5307,6 +5722,237 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "fact_listing_has_entity__measure_ty_le_nhoi_nhet": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.ty_le_nhoi_nhet": {
+			          "Target": {
+			            "Entity": "entity__measure.ty_le_nhoi_nhet"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.ty_le_nhoi_nhet"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_ty_le_nhoi_nhet"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_median_price_phap_ly_yeu_hem_nho": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.median_price_phap_ly_yeu_hem_nho": {
+			          "Target": {
+			            "Entity": "entity__measure.median_price_phap_ly_yeu_hem_nho"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.median_price_phap_ly_yeu_hem_nho"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_median_price_phap_ly_yeu_hem_nho"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_median_price_khong_noi_that": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.median_price_khong_noi_that": {
+			          "Target": {
+			            "Entity": "entity__measure.median_price_khong_noi_that"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.median_price_khong_noi_that"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_median_price_khong_noi_that"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_median_price_tho": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.median_price_tho": {
+			          "Target": {
+			            "Entity": "entity__measure.median_price_tho"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.median_price_tho"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_median_price_tho"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_avg_price_per_M2": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.avg_price_per_M2": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_price_per_M2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_price_per_M2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_avg_price_per_M2"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_diện_tích_bins": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.diện_tích_bins": {
+			          "Target": {
+			            "Entity": "fact_listing.diện_tích_bins"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.diện_tích_bins"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_diện_tích_bins"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_đơn_giá_bins": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.đơn_giá_bins": {
+			          "Target": {
+			            "Entity": "fact_listing.đơn_giá_bins"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.đơn_giá_bins"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_đơn_giá_bins"
+			        }
+			      ]
+			    },
 			    "fact_listing_has_nhom_chat_luong_thocu_sort": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
@@ -5535,534 +6181,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_property_details_have_pháp_lý_chuẩn_hóa_groups"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_bare_shell_discount_pct": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.bare_shell_discount_pct": {
-			          "Target": {
-			            "Entity": "entity__measure.bare_shell_discount_pct"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.bare_shell_discount_pct"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_bare_shell_discount_pct"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_average_price_full": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.average_price_full": {
-			          "Target": {
-			            "Entity": "entity__measure.average_price_full"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_price_full"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_average_price_full"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_average_price_bare": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.average_price_bare": {
-			          "Target": {
-			            "Entity": "entity__measure.average_price_bare"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_price_bare"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_average_price_bare"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_full_furniture_count": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.full_furniture_count": {
-			          "Target": {
-			            "Entity": "entity__measure.full_furniture_count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.full_furniture_count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_full_furniture_count"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_bare_shell_count": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.bare_shell_count": {
-			          "Target": {
-			            "Entity": "entity__measure.bare_shell_count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.bare_shell_count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_bare_shell_count"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_average_road_width": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.average_road_width": {
-			          "Target": {
-			            "Entity": "entity__measure.average_road_width"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_road_width"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_average_road_width"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_average_floors_all": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.average_floors_all": {
-			          "Target": {
-			            "Entity": "entity__measure.average_floors_all"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_floors_all"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_average_floors_all"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_fire_risk_percentage": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.fire_risk_percentage": {
-			          "Target": {
-			            "Entity": "entity__measure.fire_risk_percentage"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fire_risk_percentage"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_fire_risk_percentage"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_total_multi_unit": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.total_multi_unit": {
-			          "Target": {
-			            "Entity": "entity__measure.total_multi_unit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.total_multi_unit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_total_multi_unit"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_fire_risk_count": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.fire_risk_count": {
-			          "Target": {
-			            "Entity": "entity__measure.fire_risk_count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.fire_risk_count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_fire_risk_count"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_average_bedroom_density_cramped": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.average_bedroom_density_cramped": {
-			          "Target": {
-			            "Entity": "entity__measure.average_bedroom_density_cramped"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_bedroom_density_cramped"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_average_bedroom_density_cramped"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_average_bedroom_density": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.average_bedroom_density": {
-			          "Target": {
-			            "Entity": "entity__measure.average_bedroom_density"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_bedroom_density"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_average_bedroom_density"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_cramped_percentage": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.cramped_percentage": {
-			          "Target": {
-			            "Entity": "entity__measure.cramped_percentage"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.cramped_percentage"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_cramped_percentage"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_total_residential": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.total_residential": {
-			          "Target": {
-			            "Entity": "entity__measure.total_residential"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.total_residential"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_total_residential"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_anomaly_count_cramped": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.anomaly_count_cramped": {
-			          "Target": {
-			            "Entity": "entity__measure.anomaly_count_cramped"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.anomaly_count_cramped"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_anomaly_count_cramped"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_entity__measure": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure.entity__measure"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.entity__measure"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have__measures"
 			        }
 			      ]
 			    },
@@ -8365,39 +8483,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_fact_listing_are_overcrowded_fact_listing"
-			        }
-			      ]
-			    },
-			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing.ngày_đăng.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
-			          }
-			        },
-			        "fact_listing.ngày_đăng.quarter": {
-			          "Target": {
-			            "Entity": "fact_listing.ngày_đăng.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.ngày_đăng.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_quarters"
 			        }
 			      ]
 			    },

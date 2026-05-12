@@ -110,19 +110,18 @@ table _Measures
 			    COUNT('Fact_Listings'[Product_SKey]),
 			    0
 			)
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: b20f6943-b5e2-4a1e-b1b8-e1a106c109b0
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition _Measures = m
 		mode: import
 		source =
-			let
-				measuresList = {{"Measure", "Value"}, {"_Measures", 1}},
-				measuresTable = Table.FromRows(measuresList, {"Measure", "_Measures"}),
-				#"Removed Columns" = Table.RemoveColumns(measuresTable,{"_Measures"})
-			in
-				#"Removed Columns"
+				let
+					measuresList = {{"Measure", "Value"}, {"_Measures", 1}},
+					measuresTable = Table.FromRows(measuresList, {"Measure", "_Measures"}),
+					#"Removed Columns" = Table.RemoveColumns(measuresTable,{"_Measures"})
+				in
+					#"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

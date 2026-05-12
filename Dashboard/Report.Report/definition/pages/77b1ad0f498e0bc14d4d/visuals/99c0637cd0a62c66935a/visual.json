@@ -536,51 +536,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c154823394ad2de34360",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Property_Details"
-              }
-            },
-            "Property": "Nhom_Loai_Tin"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "100e58934e7dcb90b65d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "So_Ngay_Hien_Thi"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "cf7f864955222cc6ec5a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Đơn giá"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

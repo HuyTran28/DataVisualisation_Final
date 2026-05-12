@@ -414,53 +414,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "3484d9e5e0e79c6ed8f8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "PhanKhuc"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "eb5f8a1861012a71858f",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 2
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ad2ec45929b3c96f5396",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Property_Details"
-              }
-            },
-            "Property": "Nhom_Loai_Tin"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

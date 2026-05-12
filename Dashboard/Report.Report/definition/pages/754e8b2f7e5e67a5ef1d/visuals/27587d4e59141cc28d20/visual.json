@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "27587d4e59141cc28d20",
   "position": {
     "x": 0,
@@ -286,51 +286,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "98a4142416ee12c00227",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Vùng giá có nhiều tin nhất"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "cd194789808a82332df6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "% tin rẻ bất thường"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "24ebb42e92feb3a7857a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "Ngưỡng rẻ bất thường"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
