@@ -125,11 +125,6 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "adm29679588677686662.json",
-          "path": "adm29679588677686662.json",
-          "type": "ShapeMap"
-        },
-        {
           "name": "hcm_districts_standard652967902911581080158313.json",
           "path": "hcm_districts_standard652967902911581080158313.json",
           "type": "ShapeMap"

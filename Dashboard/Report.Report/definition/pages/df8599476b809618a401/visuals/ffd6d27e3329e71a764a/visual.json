@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "ffd6d27e3329e71a764a",
   "position": {
-    "x": 307.27272727272725,
-    "y": 400.90909090909088,
+    "x": 239.67518509672797,
+    "y": 401.08908526391212,
     "z": 5000,
-    "height": 319.09090909090907,
-    "width": 315.45454545454544,
+    "height": 319.15930260329594,
+    "width": 382.74659660855031,
     "tabOrder": 5000
   },
   "visual": {
@@ -84,20 +84,6 @@
       "grid": [
         {
           "properties": {
-            "gridHorizontal": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "gridVertical": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "outlineStyle": {
               "expr": {
                 "Literal": {
@@ -109,6 +95,20 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
                 }
               }
             }
@@ -165,6 +165,29 @@
             }
           }
         }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Avg(Fact_Listings.Biến động giá)"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -174,7 +197,20 @@
             "name": {
               "expr": {
                 "Literal": {
-                  "Value": "'Default'"
+                  "Value": "'AlternatingRowsNew'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

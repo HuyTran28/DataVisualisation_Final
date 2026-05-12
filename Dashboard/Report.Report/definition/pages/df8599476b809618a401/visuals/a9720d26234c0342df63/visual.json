@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "a9720d26234c0342df63",
   "position": {
-    "x": 622.38805970149247,
-    "y": 384.17910447761193,
-    "z": 1000,
-    "height": 335.82089552238807,
-    "width": 657.31343283582089,
+    "x": 622.42178170527825,
+    "y": 383.96942918557443,
+    "z": 2000,
+    "height": 336.27895868163364,
+    "width": 657.88392643897782,
     "tabOrder": 1000
   },
   "visual": {
@@ -123,6 +123,20 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
             }
           }
         }
@@ -154,6 +168,20 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
                 }
               }
             }

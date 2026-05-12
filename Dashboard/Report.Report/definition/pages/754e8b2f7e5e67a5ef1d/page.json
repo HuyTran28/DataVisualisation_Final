@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "754e8b2f7e5e67a5ef1d",
-  "displayName": "Tab3",
+  "displayName": "Bóc tách chiến lược định giá",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,

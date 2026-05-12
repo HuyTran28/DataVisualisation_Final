@@ -1007,39 +1007,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "50cfc39bdfb68cf97924",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Property_Details"
-              }
-            },
-            "Property": "Nhom_Loai_Tin"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e45db6009a8890f76d73",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
