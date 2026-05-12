@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "83af5da8c3d0d9330dc2",
   "position": {
-    "x": 12.857142857142858,
-    "y": 77.142857142857153,
+    "x": 12.222222222222221,
+    "y": 158.88888888888889,
     "z": 0,
-    "height": 642.85714285714289,
-    "width": 342.85714285714289,
+    "height": 550,
+    "width": 382.22222222222223,
     "tabOrder": 0
   },
   "visual": {
@@ -85,6 +85,27 @@
                   "Value": "'Số lượng tin đăng'"
                 }
               }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -96,6 +117,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Phân khúc giá'"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -121,6 +149,103 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F0E199'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dim_Property_Details"
+                          }
+                        },
+                        "Property": "Nhom_Loai_Tin"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Tin thường'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#C7B8E7'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dim_Property_Details"
+                          }
+                        },
+                        "Property": "Nhom_Loai_Tin"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Tin VIP'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -130,7 +255,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Phân bổ số lượng Tin VIP và Tin thường theo Phân khúc giá Bất động sản'"
+                  "Value": "'Số lượng Tin VIP và Tin thường theo Phân khúc giá Bất động sản'"
                 }
               }
             },

@@ -1,117 +1,138 @@
 table _Measures
 	lineageTag: 12345678-90ab-cdef-1234-567890abcdef
 
-	measure Q1_Cramped_Count = CALCULATE(COUNTROWS('Fact_Listings'), 'Fact_Listings'[Is_Overcrowded] = TRUE)
-		formatString: #,0
-		displayFolder: Q1 - Nhồi nhét công năng
-		lineageTag: q1-0001-0000-0000-000000000001
+	measure Anomaly_Count_Cramped = CALCULATE(COUNTROWS(Group2_ResidentialProperties), Group2_ResidentialProperties[Is_Cramped] = "Cramped")
+		formatString: 0
+		displayFolder: Group 2 - Cramped Functionality
+		lineageTag: 11111111-2222-3333-4444-555555555555
 
-	measure Q1_Total_With_Data =
-			CALCULATE(
-			    COUNTROWS('Fact_Listings'),
-			    NOT(ISBLANK('Fact_Listings'[Diện tích])),
-			    NOT(ISBLANK('Fact_Listings'[Số phòng ngủ]))
-			)
-		formatString: #,0
-		displayFolder: Q1 - Nhồi nhét công năng
-		lineageTag: q1-0001-0000-0000-000000000002
+	measure Total_Residential = COUNTROWS(Group2_ResidentialProperties)
+		formatString: 0
+		displayFolder: Group 2 - Cramped Functionality
+		lineageTag: 22222222-3333-4444-5555-666666666666
 
-	measure Q1_Cramped_Pct = DIVIDE([Q1_Cramped_Count], [Q1_Total_With_Data], 0)
+	measure Cramped_Percentage = DIVIDE([Anomaly_Count_Cramped], [Total_Residential], 0) * 100
 		formatString: 0.0%
-		displayFolder: Q1 - Nhồi nhét công năng
-		lineageTag: q1-0001-0000-0000-000000000003
+		displayFolder: Group 2 - Cramped Functionality
+		lineageTag: 33333333-4444-5555-6666-777777777777
 
-	measure Q1_Avg_Bedroom_Density =
-			AVERAGEX(
-			    FILTER(
-			        'Fact_Listings',
-			        NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Diện tích] > 0
-			    ),
-			    DIVIDE('Fact_Listings'[Số phòng ngủ], 'Fact_Listings'[Diện tích])
-			)
+	measure Average_Bedroom_Density = AVERAGE(Group2_ResidentialProperties[Bedroom_Density])
 		formatString: 0.000
-		displayFolder: Q1 - Nhồi nhét công năng
-		lineageTag: q1-0001-0000-0000-000000000004
+		displayFolder: Group 2 - Cramped Functionality
+		lineageTag: 44444444-5555-6666-7777-888888888888
 
-	measure Q2_Bath_Bed_Ratio =
-			DIVIDE(
-			    SUM('Fact_Listings'[Số phòng tắm, vệ sinh]),
-			    SUM('Fact_Listings'[Số phòng ngủ]),
-			    0
-			)
-		formatString: 0.00
-		displayFolder: Q2 - Tỷ lệ WC/Phòng ngủ
-		lineageTag: q2-0002-0000-0000-000000000001
+	measure Average_Bedroom_Density_Cramped = CALCULATE(AVERAGE(Group2_ResidentialProperties[Bedroom_Density]), Group2_ResidentialProperties[Is_Cramped] = "Cramped")
+		formatString: 0.000
+		displayFolder: Group 2 - Cramped Functionality
+		lineageTag: 55555555-6666-7777-8888-999999999999
 
-	measure Q2_Anomaly_Ratio_Count =
-			CALCULATE(
-			    COUNTROWS('Fact_Listings'),
-			    'Fact_Listings'[Số phòng tắm, vệ sinh] > 'Fact_Listings'[Số phòng ngủ] * 2
-			)
-		formatString: #,0
-		displayFolder: Q2 - Tỷ lệ WC/Phòng ngủ
-		lineageTag: q2-0002-0000-0000-000000000002
+	measure Fire_Risk_Count = CALCULATE(COUNTROWS(Group2_MultiUnitBuildings), Group2_MultiUnitBuildings[Is_Fire_Risk] = "High Risk")
+		formatString: 0
+		displayFolder: Group 2 - Fire Risk
+		lineageTag: 66666666-7777-8888-9999-aaaaaaaaaaaa
 
-	measure Q3_Fire_Risk_Count = CALCULATE(COUNTROWS('Fact_Listings'), 'Fact_Listings'[Is_Fire_Risk] = TRUE)
-		formatString: #,0
-		displayFolder: Q3 - Rủi ro PCCC
-		lineageTag: q3-0003-0000-0000-000000000001
+	measure Total_Multi_Unit = COUNTROWS(Group2_MultiUnitBuildings)
+		formatString: 0
+		displayFolder: Group 2 - Fire Risk
+		lineageTag: 77777777-8888-9999-aaaa-bbbbbbbbbbbb
 
-	measure Q3_Fire_Risk_Pct = DIVIDE([Q3_Fire_Risk_Count], COUNTROWS('Fact_Listings'), 0)
+	measure Fire_Risk_Percentage = DIVIDE([Fire_Risk_Count], [Total_Multi_Unit], 0) * 100
 		formatString: 0.0%
-		displayFolder: Q3 - Rủi ro PCCC
-		lineageTag: q3-0003-0000-0000-000000000002
+		displayFolder: Group 2 - Fire Risk
+		lineageTag: 88888888-9999-aaaa-bbbb-cccccccccccc
 
-	measure Q3_Avg_Floors_FireRisk = CALCULATE(AVERAGE('Fact_Listings'[Số tầng]), 'Fact_Listings'[Is_Fire_Risk] = TRUE)
+	measure Average_Floors_All = AVERAGE(Group2_MultiUnitBuildings[floors])
 		formatString: 0.0
-		displayFolder: Q3 - Rủi ro PCCC
-		lineageTag: q3-0003-0000-0000-000000000003
+		displayFolder: Group 2 - Fire Risk
+		lineageTag: 99999999-aaaa-bbbb-cccc-dddddddddddd
 
-	measure Q3_Avg_Road_FireRisk = CALCULATE(AVERAGE('Fact_Listings'[Đường vào]), 'Fact_Listings'[Is_Fire_Risk] = TRUE)
+	measure Average_Road_Width = AVERAGE(Group2_MultiUnitBuildings[road_width])
 		formatString: 0.00
-		displayFolder: Q3 - Rủi ro PCCC
-		lineageTag: q3-0003-0000-0000-000000000004
+		displayFolder: Group 2 - Fire Risk
+		lineageTag: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 
-	measure Q4_LargeBareShell_Count =
-			CALCULATE(
-			    COUNTROWS('Fact_Listings'),
-			    'Fact_Listings'[Diện tích] > 100,
-			    'Fact_Listings'[Số tầng] >= 2,
-			    'Dim_Property_Details'[Nội thất] IN {"Không nội thất", "Thô"}
-			)
-		formatString: #,0
-		displayFolder: Q4 - Bare Shell Discount
-		lineageTag: q4-0004-0000-0000-000000000001
+	measure Bare_Shell_Count = CALCULATE(COUNTROWS(Group2_ResidentialProperties), Group2_ResidentialProperties[Interior_Type] = "Bare/Basic")
+		formatString: 0
+		displayFolder: Group 2 - Bare Shell Discount
+		lineageTag: bbbbbbbb-cccc-dddd-eeee-ffffffffffff
 
-	measure Q4_AvgPrice_LargeBare =
-			CALCULATE(
-			    AVERAGE('Fact_Listings'[Đơn giá]),
-			    'Fact_Listings'[Diện tích] > 100,
-			    'Dim_Property_Details'[Nội thất] IN {"Không nội thất", "Thô"}
-			)
-		formatString: #,0.00
-		displayFolder: Q4 - Bare Shell Discount
-		lineageTag: q4-0004-0000-0000-000000000002
+	measure Full_Furniture_Count = CALCULATE(COUNTROWS(Group2_ResidentialProperties), Group2_ResidentialProperties[Interior_Type] = "Full Furniture")
+		formatString: 0
+		displayFolder: Group 2 - Bare Shell Discount
+		lineageTag: cccccccc-dddd-eeee-ffff-0000000000000
 
-	measure Q4_AvgPrice_FullFurniture =
-			CALCULATE(
-			    AVERAGE('Fact_Listings'[Đơn giá]),
-			    'Fact_Listings'[Diện tích] > 100,
-			    'Dim_Property_Details'[Nội thất] IN {"Đầy đủ", "Cao cấp"}
-			)
-		formatString: #,0.00
-		displayFolder: Q4 - Bare Shell Discount
-		lineageTag: q4-0004-0000-0000-000000000003
+	measure Average_Price_Bare = CALCULATE(AVERAGE(Group2_ResidentialProperties[price_per_m2]), Group2_ResidentialProperties[Interior_Type] = "Bare/Basic")
+		formatString: 0.00
+		displayFolder: Group 2 - Bare Shell Discount
+		lineageTag: dddddddd-eeee-ffff-0000-1111111111111
 
-	measure Q4_BareShell_Discount_Pct =
-			DIVIDE(
-			    [Q4_AvgPrice_FullFurniture] - [Q4_AvgPrice_LargeBare],
-			    [Q4_AvgPrice_FullFurniture],
-			    0
-			)
+	measure Average_Price_Full = CALCULATE(AVERAGE(Group2_ResidentialProperties[price_per_m2]), Group2_ResidentialProperties[Interior_Type] = "Full Furniture")
+		formatString: 0.00
+		displayFolder: Group 2 - Bare Shell Discount
+		lineageTag: eeeeeeee-ffff-0000-1111-2222222222222
+
+	measure Bare_Shell_Discount_Pct = DIVIDE([Average_Price_Full] - [Average_Price_Bare], [Average_Price_Full], 0) * 100
 		formatString: 0.0%
-		displayFolder: Q4 - Bare Shell Discount
-		lineageTag: q4-0004-0000-0000-000000000004
+		displayFolder: Group 2 - Bare Shell Discount
+		lineageTag: ffffffff-0000-1111-2222-3333333333333
+
+	measure 'Column Color' =
+			
+			VAR CurrentPrice = MAX('Fact_Listings'[Khoảng đơn giá/m²])
+			VAR Threshold = [Ngưỡng rẻ bất thường]
+			RETURN
+			IF(CurrentPrice < Threshold, "#D55E00", "#D9D9D9")
+		lineageTag: c1d25dbe-d424-4e5d-a452-452d1c5e9f21
+
+	measure 'Màu Đỉnh Và Trung Bình' = ```
+			
+			// 1. Xác định giới hạn dải giá của cột hiện tại đang được vẽ
+			VAR CurrentMin = MIN('Fact_Listings'[Giá bán (tỷ đồng)])
+			VAR CurrentMax = MAX('Fact_Listings'[Giá bán (tỷ đồng)])
+			
+			// 2. Cố định giá trị Đỉnh TOÀN CỤC (gỡ bỏ màng lọc của trục X bằng cách quét cả bảng)
+			VAR PeakPrice = CALCULATE(
+			    VALUE([Vùng giá có nhiều tin nhất]),
+			    ALLSELECTED('Fact_Listings')
+			)
+			
+			// 3. Cố định giá trị Trung bình TOÀN CỤC
+			VAR AvgPrice = CALCULATE(
+			    AVERAGE('Fact_Listings'[Giá bán (tỷ đồng)]), 
+			    ALLSELECTED('Fact_Listings')
+			)
+			
+			VAR Radius = 2
+			
+			// 4. Kiểm tra điều kiện và tô màu
+			RETURN
+			IF(
+			    ISBLANK(CurrentMin), // Thêm bẫy lỗi
+			    BLANK(),
+			    IF(
+			        (CurrentMax >= PeakPrice - Radius && CurrentMax <= PeakPrice + Radius) || 
+			        (AvgPrice >= CurrentMin && AvgPrice <= CurrentMax),
+			        "#2E5A88", // Màu xanh đậm (Highlight)
+			        "#D9D9D9"  // Màu xám trung tính (Neutral)
+			    )
+			)
+			```
+		lineageTag: 54784b5d-1a10-4e49-b8a1-f2911bf2971e
+
+	measure 'Màu Bong Bóng Scatter' = ```
+			
+			// Lấy giá trị Đơn giá của điểm dữ liệu hiện tại
+			VAR CurrentPrice = AVERAGE('Fact_Listings'[Đơn giá]) 
+			
+			// Áp dụng quy tắc màu sắc
+			RETURN
+			IF(
+			    CurrentPrice < [Ngưỡng rẻ bất thường],
+			    "#D55E00", // Cam đậm cho điểm có đơn giá < 44.20
+			    "#D3D3D3"  // Xám nhạt cho toàn bộ các điểm còn lại
+			)
+			```
+		lineageTag: 6ca9c5cf-e4c4-4d79-8ded-a02b24620bfb
 
 	measure Avg_PricePerM2 =
 		AVERAGEX(

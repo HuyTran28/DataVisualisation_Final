@@ -9,7 +9,7 @@ table Fact_Listings
 			
 			VAR MaxSoTin =
 			    MAXX(
-			        ALLSELECTED('Fact_Listings'[Khoảng giá bán 50 trieu]),
+			        ALLSELECTED('Fact_Listings'[Khoảng giá bán]),
 			        [Số tin đăng]
 			    )
 			RETURN
@@ -21,7 +21,7 @@ table Fact_Listings
 			
 			VAR BangTam =
 			    ADDCOLUMNS(
-			        ALLSELECTED('Fact_Listings'[Khoảng giá bán 50 trieu]),
+			        ALLSELECTED('Fact_Listings'[Khoảng giá bán]),
 			        "SoTin", [Số tin đăng]
 			    )
 			VAR DongCaoNhat =
@@ -34,7 +34,7 @@ table Fact_Listings
 			RETURN
 			    CONCATENATEX(
 			        DongCaoNhat,
-			        'Fact_Listings'[Khoảng giá bán 50 trieu],
+			        'Fact_Listings'[Khoảng giá bán],
 			        ", "
 			    )
 		lineageTag: c6fbed4a-a131-4bc4-bb3f-9784788ac6cb
@@ -81,6 +81,12 @@ table Fact_Listings
 		lineageTag: 78235c3e-e75f-4a2a-89ce-48af9b7832d1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Đơn giá TB Loại BĐS này' = CALCULATE(AVERAGE(Fact_Listings[Đơn giá]), ALLEXCEPT(Fact_Listings, Fact_Listings[Loại hình BĐS]))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ee9a8b3a-5683-405e-bdff-7cec040765d6
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	column expiry_date
 		dataType: dateTime
@@ -283,89 +289,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
-		formatString: #,0.00
-		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán 50 trieu","ObjectType":4},"LinkType":"UsedInGroup"}]
-
-	column 'Khoảng giá bán 50 trieu' =
-			IF(
-				ISBLANK('Fact_Listings'[Giá bán (tỷ đồng)]),
-				BLANK(),
-				IF(
-					'Fact_Listings'[Giá bán (tỷ đồng)] >= 0,
-					ROUNDDOWN('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05,
-					ROUNDUP('Fact_Listings'[Giá bán (tỷ đồng)] / 0.05, 0) * 0.05
-				)
-			)
-		formatString: #,0.00
-		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
-		summarizeBy: none
-
-		extendedProperty GroupingMetadata =
-				{
-				  "version": 0,
-				  "groupedColumns": [
-				    {
-				      "Column": {
-				        "Expression": {
-				          "SourceRef": {
-				            "Entity": "Fact_Listings"
-				          }
-				        },
-				        "Property": "Giá bán (tỷ đồng)"
-				      }
-				    }
-				  ],
-				  "binningMetadata": {
-				    "binSize": {
-				      "value": 0.05,
-				      "unit": 0
-				    }
-				  }
-				}
-
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.05}}}}
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Tỷ lệ sâu/rộng' = ```
-			
-			DIVIDE(
-			    'Fact_Listings'[Diện tích],
-			    'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền] 
-			)
-			```
-		lineageTag: 61fcde6b-8556-4f33-9ecf-2ecacd406db3
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nhóm hình dáng thửa đất' =
-			
-			VAR TyLe =
-			    DIVIDE(
-			        'Fact_Listings'[Diện tích],
-			        'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền]
-			    )
-			RETURN
-			    SWITCH(
-			        TRUE(),
-			        ISBLANK('Fact_Listings'[Mặt tiền]) || ISBLANK('Fact_Listings'[Mặt tiền]), "Thiếu thông tin",
-			        TyLe < 1.5, "Mặt tiền rộng",
-			        TyLe < 3, "Cân đối",
-			        TyLe < 5, "Nhà hẹp dài",
-			        "Ống siêu dài"
-			    )
-		lineageTag: 945d6bae-2123-44bb-abc0-8f33c5c78492
-		summarizeBy: none
-
-		annotation SummarizationSetBy = Automatic
-
 	column PhanKhuc =
 			
 			// Bước 1: Tính các mốc bách phân vị dựa trên TOÀN BỘ dữ liệu và LÀM TRÒN
@@ -412,11 +335,90 @@ table Fact_Listings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Giá bán (tỷ đồng)' = [Khoảng giá] / 1000
+		formatString: #,0.00
+		lineageTag: da9d8c65-34b4-466a-a6a8-3a9a5d841806
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng giá bán","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Tỷ lệ sâu/rộng' = ```
+			
+			DIVIDE(
+			    'Fact_Listings'[Diện tích],
+			    'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền] 
+			)
+			```
+		lineageTag: 61fcde6b-8556-4f33-9ecf-2ecacd406db3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nhóm hình dáng thửa đất' =
+			
+			VAR TyLe =
+			    DIVIDE(
+			        'Fact_Listings'[Diện tích],
+			        'Fact_Listings'[Mặt tiền] * 'Fact_Listings'[Mặt tiền]
+			    )
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK('Fact_Listings'[Mặt tiền]) || ISBLANK('Fact_Listings'[Mặt tiền]), "Thiếu thông tin",
+			        TyLe < 1.5, "Mặt tiền rộng",
+			        TyLe < 3, "Cân đối",
+			        TyLe < 5, "Nhà hẹp dài",
+			        "Ống siêu dài"
+			    )
+		lineageTag: 945d6bae-2123-44bb-abc0-8f33c5c78492
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Khoảng giá bán' =
+			IF(
+				ISBLANK('Fact_Listings'[Giá bán (tỷ đồng)]),
+				BLANK(),
+				INT('Fact_Listings'[Giá bán (tỷ đồng)] / 0.5) * 0.5
+			)
+		formatString: #,0.00
+		lineageTag: 44f3606f-47bd-4b59-8043-eced1eec11ab
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Giá bán (tỷ đồng)"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 0.5,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Giá bán (tỷ đồng)"}},"Size":0.5}}}}
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'Khoảng đơn giá/m²' =
 			IF(
 				ISBLANK('Fact_Listings'[Đơn giá]),
 				BLANK(),
-				INT('Fact_Listings'[Đơn giá])
+				INT('Fact_Listings'[Đơn giá] / 5) * 5
 			)
 		formatString: #,0.00
 		lineageTag: d1307432-4440-42a8-8972-92439a23c6bc
@@ -439,13 +441,22 @@ table Fact_Listings
 				  ],
 				  "binningMetadata": {
 				    "binSize": {
-				      "value": 1.0,
+				      "value": 5.0,
 				      "unit": 0
 				    }
 				  }
 				}
 
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":1.0}}}}
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":5.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column Listing_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: b6f81f75-080f-49b1-ad8f-baaecbda785a
+		summarizeBy: count
+		sourceColumn: Listing_ID
 
 		annotation SummarizationSetBy = Automatic
 
@@ -465,9 +476,10 @@ table Fact_Listings
 				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"}),
 				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded Dim_Product", {"Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Biến động giá", "Xu hướng giá", "Ngày đăng", "expiry_date", "Location_SKey", "Feature_SKey", "Status_SKey", "Product_SKey"}),
 				    #"Added Is_Overcrowded" = Table.AddColumn(#"Removed Other Columns", "Is_Overcrowded", each if [Diện tích] <> null and [Số phòng ngủ] <> null and [Diện tích] < 40 and [Số phòng ngủ] >= 3 then true else false, type logical),
-				    #"Added Is_Fire_Risk" = Table.AddColumn(#"Added Is_Overcrowded", "Is_Fire_Risk", each if [Số tầng] <> null and [Đường vào] <> null and [Số tầng] > 5 and [Đường vào] < 3 then true else false, type logical)
+				    #"Added Is_Fire_Risk" = Table.AddColumn(#"Added Is_Overcrowded", "Is_Fire_Risk", each if [Số tầng] <> null and [Đường vào] <> null and [Số tầng] > 5 and [Đường vào] < 3 then true else false, type logical),
+				    #"Added Index" = Table.AddIndexColumn(#"Added Is_Fire_Risk", "Listing_ID", 1, 1, Int64.Type)
 				in
-				    #"Added Is_Fire_Risk"
+				    #"Added Index"
 
 	annotation PBI_NavigationStepName = Navigation
 

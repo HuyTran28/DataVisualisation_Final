@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "0a4d1f52b588c8ce9f02",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "7e797ec5fc2ffaca463d",
   "position": {
-    "x": 688.57142857142867,
-    "y": 461.42857142857144,
-    "z": 7000,
-    "height": 241.42857142857144,
-    "width": 202.85714285714286,
-    "tabOrder": 7000
+    "x": 941.11111111111109,
+    "y": 425.55555555555554,
+    "z": 6002,
+    "height": 243.33333333333331,
+    "width": 273.33333333333331,
+    "tabOrder": 6002
   },
   "visual": {
     "visualType": "pieChart",
@@ -97,58 +97,49 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "ed73b8cb9039c49505bb",
+        "name": "6c6e42a8e10535e65278",
         "field": {
-          "Column": {
+          "GroupRef": {
             "Expression": {
               "SourceRef": {
                 "Entity": "Dim_Property_Details"
               }
             },
-            "Property": "Nhom_Loai_Tin"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Dim_Property_Details",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Nhom_Loai_Tin"
-                      }
+            "Property": "Pháp lý Chuẩn hóa (groups)",
+            "GroupedColumns": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Property_Details"
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Tin VIP'"
-                        }
-                      }
-                    ]
-                  ]
+                  },
+                  "Property": "Pháp lý Chuẩn hóa"
                 }
               }
-            }
-          ]
+            ]
+          }
         },
-        "howCreated": "User"
+        "type": "Categorical"
+      },
+      {
+        "name": "ba7efa776682d2b0322f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
