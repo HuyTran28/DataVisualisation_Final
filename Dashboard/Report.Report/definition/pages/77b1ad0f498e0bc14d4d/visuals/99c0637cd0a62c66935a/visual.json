@@ -500,7 +500,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Đơn giá Tin VIP không có sự chênh lệch lớn so với Tin thường'"
+                  "Value": "'Tin VIP phân hóa rõ rệt: Số ít neo giá, số đông định giá thấp'"
                 }
               }
             },
