@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DatasetFolderPath","batdongsan_real_estate_cleaned","Dim_Location","Dim_Property_Details","Dim_Features","Dim_Product","Fact_Listings","_Measures"]
+annotation PBI_QueryOrder = ["DatasetFolderPath","batdongsan_real_estate_cleaned","batdongsan_apartment","batdongsan_house","batdongsan_multi_unit_building","Dim_Location","Dim_Property_Details","Dim_Features","Dim_Product","Fact_Listings","_Measures"]
 
 annotation PBI_ProTooling = ["DevMode","TMDL-Extension"]
 
@@ -24,5 +24,3 @@ ref table _Measures
 
 ref cultureInfo en-US
 
-ref expression DatasetFolderPath
-ref expression batdongsan_real_estate_cleaned

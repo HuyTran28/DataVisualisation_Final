@@ -47,8 +47,8 @@
                 }
               },
               "queryRef": "Fact_Listings.Nhom_Chat_Luong_Thocu",
-              "nativeQueryRef": "Chất lượng thổ cư",
-              "displayName": "Chất lượng thổ cư"
+              "nativeQueryRef": "Chất lượng BĐS",
+              "displayName": "Chất lượng BĐS"
             }
           ]
         },
@@ -108,7 +108,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Chất lượng thổ cư'"
+                  "Value": "'Chất lượng BĐS'"
                 }
               }
             },
@@ -143,7 +143,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "11D"
                 }
               }
             }

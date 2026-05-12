@@ -6034,7 +6034,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Chất lượng thổ cư": {
+			          "Chất lượng BĐS": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -6044,42 +6044,132 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "fact_listing.nhom_chat_luong_thocu_sort": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_Listings",
+			          "ConceptualProperty": "Nhom_Chat_Luong_Thocu_Sort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nhom chat luong thocu sort": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Nhom_Chat_Luong_Thocu_Sort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu genus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu species": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu nature": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu ilk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "nhom chat luong thocu order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing.ngày_đăng.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
-			          }
-			        },
-			        "fact_listing.ngày_đăng.quarter": {
-			          "Target": {
-			            "Entity": "fact_listing.ngày_đăng.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.ngày_đăng.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_quarters"
-			        }
-			      ]
-			    },
 			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_year": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
@@ -6723,6 +6813,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_locations_have_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_nhom_chat_luong_thocu_sort": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.nhom_chat_luong_thocu_sort": {
+			          "Target": {
+			            "Entity": "fact_listing.nhom_chat_luong_thocu_sort"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.nhom_chat_luong_thocu_sort"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_nhom_chat_luong_thocu_sorts"
 			        }
 			      ]
 			    },
@@ -9751,6 +9874,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_fact_listing_are_overcrowded_fact_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_ngày_đăng_date_hierarchy_has_fact_listing_ngày_đăng_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing.ngày_đăng.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.date_hierarchy"
+			          }
+			        },
+			        "fact_listing.ngày_đăng.quarter": {
+			          "Target": {
+			            "Entity": "fact_listing.ngày_đăng.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing.ngày_đăng.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.ngày_đăng.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ngày_đăng_date_hierarchies_have_ngày_đăng_quarters"
 			        }
 			      ]
 			    },
