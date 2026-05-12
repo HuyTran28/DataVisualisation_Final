@@ -4,10 +4,10 @@
   "position": {
     "x": 406.25,
     "y": 433.75,
-    "z": 3000,
+    "z": 2000,
     "height": 275,
     "width": 862.5,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -537,20 +537,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9c03da2d976c76c26f4d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Property_Details"
-              }
-            },
-            "Property": "Nhom_Loai_Tin"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "15b21c240f912312917d",
         "field": {
           "Column": {
@@ -580,7 +566,21 @@
         }
       },
       {
-        "name": "40c1b9a59e16f59f1f28",
+        "name": "1a927204e659eb3f41f1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Property_Details"
+              }
+            },
+            "Property": "Nhom_Loai_Tin"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "236706d5c23b3bb0f9f7",
         "field": {
           "Aggregation": {
             "Expression": {

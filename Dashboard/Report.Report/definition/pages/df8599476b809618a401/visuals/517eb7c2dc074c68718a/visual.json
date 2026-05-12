@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "089cef996988dddc13e8",
+  "name": "517eb7c2dc074c68718a",
   "position": {
-    "x": 12.222222222222221,
-    "y": 78.888888888888886,
-    "z": 5000,
-    "height": 70,
-    "width": 150,
-    "tabOrder": 5000
+    "x": 20.983606557377048,
+    "y": 560.26229508196718,
+    "z": 4001,
+    "height": 125.90163934426229,
+    "width": 196.19672131147541,
+    "tabOrder": 4001
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,11 @@
                       "Entity": "Fact_Listings"
                     }
                   },
-                  "Property": "PhanKhuc"
+                  "Property": "Loại hình BĐS"
                 }
               },
-              "queryRef": "Fact_Listings.PhanKhuc",
-              "nativeQueryRef": "PhanKhuc",
+              "queryRef": "Fact_Listings.Loại hình BĐS",
+              "nativeQueryRef": "Loại hình BĐS",
               "active": true
             }
           ]
@@ -41,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Basic'"
                 }
               }
             }
@@ -52,28 +52,26 @@
         {
           "properties": {}
         }
-      ],
-      "header": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Phân khúc'"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Tahoma'"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e4c8cbc38ab3135cb336",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Loại hình BĐS"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

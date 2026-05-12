@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "20ae5d77f8bc7929af9a",
   "position": {
-    "x": 38.633836378077838,
-    "y": 450.38919777601268,
-    "z": 3000,
-    "height": 251.11993645750596,
-    "width": 442.25575853852263,
-    "tabOrder": 1000
+    "x": 20.983606557377048,
+    "y": 101.77049180327869,
+    "z": 1000,
+    "height": 330.49180327868851,
+    "width": 451.14754098360658,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "BoxWhiskerChart1455240051538",
@@ -28,6 +28,24 @@
               },
               "queryRef": "Dim_Property_Details.Nội thất",
               "nativeQueryRef": "Nội thất"
+            }
+          ]
+        },
+        "Samples": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Listings"
+                    }
+                  },
+                  "Property": "Product_SKey"
+                }
+              },
+              "queryRef": "Fact_Listings.Product_SKey",
+              "nativeQueryRef": "Product_SKey"
             }
           ]
         },
@@ -53,24 +71,6 @@
               "nativeQueryRef": "Sum of Đơn giá"
             }
           ]
-        },
-        "Samples": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_Listings"
-                    }
-                  },
-                  "Property": "Product_SKey"
-                }
-              },
-              "queryRef": "Fact_Listings.Product_SKey",
-              "nativeQueryRef": "Product_SKey"
-            }
-          ]
         }
       },
       "sortDefinition": {
@@ -91,10 +91,22 @@
                 "Function": 0
               }
             },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
+              }
+            },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
@@ -140,6 +152,69 @@
                   "Value": "0D"
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "title": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Đơn giá'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gridLines": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -174,35 +249,47 @@
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "Nội thất"
                           }
-                        },
-                        "Property": "Nội thất"
-                      }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Không rõ'"
+                            }
+                          }
+                        ]
+                      ]
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Thô'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Đầy đủ'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
                 }
               }
             }
@@ -210,7 +297,21 @@
         }
       },
       {
-        "name": "c8a71d171ec23263dc4e",
+        "name": "168f3f794677a7246d56",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Product_SKey"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aff431daf79531dba3fd",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -226,46 +327,7 @@
             "Function": 0
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "f",
-              "Entity": "Fact_Listings",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 3,
-                  "Left": {
-                    "Aggregation": {
-                      "Expression": {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "f"
-                            }
-                          },
-                          "Property": "Đơn giá"
-                        }
-                      },
-                      "Function": 0
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "1000L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "type": "Advanced"
       }
     ]
   }

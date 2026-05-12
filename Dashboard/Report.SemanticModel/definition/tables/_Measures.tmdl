@@ -1,81 +1,6 @@
 table _Measures
 	lineageTag: 12345678-90ab-cdef-1234-567890abcdef
 
-	measure Anomaly_Count_Cramped = CALCULATE(COUNTROWS(Group2_ResidentialProperties), Group2_ResidentialProperties[Is_Cramped] = "Cramped")
-		formatString: 0
-		displayFolder: Group 2 - Cramped Functionality
-		lineageTag: 11111111-2222-3333-4444-555555555555
-
-	measure Total_Residential = COUNTROWS(Group2_ResidentialProperties)
-		formatString: 0
-		displayFolder: Group 2 - Cramped Functionality
-		lineageTag: 22222222-3333-4444-5555-666666666666
-
-	measure Cramped_Percentage = DIVIDE([Anomaly_Count_Cramped], [Total_Residential], 0) * 100
-		formatString: 0.0%
-		displayFolder: Group 2 - Cramped Functionality
-		lineageTag: 33333333-4444-5555-6666-777777777777
-
-	measure Average_Bedroom_Density = AVERAGE(Group2_ResidentialProperties[Bedroom_Density])
-		formatString: 0.000
-		displayFolder: Group 2 - Cramped Functionality
-		lineageTag: 44444444-5555-6666-7777-888888888888
-
-	measure Average_Bedroom_Density_Cramped = CALCULATE(AVERAGE(Group2_ResidentialProperties[Bedroom_Density]), Group2_ResidentialProperties[Is_Cramped] = "Cramped")
-		formatString: 0.000
-		displayFolder: Group 2 - Cramped Functionality
-		lineageTag: 55555555-6666-7777-8888-999999999999
-
-	measure Fire_Risk_Count = CALCULATE(COUNTROWS(Group2_MultiUnitBuildings), Group2_MultiUnitBuildings[Is_Fire_Risk] = "High Risk")
-		formatString: 0
-		displayFolder: Group 2 - Fire Risk
-		lineageTag: 66666666-7777-8888-9999-aaaaaaaaaaaa
-
-	measure Total_Multi_Unit = COUNTROWS(Group2_MultiUnitBuildings)
-		formatString: 0
-		displayFolder: Group 2 - Fire Risk
-		lineageTag: 77777777-8888-9999-aaaa-bbbbbbbbbbbb
-
-	measure Fire_Risk_Percentage = DIVIDE([Fire_Risk_Count], [Total_Multi_Unit], 0) * 100
-		formatString: 0.0%
-		displayFolder: Group 2 - Fire Risk
-		lineageTag: 88888888-9999-aaaa-bbbb-cccccccccccc
-
-	measure Average_Floors_All = AVERAGE(Group2_MultiUnitBuildings[floors])
-		formatString: 0.0
-		displayFolder: Group 2 - Fire Risk
-		lineageTag: 99999999-aaaa-bbbb-cccc-dddddddddddd
-
-	measure Average_Road_Width = AVERAGE(Group2_MultiUnitBuildings[road_width])
-		formatString: 0.00
-		displayFolder: Group 2 - Fire Risk
-		lineageTag: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-
-	measure Bare_Shell_Count = CALCULATE(COUNTROWS(Group2_ResidentialProperties), Group2_ResidentialProperties[Interior_Type] = "Bare/Basic")
-		formatString: 0
-		displayFolder: Group 2 - Bare Shell Discount
-		lineageTag: bbbbbbbb-cccc-dddd-eeee-ffffffffffff
-
-	measure Full_Furniture_Count = CALCULATE(COUNTROWS(Group2_ResidentialProperties), Group2_ResidentialProperties[Interior_Type] = "Full Furniture")
-		formatString: 0
-		displayFolder: Group 2 - Bare Shell Discount
-		lineageTag: cccccccc-dddd-eeee-ffff-0000000000000
-
-	measure Average_Price_Bare = CALCULATE(AVERAGE(Group2_ResidentialProperties[price_per_m2]), Group2_ResidentialProperties[Interior_Type] = "Bare/Basic")
-		formatString: 0.00
-		displayFolder: Group 2 - Bare Shell Discount
-		lineageTag: dddddddd-eeee-ffff-0000-1111111111111
-
-	measure Average_Price_Full = CALCULATE(AVERAGE(Group2_ResidentialProperties[price_per_m2]), Group2_ResidentialProperties[Interior_Type] = "Full Furniture")
-		formatString: 0.00
-		displayFolder: Group 2 - Bare Shell Discount
-		lineageTag: eeeeeeee-ffff-0000-1111-2222222222222
-
-	measure Bare_Shell_Discount_Pct = DIVIDE([Average_Price_Full] - [Average_Price_Bare], [Average_Price_Full], 0) * 100
-		formatString: 0.0%
-		displayFolder: Group 2 - Bare Shell Discount
-		lineageTag: ffffffff-0000-1111-2222-3333333333333
-
 	measure 'Column Color' =
 			
 			VAR CurrentPrice = MAX('Fact_Listings'[Khoảng đơn giá/m²])
@@ -135,87 +60,26 @@ table _Measures
 		lineageTag: 6ca9c5cf-e4c4-4d79-8ded-a02b24620bfb
 
 	measure Avg_PricePerM2 =
-		AVERAGEX(
-			FILTER(
-				'Fact_Listings',
-				NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Diện tích] > 0
-			),
-			DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
-		)
-		formatString: #,0.00
-		displayFolder: Price - Normalized
-		lineageTag: pnorm-0001-0000-0000-000000000001
-
-	measure Median_PricePerM2_ByType =
-		CALCULATE(
-			MEDIANX(
+			AVERAGEX(
 				FILTER(
 					'Fact_Listings',
 					NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Diện tích] > 0
-					),
+				),
 				DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
-			),
-			ALLEXCEPT('Fact_Listings', 'Fact_Listings'[Loại hình BĐS])
-		)
-		formatString: #,0.00
-		displayFolder: Price - Normalized
-		lineageTag: pnorm-0002-0000-0000-000000000002
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b476cf2a-0bfb-4115-94ce-4169fd9250d8
 
-	measure PricePerM2_Index =
-		DIVIDE(
-			[Avg_PricePerM2],
-			[Median_PricePerM2_ByType],
-			BLANK()
-		)
-		formatString: 0.00
-		displayFolder: Price - Normalized
-		lineageTag: pnorm-0003-0000-0000-000000000003
-
-	measure PricePerM2_PctRank =
-		VAR cur = DIVIDE(SELECTEDVALUE('Fact_Listings'[Đơn giá]), SELECTEDVALUE('Fact_Listings'[Diện tích]), BLANK())
-		VAR tbl = FILTER(
-			ALL('Fact_Listings'),
-			NOT(ISBLANK('Fact_Listings'[Diện tích])) && 'Fact_Listings'[Loại hình BĐS] = SELECTEDVALUE('Fact_Listings'[Loại hình BĐS])
-		)
-		VAR r = RANKX(tbl, DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK()), cur, , DESC)
-		VAR total = COUNTROWS(tbl)
-		RETURN DIVIDE(r, total, BLANK())
-		formatString: 0.00
-		displayFolder: Price - Normalized
-		lineageTag: pnorm-0004-0000-0000-000000000004
-
-	measure PricePerM2_Z =
-		VAR cur = DIVIDE(SELECTEDVALUE('Fact_Listings'[Đơn giá]), SELECTEDVALUE('Fact_Listings'[Diện tích]), BLANK())
-		VAR mean = CALCULATE(
-			AVERAGEX(
-				FILTER('Fact_Listings', NOT(ISBLANK('Fact_Listings'[Diện tích]))),
-				DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
-			),
-			ALLEXCEPT('Fact_Listings', 'Fact_Listings'[Loại hình BĐS])
-		)
-		VAR sd = CALCULATE(
-			STDEVX.P(
-				FILTER('Fact_Listings', NOT(ISBLANK('Fact_Listings'[Diện tích]))),
-				DIVIDE('Fact_Listings'[Đơn giá], 'Fact_Listings'[Diện tích], BLANK())
-			),
-			ALLEXCEPT('Fact_Listings', 'Fact_Listings'[Loại hình BĐS])
-		)
-		RETURN IF(ISBLANK(cur) || sd = 0, BLANK(), (cur - mean) / sd)
-		formatString: 0.00
-		displayFolder: Price - Normalized
-		lineageTag: pnorm-0005-0000-0000-000000000005
-
-	column _Measures
-		dataType: string
-		lineageTag: e27efe27-caf1-421e-8db3-1f3365ea355e
-		summarizeBy: none
-		sourceColumn: _Measures
-
-		annotation SummarizationSetBy = Automatic
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	partition _Measures = m
 		mode: import
-		source = {{"Measure", "Value"}, {"_Measures", 1}}
+		source =
+				let
+				    _Measures = {{"Measure", "Value"}, {"_Measures", 1}},
+				    #"Removed Columns" = Table.RemoveColumns(_Measures,{"_Measures"})
+				in
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
