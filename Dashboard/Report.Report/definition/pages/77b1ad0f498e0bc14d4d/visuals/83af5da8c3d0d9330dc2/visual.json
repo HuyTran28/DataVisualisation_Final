@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "83af5da8c3d0d9330dc2",
   "position": {
-    "x": 11.694352159468439,
-    "y": 158.40531561461793,
+    "x": 0,
+    "y": 78.3003269891842,
     "z": 0,
-    "height": 550.69767441860461,
-    "width": 382.72425249169436,
+    "height": 641.513205332439,
+    "width": 379.138425421313,
     "tabOrder": 0
   },
   "visual": {
@@ -67,12 +67,11 @@
                       "Property": "Product_SKey"
                     }
                   },
-                  "Function": 5
+                  "Function": 2
                 }
               },
-              "queryRef": "CountNonNull(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Số lượng tin",
-              "displayName": "Số lượng tin"
+              "queryRef": "Count(Fact_Listings.Product_SKey)",
+              "nativeQueryRef": "Count of Product_SKey"
             }
           ]
         }
@@ -109,6 +108,20 @@
                   "Value": "false"
                 }
               }
+            },
+            "sharedAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "scaleToFit": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -134,6 +147,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Tahoma'"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "20L"
                 }
               }
             }
@@ -168,7 +188,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F0E199'"
+                      "Value": "'#ADD8E6'"
                     }
                   }
                 }
@@ -209,7 +229,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C7B8E7'"
+                      "Value": "'#6F42C1'"
                     }
                   }
                 }
@@ -260,6 +280,60 @@
                   "Value": "'Tahoma'"
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "smallMultiplesLayout": [
+        {
+          "properties": {
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "gridPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "gridLineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subheader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -272,7 +346,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Số lượng Tin VIP và Tin thường theo Phân khúc giá Bất động sản'"
+                  "Value": "'Tin thường chiếm đa số ở mọi phân khúc giá'"
                 }
               }
             },
@@ -280,6 +354,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Tahoma'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }
@@ -333,6 +414,53 @@
             }
           ]
         }
+      },
+      {
+        "name": "3484d9e5e0e79c6ed8f8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "PhanKhuc"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb5f8a1861012a71858f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ad2ec45929b3c96f5396",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Property_Details"
+              }
+            },
+            "Property": "Nhom_Loai_Tin"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

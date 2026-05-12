@@ -3,10 +3,10 @@
   "name": "27587d4e59141cc28d20",
   "position": {
     "x": 0,
-    "y": 65.098753373176834,
+    "y": 77.304769630647485,
     "z": 9250,
     "height": 99.004354088373091,
-    "width": 1047.0049500852606,
+    "width": 1280.2754830058109,
     "tabOrder": 0
   },
   "visual": {
@@ -294,5 +294,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "98a4142416ee12c00227",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Vùng giá có nhiều tin nhất"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cd194789808a82332df6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "% tin rẻ bất thường"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "24ebb42e92feb3a7857a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Ngưỡng rẻ bất thường"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

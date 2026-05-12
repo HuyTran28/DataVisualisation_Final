@@ -11,6 +11,64 @@
       "type": "SharedResources"
     }
   },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7d2accad23fac9826919",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Location"
+              }
+            },
+            "Property": "Thành phố"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_Location",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Thành phố"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Thành phố Hồ Chí Minh'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
   "objects": {
     "section": [
       {
@@ -72,8 +130,8 @@
           "type": "ShapeMap"
         },
         {
-          "name": "hcm_districts_standard6529679076318834.json",
-          "path": "hcm_districts_standard6529679076318834.json",
+          "name": "hcm_districts_standard652967902911581080158313.json",
+          "path": "hcm_districts_standard652967902911581080158313.json",
           "type": "ShapeMap"
         }
       ]

@@ -1294,7 +1294,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "760",
-            "name": "Quận 1"
+            "name": "Quận 1",
+            "label_lon": 106.697716,
+            "label_lat": 10.775321
           }
         },
         {
@@ -1312,7 +1314,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "761",
-            "name": "Quận 12"
+            "name": "Quận 12",
+            "label_lon": 106.657217,
+            "label_lat": 10.864694
           }
         },
         {
@@ -1327,7 +1331,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "764",
-            "name": "Quận Gò Vấp"
+            "name": "Quận Gò Vấp",
+            "label_lon": 106.668529,
+            "label_lat": 10.838887
           }
         },
         {
@@ -1344,7 +1350,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "765",
-            "name": "Quận Bình Thạnh"
+            "name": "Quận Bình Thạnh",
+            "label_lon": 106.715888,
+            "label_lat": 10.8124
           }
         },
         {
@@ -1362,7 +1370,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "766",
-            "name": "Quận Tân Bình"
+            "name": "Quận Tân Bình",
+            "label_lon": 106.651661,
+            "label_lat": 10.809919
           }
         },
         {
@@ -1378,7 +1388,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "767",
-            "name": "Quận Tân Phú"
+            "name": "Quận Tân Phú",
+            "label_lon": 106.627575,
+            "label_lat": 10.791738
           }
         },
         {
@@ -1394,7 +1406,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "768",
-            "name": "Quận Phú Nhuận"
+            "name": "Quận Phú Nhuận",
+            "label_lon": 106.678477,
+            "label_lat": 10.800536
           }
         },
         {
@@ -1410,7 +1424,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "769",
-            "name": "Thành phố Thủ Đức"
+            "name": "Thành phố Thủ Đức",
+            "label_lon": 106.757393,
+            "label_lat": 10.778689
           }
         },
         {
@@ -1425,7 +1441,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "770",
-            "name": "Quận 3"
+            "name": "Quận 3",
+            "label_lon": 106.682794,
+            "label_lat": 10.783016
           }
         },
         {
@@ -1440,7 +1458,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "771",
-            "name": "Quận 10"
+            "name": "Quận 10",
+            "label_lon": 106.668735,
+            "label_lat": 10.772688
           }
         },
         {
@@ -1456,7 +1476,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "772",
-            "name": "Quận 11"
+            "name": "Quận 11",
+            "label_lon": 106.64951,
+            "label_lat": 10.764577
           }
         },
         {
@@ -1472,7 +1494,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "773",
-            "name": "Quận 4"
+            "name": "Quận 4",
+            "label_lon": 106.706101,
+            "label_lat": 10.758724
           }
         },
         {
@@ -1489,7 +1513,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "774",
-            "name": "Quận 5"
+            "name": "Quận 5",
+            "label_lon": 106.670068,
+            "label_lat": 10.754826
           }
         },
         {
@@ -1505,7 +1531,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "775",
-            "name": "Quận 6"
+            "name": "Quận 6",
+            "label_lon": 106.634769,
+            "label_lat": 10.746542
           }
         },
         {
@@ -1522,7 +1550,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "776",
-            "name": "Quận 8"
+            "name": "Quận 8",
+            "label_lon": 106.643228,
+            "label_lat": 10.727513
           }
         },
         {
@@ -1539,7 +1569,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "777",
-            "name": "Quận Bình Tân"
+            "name": "Quận Bình Tân",
+            "label_lon": 106.597576,
+            "label_lat": 10.766058
           }
         },
         {
@@ -1556,7 +1588,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "778",
-            "name": "Quận 7"
+            "name": "Quận 7",
+            "label_lon": 106.729238,
+            "label_lat": 10.736851
           }
         },
         {
@@ -1569,7 +1603,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "783",
-            "name": "Huyện Củ Chi"
+            "name": "Huyện Củ Chi",
+            "label_lon": 106.510891,
+            "label_lat": 11.008956
           }
         },
         {
@@ -1586,7 +1622,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "784",
-            "name": "Huyện Hóc Môn"
+            "name": "Huyện Hóc Môn",
+            "label_lon": 106.590904,
+            "label_lat": 10.885849
           }
         },
         {
@@ -1603,7 +1641,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "785",
-            "name": "Huyện Bình Chánh"
+            "name": "Huyện Bình Chánh",
+            "label_lon": 106.576002,
+            "label_lat": 10.73296
           }
         },
         {
@@ -1619,7 +1659,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "786",
-            "name": "Huyện Nhà Bè"
+            "name": "Huyện Nhà Bè",
+            "label_lon": 106.730132,
+            "label_lat": 10.655849
           }
         },
         {
@@ -1632,7 +1674,9 @@
           "type": "Polygon",
           "properties": {
             "level2_id": "787",
-            "name": "Huyện Cần Giờ"
+            "name": "Huyện Cần Giờ",
+            "label_lon": 106.86058,
+            "label_lat": 10.522089
           }
         }
       ]

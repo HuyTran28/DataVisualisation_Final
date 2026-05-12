@@ -18,6 +18,23 @@
           }
         }
       }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#CCDFF1'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "visualInteractions": [

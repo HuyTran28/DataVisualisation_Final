@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2f3855406891ab79290d",
   "position": {
-    "x": 406.1129568106312,
-    "y": 433.75415282392026,
+    "x": 379.138425421313,
+    "y": 390.12794499874235,
     "z": 2000,
-    "height": 275.3488372093023,
-    "width": 865.38205980066436,
+    "height": 329.68558732288085,
+    "width": 901.1406053492077,
     "tabOrder": 2000
   },
   "visual": {
@@ -115,7 +115,7 @@
             "position": {
               "expr": {
                 "Literal": {
-                  "Value": "'LeftCenter'"
+                  "Value": "'BottomCenter'"
                 }
               }
             },
@@ -201,6 +201,41 @@
                   "Value": "'Tahoma'"
                 }
               }
+            },
+            "enableDetailDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            },
+            "optimizeLabelDisplay": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelOverflow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "detailFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
             }
           }
         }
@@ -212,9 +247,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.25
+                    "Literal": {
+                      "Value": "'#005A9C'"
                     }
                   }
                 }
@@ -254,9 +288,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0.4
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -297,7 +330,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#4E82BA'"
+                      "Value": "'#005A9C'"
                     }
                   }
                 }
@@ -338,7 +371,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9DB9DC'"
+                      "Value": "'#7EB6FF'"
                     }
                   }
                 }
@@ -378,9 +411,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -421,7 +453,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#4E82BA'"
+                      "Value": "'#005A9C'"
                     }
                   }
                 }
@@ -462,7 +494,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#9DB9DC'"
+                      "Value": "'#7EB6FF'"
                     }
                   }
                 }
@@ -502,9 +534,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -544,9 +575,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0.4
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -587,7 +617,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#558BC4'"
+                      "Value": "'#005A9C'"
                     }
                   }
                 }
@@ -628,7 +658,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AAC4DC'"
+                      "Value": "'#7EB6FF'"
                     }
                   }
                 }
@@ -668,9 +698,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 4,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -711,7 +740,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFD6C1'"
+                      "Value": "'#CCCCCC'"
                     }
                   }
                 }
@@ -789,6 +818,53 @@
                   "Value": "true"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "ribbonBands": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "seriesOrderSorted": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "seriesOrderReversed": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -801,7 +877,28 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tỷ lệ Sổ đỏ + Vị trí tốt của Tin thường cao hơn Tin VIP'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }
@@ -815,6 +912,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Tahoma'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -839,6 +949,49 @@
           }
         },
         "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Fact_Listings",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "Nhom_Chat_Luong_Thocu"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Pháp lý yếu + Hẻm nhỏ'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
         "objects": {
           "general": [
             {
@@ -854,6 +1007,39 @@
             }
           ]
         }
+      },
+      {
+        "name": "602a1770019903f5d522",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Property_Details"
+              }
+            },
+            "Property": "Nhom_Loai_Tin"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5a8f626c886ade3fd27b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "23afb69a1290c92f7c0f",
   "position": {
-    "x": 0,
+    "x": 233.27053292055029,
     "y": 0,
     "z": 7000,
-    "height": 64.494212633377444,
-    "width": 1280.2787316370459,
+    "height": 65.098753373176834,
+    "width": 1047.0049500852606,
     "tabOrder": 5000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "BÓC TRẦN CHIÊU TRÒ GIÁ BĐS",
+                    "value": "Bóc trần chiêu trò giá BĐS",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Tahoma",

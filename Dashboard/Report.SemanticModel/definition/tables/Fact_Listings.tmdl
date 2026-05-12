@@ -232,17 +232,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Đơn giá'
-		dataType: decimal
-		formatString: #,0.00
-		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
-		summarizeBy: sum
-		sourceColumn: Đơn giá
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng đơn giá/m²","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Đơn giá (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
-
 	column 'Phân loại Đường'
 		dataType: string
 		lineageTag: d236c1f2-aece-4a3f-96ea-0a3d05a6148c
@@ -337,43 +326,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Khoảng đơn giá/m²' =
-			IF(
-				ISBLANK('Fact_Listings'[Đơn giá]),
-				BLANK(),
-				INT('Fact_Listings'[Đơn giá] / 5) * 5
-			)
-		formatString: #,0.00
-		lineageTag: d1307432-4440-42a8-8972-92439a23c6bc
-		summarizeBy: none
-
-		extendedProperty GroupingMetadata =
-				{
-				  "version": 0,
-				  "groupedColumns": [
-				    {
-				      "Column": {
-				        "Expression": {
-				          "SourceRef": {
-				            "Entity": "Fact_Listings"
-				          }
-				        },
-				        "Property": "Đơn giá"
-				      }
-				    }
-				  ],
-				  "binningMetadata": {
-				    "binSize": {
-				      "value": 5.0,
-				      "unit": 0
-				    }
-				  }
-				}
-
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":5.0}}}}
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Tỷ lệ sâu/rộng' = ```
 			
 			DIVIDE(
@@ -453,6 +405,54 @@ table Fact_Listings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Đơn giá'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: df38144f-a43b-4cc5-b25a-253daa230f6f
+		summarizeBy: sum
+		sourceColumn: Đơn giá
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Khoảng đơn giá/m²","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"Fact_Listings","TableItemName":"Đơn giá (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Khoảng đơn giá/m²' =
+			IF(
+				ISBLANK('Fact_Listings'[Đơn giá]),
+				BLANK(),
+				INT('Fact_Listings'[Đơn giá] / 5) * 5
+			)
+		formatString: #,0.00
+		lineageTag: d1307432-4440-42a8-8972-92439a23c6bc
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Đơn giá"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 5.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":5.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
 	column Listing_ID
 		dataType: int64
 		formatString: 0
@@ -490,6 +490,35 @@ table Fact_Listings
 		sortByColumn: Nhom_Chat_Luong_Thocu_Sort
 
 		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nhom_Chat_Luong_Thocu_Sort =
+			
+			VAR MatTien = 'Fact_Listings'[Loại Mặt tiền]
+			VAR Duong = 'Fact_Listings'[Phân loại Đường]
+			VAR PhapLy = RELATED('Dim_Property_Details'[Pháp lý Chuẩn hóa (groups)])
+			
+			VAR MatTienTot = MatTien IN {"Tiêu chuẩn (5m)", "Khá (5-10m)", "Rất rộng (>10m)"}
+			VAR DuongTot = Duong IN {"Đường xe hơi (5-10m)", "Đường lớn (>10m)"}
+			
+			VAR PhapLyManh = PhapLy = "Sổ hồng/Sổ đỏ"
+			VAR PhapLyYeu = PhapLy IN {"Chưa xác định & Hợp đồng mua bán", "Sổ chung"}
+			
+			VAR ViTriKem = NOT(MatTienTot) && NOT(DuongTot)
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    PhapLyYeu && ViTriKem, 4, -- Nằm cuối cùng bên phải
+			    PhapLyYeu, 3,             -- Nằm thứ 3
+			    PhapLyManh && (MatTienTot || DuongTot), 1, -- Nằm đầu tiên bên trái
+			    PhapLyManh, 2,            -- Nằm thứ 2
+			    5
+			)
+		formatString: 0
+		lineageTag: a95fcd18-c0df-479f-ae91-46b410a39254
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
@@ -571,35 +600,6 @@ table Fact_Listings
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Nhom_Chat_Luong_Thocu_Sort =
-			
-			VAR MatTien = 'Fact_Listings'[Loại Mặt tiền]
-			VAR Duong = 'Fact_Listings'[Phân loại Đường]
-			VAR PhapLy = RELATED('Dim_Property_Details'[Pháp lý Chuẩn hóa (groups)])
-			
-			VAR MatTienTot = MatTien IN {"Tiêu chuẩn (5m)", "Khá (5-10m)", "Rất rộng (>10m)"}
-			VAR DuongTot = Duong IN {"Đường xe hơi (5-10m)", "Đường lớn (>10m)"}
-			
-			VAR PhapLyManh = PhapLy = "Sổ hồng/Sổ đỏ"
-			VAR PhapLyYeu = PhapLy IN {"Chưa xác định & Hợp đồng mua bán", "Sổ chung"}
-			
-			VAR ViTriKem = NOT(MatTienTot) && NOT(DuongTot)
-			
-			RETURN
-			SWITCH(
-			    TRUE(),
-			    PhapLyYeu && ViTriKem, 4, -- Nằm cuối cùng bên phải
-			    PhapLyYeu, 3,             -- Nằm thứ 3
-			    PhapLyManh && (MatTienTot || DuongTot), 1, -- Nằm đầu tiên bên trái
-			    PhapLyManh, 2,            -- Nằm thứ 2
-			    5
-			)
-		formatString: 0
-		lineageTag: a95fcd18-c0df-479f-ae91-46b410a39254
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
 
 	partition Fact_Listings = m
 		mode: import

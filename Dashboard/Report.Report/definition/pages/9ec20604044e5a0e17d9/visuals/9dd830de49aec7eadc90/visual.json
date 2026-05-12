@@ -43,14 +43,14 @@
                           "Entity": "Fact_Listings"
                         }
                       },
-                      "Property": "Product_SKey"
+                      "Property": "Biến động giá"
                     }
                   },
-                  "Function": 5
+                  "Function": 1
                 }
               },
-              "queryRef": "CountNonNull(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Product_SKey"
+              "queryRef": "Sum(Fact_Listings.Biến động giá)",
+              "nativeQueryRef": "Average of Biến động giá"
             }
           ]
         }
@@ -72,7 +72,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'hcm_districts_standard.json'"
+                      "Value": "'hcm_districts_standard6529679076318834.json'"
                     }
                   }
                 },
@@ -81,7 +81,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "hcm_districts_standard6529679076318834.json"
+                      "ItemName": "hcm_districts_standard652967902911581080158313.json"
                     }
                   }
                 }
@@ -138,6 +138,60 @@
         {
           "properties": {
             "autoZoom": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "defaultColors": [
+        {
+          "properties": {
+            "defaultShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -359,6 +413,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "fa7dfb113553b8b0c756",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Biến động giá"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

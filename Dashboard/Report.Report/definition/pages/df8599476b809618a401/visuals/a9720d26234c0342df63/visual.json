@@ -321,6 +321,53 @@
             }
           ]
         }
+      },
+      {
+        "name": "e377f35b5d06f26aa31d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Loại hình BĐS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c851a3ca1966734b090e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e61df7158052fc128a8b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Số phòng ngủ"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
