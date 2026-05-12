@@ -192,9 +192,16 @@ Nếu người dùng yêu cầu phân tích dữ liệu cụ thể, bạn bắt 
       "value": "blue",
       "label": "Màu sắc biểu đồ",
       "options": ["blue", "green", "red", "purple", "orange", "cyan"] 
+    }},
+    {{
+      "name": "TARGET_CITIES",
+      "type": "list",
+      "value": ["Hà Nội", "Hồ Chí Minh"],
+      "label": "Thành phố",
+      "options": ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Hải Phòng"]
     }}
   ],
-  "code": "Mã Python thực thi. Sử dụng các biến từ parameters (ví dụ TOP_K, CHART_COLOR) mà KHÔNG cần khởi tạo lại.",
+  "code": "Mã Python thực thi. Sử dụng các biến từ parameters (ví dụ TOP_K, CHART_COLOR, TARGET_CITIES) mà KHÔNG cần khởi tạo lại.",
   "explanation": "Giải thích mã bằng tiếng Việt"
 }}
 ```
