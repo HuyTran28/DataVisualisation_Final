@@ -493,35 +493,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column Nhom_Chat_Luong_Thocu_Sort =
-			
-			VAR MatTien = 'Fact_Listings'[Loại Mặt tiền]
-			VAR Duong = 'Fact_Listings'[Phân loại Đường]
-			VAR PhapLy = RELATED('Dim_Property_Details'[Pháp lý Chuẩn hóa (groups)])
-			
-			VAR MatTienTot = MatTien IN {"Tiêu chuẩn (5m)", "Khá (5-10m)", "Rất rộng (>10m)"}
-			VAR DuongTot = Duong IN {"Đường xe hơi (5-10m)", "Đường lớn (>10m)"}
-			
-			VAR PhapLyManh = PhapLy = "Sổ hồng/Sổ đỏ"
-			VAR PhapLyYeu = PhapLy IN {"Chưa xác định & Hợp đồng mua bán", "Sổ chung"}
-			
-			VAR ViTriKem = NOT(MatTienTot) && NOT(DuongTot)
-			
-			RETURN
-			SWITCH(
-			    TRUE(),
-			    PhapLyYeu && ViTriKem, 4, -- Nằm cuối cùng bên phải
-			    PhapLyYeu, 3,             -- Nằm thứ 3
-			    PhapLyManh && (MatTienTot || DuongTot), 1, -- Nằm đầu tiên bên trái
-			    PhapLyManh, 2,            -- Nằm thứ 2
-			    5
-			)
-		formatString: 0
-		lineageTag: a95fcd18-c0df-479f-ae91-46b410a39254
-		summarizeBy: sum
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Đơn giá (bins)' =
 			IF(
 				ISBLANK('Fact_Listings'[Đơn giá]),
@@ -601,6 +572,35 @@ table Fact_Listings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column Nhom_Chat_Luong_Thocu_Sort =
+			
+			VAR MatTien = 'Fact_Listings'[Loại Mặt tiền]
+			VAR Duong = 'Fact_Listings'[Phân loại Đường]
+			VAR PhapLy = RELATED('Dim_Property_Details'[Pháp lý Chuẩn hóa (groups)])
+			
+			VAR MatTienTot = MatTien IN {"Tiêu chuẩn (5m)", "Khá (5-10m)", "Rất rộng (>10m)"}
+			VAR DuongTot = Duong IN {"Đường xe hơi (5-10m)", "Đường lớn (>10m)"}
+			
+			VAR PhapLyManh = PhapLy = "Sổ hồng/Sổ đỏ"
+			VAR PhapLyYeu = PhapLy IN {"Chưa xác định & Hợp đồng mua bán", "Sổ chung"}
+			
+			VAR ViTriKem = NOT(MatTienTot) && NOT(DuongTot)
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    PhapLyYeu && ViTriKem, 4, -- Nằm cuối cùng bên phải
+			    PhapLyYeu, 3,             -- Nằm thứ 3
+			    PhapLyManh && (MatTienTot || DuongTot), 1, -- Nằm đầu tiên bên trái
+			    PhapLyManh, 2,            -- Nằm thứ 2
+			    5
+			)
+		formatString: 0
+		lineageTag: a95fcd18-c0df-479f-ae91-46b410a39254
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_Listings = m
 		mode: import
 		source =
@@ -617,7 +617,7 @@ table Fact_Listings
 				    #"Expanded Dim_Product" = Table.ExpandTableColumn(#"Expanded Dim_Property_Details", "Dim_Product", {"Product_SKey"}, {"Product_SKey"}),
 				    #"Removed Other Columns" = Table.SelectColumns(#"Expanded Dim_Product", {"Khoảng giá", "Diện tích", "Đơn giá", "Loại hình BĐS", "Mặt tiền", "Loại Mặt tiền", "Đường vào", "Phân loại Đường", "Số phòng ngủ", "Số phòng tắm, vệ sinh", "Số tầng", "Biến động giá", "Xu hướng giá", "Ngày đăng", "expiry_date", "Location_SKey", "Feature_SKey", "Status_SKey", "Product_SKey"}),
 				    #"Added Is_Overcrowded" = Table.AddColumn(#"Removed Other Columns", "Is_Overcrowded", each if [Diện tích] <> null and [Số phòng ngủ] <> null and [Diện tích] < 40 and [Số phòng ngủ] >= 3 then true else false, type logical),
-				    #"Added Is_Fire_Risk" = Table.AddColumn(#"Added Is_Overcrowded", "Is_Fire_Risk", each if [Số tầng] <> null and [Đường vào] <> null and [Số tầng] > 5 and [Đường vào] < 3 then true else false, type logical),
+				    #"Added Is_Fire_Risk" = Table.AddColumn(#"Added Is_Overcrowded", "Is_Fire_Risk", each if [Số tầng] <> null and [Đường vào] <> null and [Số tầng] >= 4 and [Đường vào] <= 4 then true else false, type logical),
 				    #"Added Index" = Table.AddIndexColumn(#"Added Is_Fire_Risk", "Listing_ID", 1, 1, Int64.Type)
 				in
 				    #"Added Index"

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "a9720d26234c0342df63",
   "position": {
-    "x": 623.21311475409834,
-    "y": 23.081967213114755,
-    "z": 4002,
-    "height": 327.344262295082,
-    "width": 557.11475409836066,
-    "tabOrder": 4002
+    "x": 610.60070671378094,
+    "y": 64.452296819787989,
+    "z": 2000,
+    "height": 322.26148409893995,
+    "width": 669.39929328621906,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -64,11 +64,11 @@
                       "Entity": "Fact_Listings"
                     }
                   },
-                  "Property": "Diện tích (bins)"
+                  "Property": "Diện tích"
                 }
               },
-              "queryRef": "Fact_Listings.Diện tích (bins)",
-              "nativeQueryRef": "Diện tích (bins)",
+              "queryRef": "Sum(Fact_Listings.Diện tích)",
+              "nativeQueryRef": "Diện tích",
               "active": true
             }
           ]
@@ -77,22 +77,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_Listings"
-                        }
-                      },
-                      "Property": "Số phòng ngủ"
+                    "SourceRef": {
+                      "Entity": "Fact_Listings"
                     }
                   },
-                  "Function": 1
+                  "Property": "Số phòng ngủ"
                 }
               },
               "queryRef": "Sum(Fact_Listings.Số phòng ngủ)",
-              "nativeQueryRef": "Average of Số phòng ngủ"
+              "nativeQueryRef": "Số phòng ngủ"
             }
           ]
         }
@@ -164,6 +159,26 @@
             }
           }
         }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showOnValueAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -198,40 +213,7 @@
           }
         },
         "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "f",
-              "Entity": "Fact_Listings",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 3,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "f"
-                        }
-                      },
-                      "Property": "Diện tích (bins)"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "5000L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "howCreated": "User"
       },
       {
         "name": "c6597f18e54a778b80c6",
@@ -289,29 +271,11 @@
               }
             }
           ]
-        }
-      },
-      {
-        "name": "02747405e67ce4ef616a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
         },
-        "type": "Advanced"
+        "howCreated": "User"
       },
       {
-        "name": "dd1a44fe7daad079220c",
+        "name": "e036d05d803b31b72ef4",
         "field": {
           "Column": {
             "Expression": {
@@ -319,10 +283,44 @@
                 "Entity": "Fact_Listings"
               }
             },
-            "Property": "Loại hình BĐS"
+            "Property": "Diện tích"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Fact_Listings",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 3,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "Diện tích"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "250L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "20ae5d77f8bc7929af9a",
   "position": {
-    "x": 20.983606557377048,
-    "y": 101.77049180327869,
-    "z": 1000,
-    "height": 330.49180327868851,
-    "width": 451.14754098360658,
+    "x": 0,
+    "y": 386.95384615384614,
+    "z": 0,
+    "height": 332.8,
+    "width": 610.46153846153845,
     "tabOrder": 0
   },
   "visual": {
@@ -184,7 +184,7 @@
             "title": {
               "expr": {
                 "Literal": {
-                  "Value": "'Đơn giá'"
+                  "Value": "'Đơn giá (Triệu VND/m2)'"
                 }
               }
             }
@@ -297,7 +297,7 @@
         }
       },
       {
-        "name": "168f3f794677a7246d56",
+        "name": "88217b60dd479783a635",
         "field": {
           "Column": {
             "Expression": {
@@ -311,7 +311,7 @@
         "type": "Advanced"
       },
       {
-        "name": "aff431daf79531dba3fd",
+        "name": "3038120df1ec13095377",
         "field": {
           "Aggregation": {
             "Expression": {

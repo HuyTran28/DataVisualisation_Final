@@ -72,6 +72,48 @@ table _Measures
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
+	measure MedianPrice_Tho =
+			
+			CALCULATE(
+			    MEDIAN('Fact_Listings'[Đơn giá]),
+			    'Dim_Property_Details'[Nội thất] = "Thô"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 5f1cf280-80fe-4f6d-bd81-0f652b134b30
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure MedianPrice_KhongNoiThat =
+			
+			CALCULATE(
+			    MEDIAN('Fact_Listings'[Đơn giá]),
+			    'Dim_Property_Details'[Nội thất] = "Không nội thất"
+			)
+		formatString: 0.00
+		lineageTag: 85843d36-1d65-479c-b224-733b5a48228c
+
+	measure MedianPrice_PhapLyYeuHemNho =
+			
+			CALCULATE(
+			    MEDIAN('Fact_Listings'[Đơn giá]),
+			    'Fact_Listings'[Nhom_Chat_Luong_Thocu] = "Pháp lý yếu + Hẻm nhỏ"
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e2db5c5e-b0bc-4b80-8fb1-550f3b07c597
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Ty_Le_Nhoi_Nhet =
+			
+			DIVIDE(
+			    CALCULATE(COUNT('Fact_Listings'[Product_SKey]), 'Fact_Listings'[Diện tích] <= 40, 'Fact_Listings'[Số phòng ngủ] >= 3),
+			    COUNT('Fact_Listings'[Product_SKey]),
+			    0
+			)
+		lineageTag: b20f6943-b5e2-4a1e-b1b8-e1a106c109b0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =

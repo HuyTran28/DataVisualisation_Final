@@ -4,10 +4,10 @@
   "position": {
     "x": 406.1129568106312,
     "y": 433.75415282392026,
-    "z": 3000,
+    "z": 2000,
     "height": 275.3488372093023,
     "width": 865.38205980066436,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -854,39 +854,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "1a927204e659eb3f41f1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Property_Details"
-              }
-            },
-            "Property": "Nhom_Loai_Tin"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "236706d5c23b3bb0f9f7",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "Product_SKey"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
