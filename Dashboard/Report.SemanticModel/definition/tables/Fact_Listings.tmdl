@@ -460,6 +460,44 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
+	column Nhom_Chat_Luong_Thocu = ```
+			
+			VAR MatTien = 'Fact_Listings'[Loại Mặt tiền]
+			VAR Duong = 'Fact_Listings'[Phân loại Đường]
+			VAR PhapLy = RELATED('Dim_Property_Details'[Pháp lý Chuẩn hóa (groups)])
+			
+			VAR MatTienTot = MatTien IN {"Khá (5-10m)", "Rất rộng (>10m)"}
+			VAR DuongTot = Duong IN {"Đường xe hơi (5-10m)", "Đường lớn (>10m)"}
+			
+			VAR PhapLyManh = PhapLy = "Sổ hồng/Sổ đỏ"
+			VAR PhapLyYeu = PhapLy IN {"Chưa xác định & Hợp đồng mua bán", "Sổ chung"}
+			
+			VAR ViTriKem = NOT(MatTienTot) && NOT(DuongTot)
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    // Tầng 1: Đáy rủi ro
+			    PhapLyYeu && ViTriKem, "Rủi ro kép (Pháp lý yếu + Hẻm nhỏ)",
+			    
+			    // Tầng 2: Cạm bẫy lùa gà mặt tiền
+			    PhapLyYeu, "Rủi ro ngầm (Pháp lý yếu + Vị trí trung bình/đẹp)",
+			    
+			    // Tầng 3: Hàng Hiệu
+			    PhapLyManh && (MatTienTot || DuongTot), "Cao cấp (Sổ đỏ + Mặt tiền/Đường lớn)",
+			    
+			    // Tầng 4: Hàng ở thực an toàn (Khóa chặt: Phải CÓ SỔ mới được vào nhóm này)
+			    PhapLyManh, "Phổ thông (Sổ đỏ + Nhà hẻm)",
+			    
+			    // Tầng 5: Lưới an toàn (Bắt hết các ca Blank/Lỗi gõ phím để dữ liệu luôn sạch 100%)
+			    "Khác (Dữ liệu chưa xác định)"
+			)
+			```
+		lineageTag: c7de3787-2be7-4d44-90e5-272a4cc82d2c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_Listings = m
 		mode: import
 		source =

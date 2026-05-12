@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2f3855406891ab79290d",
   "position": {
-    "x": 1056.6666666666667,
-    "y": 437.77777777777777,
+    "x": 406.25,
+    "y": 433.75,
     "z": 3000,
-    "height": 241.11111111111111,
-    "width": 203.33333333333331,
+    "height": 275,
+    "width": 862.5,
     "tabOrder": 3000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "hundredPercentStackedBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,15 +20,35 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Dim_Property_Details"
+                    }
+                  },
+                  "Property": "Nhom_Loai_Tin"
+                }
+              },
+              "queryRef": "Dim_Property_Details.Nhom_Loai_Tin",
+              "nativeQueryRef": "Loại tin",
+              "active": true,
+              "displayName": "Loại tin"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Fact_Listings"
                     }
                   },
-                  "Property": "Loại Mặt tiền"
+                  "Property": "Nhom_Chat_Luong_Thocu"
                 }
               },
-              "queryRef": "Fact_Listings.Loại Mặt tiền",
-              "nativeQueryRef": "Count of Loại Mặt tiền",
-              "active": true
+              "queryRef": "Fact_Listings.Nhom_Chat_Luong_Thocu",
+              "nativeQueryRef": "Chất lượng thổ cư",
+              "displayName": "Chất lượng thổ cư"
             }
           ]
         },
@@ -51,7 +71,8 @@
                 }
               },
               "queryRef": "CountNonNull(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey"
+              "nativeQueryRef": "Số lượng tin ",
+              "displayName": "Số lượng tin "
             }
           ]
         }
@@ -80,12 +101,443 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Chất lượng thổ cư'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pháp lý mạnh + mặt tiền tốt'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pháp lý yếu + hẻm sâu'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4E82BA'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Hàng Hiệu (Sổ đỏ sẵn + Vị trí đẹp)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#9DB9DC'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Nhà Hẻm (Sổ đỏ sẵn + Hẻm nhỏ)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pháp lý yếu / Rủi ro cao'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#4E82BA'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cao cấp (Sổ đỏ + Mặt tiền/Đường lớn)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#9DB9DC'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Phổ thông (Sổ đỏ + Nhà hẻm)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Rủi ro ngầm (Pháp lý yếu + Vị trí trung bình/đẹp)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "ed73b8cb9039c49505bb",
+        "name": "9c03da2d976c76c26f4d",
         "field": {
           "Column": {
             "Expression": {
@@ -96,47 +548,55 @@
             "Property": "Nhom_Loai_Tin"
           }
         },
+        "type": "Categorical"
+      },
+      {
+        "name": "15b21c240f912312917d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Nhom_Chat_Luong_Thocu"
+          }
+        },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
+        "objects": {
+          "general": [
             {
-              "Name": "d",
-              "Entity": "Dim_Property_Details",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Nhom_Loai_Tin"
-                      }
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Tin VIP'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
                 }
               }
             }
           ]
+        }
+      },
+      {
+        "name": "40c1b9a59e16f59f1f28",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "Product_SKey"
+              }
+            },
+            "Function": 5
+          }
         },
-        "howCreated": "User"
+        "type": "Advanced"
       }
     ]
   }

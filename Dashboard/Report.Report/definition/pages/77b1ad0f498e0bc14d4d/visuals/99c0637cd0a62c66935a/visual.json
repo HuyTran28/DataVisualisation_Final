@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "99c0637cd0a62c66935a",
   "position": {
-    "x": 405.55555555555554,
-    "y": 78.888888888888886,
+    "x": 405.71428571428572,
+    "y": 78.571428571428569,
     "z": 1000,
-    "height": 335.55555555555554,
-    "width": 808.88888888888891,
+    "height": 342.85714285714289,
+    "width": 864.28571428571433,
     "tabOrder": 1000
   },
   "visual": {
@@ -27,30 +27,8 @@
                 }
               },
               "queryRef": "Dim_Property_Details.Nhom_Loai_Tin",
-              "nativeQueryRef": "Nhom_Loai_Tin1"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_Property_Details"
-                        }
-                      },
-                      "Property": "Nhom_Loai_Tin"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(Dim_Property_Details.Nhom_Loai_Tin)",
-              "nativeQueryRef": "Nhom_Loai_Tin"
+              "nativeQueryRef": "Loại tin",
+              "displayName": "Loại tin"
             }
           ]
         },
@@ -68,8 +46,9 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.So_Ngay_Hien_Thi)",
-              "nativeQueryRef": "So_Ngay_Hien_Thi",
-              "active": true
+              "nativeQueryRef": "Số ngày hiển thị",
+              "active": true,
+              "displayName": "Số ngày hiển thị"
             }
           ]
         },
@@ -108,6 +87,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'Tahoma'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Đơn giá (triệu VNĐ / m²)'"
                 }
               }
             }
@@ -325,7 +318,7 @@
             "displayName": {
               "expr": {
                 "Literal": {
-                  "Value": "'Y-Axis Constant Line 1'"
+                  "Value": "'Đơn giá mặt bằng chung (triệu VNĐ / m²)'"
                 }
               }
             },
@@ -345,6 +338,97 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dashed'"
+                }
+              }
+            },
+            "dataLabelText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ValueAndName'"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "dataLabelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "shadeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "shadeColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#AFD6FF'"
+                    }
+                  }
+                }
+              }
+            },
+            "dataLabelVerticalPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'above'"
+                }
+              }
+            },
+            "shadeRegion": {
+              "expr": {
+                "Literal": {
+                  "Value": "'before'"
+                }
+              }
+            },
+            "shadeTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "75D"
+                }
+              }
+            },
+            "dataLabelHorizontalPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'right'"
                 }
               }
             }
@@ -374,25 +458,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "7d03bef875346a6050f0",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Property_Details"
-                  }
-                },
-                "Property": "Nhom_Loai_Tin"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "123402d99c0656154ef2",
         "field": {
