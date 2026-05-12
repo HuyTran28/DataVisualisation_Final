@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "ff8eec40eab50fb31f4d",
   "position": {
     "x": 640.13774150290544,
@@ -255,7 +255,7 @@
             "categorySize": {
               "expr": {
                 "Literal": {
-                  "Value": "753.705566207675D"
+                  "Value": "488.54699443293816D"
                 }
               }
             }
@@ -324,5 +324,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0828cf453d7004e431cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Khoảng đơn giá/m²"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fcedb55778258397abcb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "Số tin đăng"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

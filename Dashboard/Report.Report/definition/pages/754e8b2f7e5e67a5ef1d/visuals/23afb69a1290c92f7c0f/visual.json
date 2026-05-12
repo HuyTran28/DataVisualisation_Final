@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "23afb69a1290c92f7c0f",
   "position": {
     "x": 0,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "BÓC TRẦN CHIÊU TRÒ GIÁ BĐS",
+                    "value": "BÓC TÁCH TÂM LÝ GIÁ BĐS",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Tahoma",

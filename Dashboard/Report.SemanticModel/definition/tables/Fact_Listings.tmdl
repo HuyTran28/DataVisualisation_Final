@@ -337,43 +337,6 @@ table Fact_Listings
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Khoảng đơn giá/m²' =
-			IF(
-				ISBLANK('Fact_Listings'[Đơn giá]),
-				BLANK(),
-				INT('Fact_Listings'[Đơn giá] / 5) * 5
-			)
-		formatString: #,0.00
-		lineageTag: d1307432-4440-42a8-8972-92439a23c6bc
-		summarizeBy: none
-
-		extendedProperty GroupingMetadata =
-				{
-				  "version": 0,
-				  "groupedColumns": [
-				    {
-				      "Column": {
-				        "Expression": {
-				          "SourceRef": {
-				            "Entity": "Fact_Listings"
-				          }
-				        },
-				        "Property": "Đơn giá"
-				      }
-				    }
-				  ],
-				  "binningMetadata": {
-				    "binSize": {
-				      "value": 5.0,
-				      "unit": 0
-				    }
-				  }
-				}
-
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":5.0}}}}
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Tỷ lệ sâu/rộng' = ```
 			
 			DIVIDE(
@@ -452,6 +415,43 @@ table Fact_Listings
 		summarizeBy: sum
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Khoảng đơn giá/m²' =
+			IF(
+				ISBLANK('Fact_Listings'[Đơn giá]),
+				BLANK(),
+				INT('Fact_Listings'[Đơn giá] / 5) * 5
+			)
+		formatString: #,0.00
+		lineageTag: d1307432-4440-42a8-8972-92439a23c6bc
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Listings"
+				          }
+				        },
+				        "Property": "Đơn giá"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 5.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Listings"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Đơn giá"}},"Size":5.0}}}}
+
+		annotation SummarizationSetBy = Automatic
 
 	column Listing_ID
 		dataType: int64

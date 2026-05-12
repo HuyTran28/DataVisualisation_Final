@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "27587d4e59141cc28d20",
   "position": {
     "x": 0,
@@ -218,15 +218,7 @@
       ],
       "layout": [
         {
-          "properties": {
-            "showFixedSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
+          "properties": {}
         },
         {
           "properties": {
