@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "99c0637cd0a62c66935a",
   "position": {
-    "x": 405.71428571428572,
-    "y": 78.571428571428569,
+    "x": 405.77092419088956,
+    "y": 76.923397950879533,
     "z": 1000,
-    "height": 342.85714285714289,
-    "width": 864.28571428571433,
+    "height": 342.30912088141395,
+    "width": 865.38822694739486,
     "tabOrder": 1000
   },
   "visual": {
@@ -169,6 +169,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
                 }
               }
             }
@@ -359,9 +366,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#FD8992'"
                     }
                   }
                 }
@@ -378,9 +384,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#AC4F57'"
                     }
                   }
                 }
@@ -389,7 +394,7 @@
             "shadeShow": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -398,7 +403,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AFD6FF'"
+                      "Value": "'#FD8992'"
                     }
                   }
                 }
@@ -431,6 +436,34 @@
                   "Value": "'right'"
                 }
               }
+            },
+            "autoScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'front'"
+                }
+              }
+            },
+            "shadeColorMatchStroke": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           },
           "selector": {
@@ -447,6 +480,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
                 }
               }
             }

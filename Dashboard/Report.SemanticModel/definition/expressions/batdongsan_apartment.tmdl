@@ -1,2 +1,0 @@
-expression batdongsan_apartment = Table.PromoteHeaders(Csv.Document(File.Contents(DatasetFolderPath & "\\segmented_by_type\\batdongsan_apartment.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true]) meta [IsParameterQuery=false, Type="Table"]
-	lineageTag: edbbbfa1-60a3-461f-94a8-cff4b9a0ffc6
