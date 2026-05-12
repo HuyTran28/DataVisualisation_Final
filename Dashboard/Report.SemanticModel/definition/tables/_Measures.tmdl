@@ -117,11 +117,12 @@ table _Measures
 	partition _Measures = m
 		mode: import
 		source =
-				let
-				    _Measures = {{"Measure", "Value"}, {"_Measures", 1}},
-				    #"Removed Columns" = Table.RemoveColumns(_Measures,{"_Measures"})
-				in
-				    #"Removed Columns"
+			let
+				measuresList = {{"Measure", "Value"}, {"_Measures", 1}},
+				measuresTable = Table.FromRows(measuresList, {"Measure", "_Measures"}),
+				#"Removed Columns" = Table.RemoveColumns(measuresTable,{"_Measures"})
+			in
+				#"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
