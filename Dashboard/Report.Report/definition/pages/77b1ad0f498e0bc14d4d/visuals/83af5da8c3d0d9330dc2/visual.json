@@ -71,7 +71,8 @@
                 }
               },
               "queryRef": "Count(Fact_Listings.Product_SKey)",
-              "nativeQueryRef": "Count of Product_SKey"
+              "nativeQueryRef": "Số lượng tin",
+              "displayName": "Số lượng tin"
             }
           ]
         }
