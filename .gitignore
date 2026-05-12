@@ -20,3 +20,10 @@ __pycache__/
 
 Dashboard/Report.SemanticModel/definition/expressions/DatasetFolderPath.tmdl
 Dashboard/Report.SemanticModel/definition/expressions.tmdl
+
+# AI_App
+AI_App/.env
+AI_App/.venv/
+AI_App/backend/logs.json
+AI_App/backend/__pycache__/
+AI_App/frontend/__pycache__/
