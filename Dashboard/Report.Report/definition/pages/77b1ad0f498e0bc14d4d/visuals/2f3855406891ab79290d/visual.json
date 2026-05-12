@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2f3855406891ab79290d",
   "position": {
-    "x": 406.25,
-    "y": 433.75,
-    "z": 2000,
-    "height": 275,
-    "width": 862.5,
-    "tabOrder": 2000
+    "x": 406.1129568106312,
+    "y": 433.75415282392026,
+    "z": 3000,
+    "height": 275.3488372093023,
+    "width": 865.38205980066436,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -47,8 +47,8 @@
                 }
               },
               "queryRef": "Fact_Listings.Nhom_Chat_Luong_Thocu",
-              "nativeQueryRef": "Chất lượng thổ cư",
-              "displayName": "Chất lượng thổ cư"
+              "nativeQueryRef": "Chất lượng BĐS",
+              "displayName": "Chất lượng BĐS"
             }
           ]
         },
@@ -108,7 +108,42 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Chất lượng thổ cư'"
+                  "Value": "'Chất lượng BĐS'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'LeftCenter'"
+                }
+              }
+            },
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
                 }
               }
             }
@@ -129,6 +164,41 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "enableValueDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "enableTitleDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "enableBackground": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelContentLayout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SingleLine'"
+                }
+              }
+            },
+            "detailFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
                 }
               }
             }
@@ -434,7 +504,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 4,
-                      "Percent": 0.2
+                      "Percent": 0
                     }
                   }
                 }
@@ -460,6 +530,213 @@
                     "Right": {
                       "Literal": {
                         "Value": "'Rủi ro ngầm (Pháp lý yếu + Vị trí trung bình/đẹp)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Rủi ro kép (Pháp lý yếu + Hẻm nhỏ)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#558BC4'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Sổ đỏ + Vị trí tốt'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#AAC4DC'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Sổ đỏ + Nhà hẻm'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pháp lý yếu + Vị trí trung bình'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFD6C1'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Fact_Listings"
+                          }
+                        },
+                        "Property": "Nhom_Chat_Luong_Thocu"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pháp lý yếu + Hẻm nhỏ'"
                       }
                     }
                   }
@@ -525,6 +802,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tahoma'"
                 }
               }
             }
